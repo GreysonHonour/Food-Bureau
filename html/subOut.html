@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/ui.jqgrid.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/daterangepicker-bs3.css">
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/bt_dropdown.js"></script>
+	<script type="text/javascript" src="../js/moment.js"></script>
+	<script type="text/javascript" src="../js/daterangepicker.js"></script>
+	<script type="text/javascript" src="../js/jquery-migrate-1.4.0.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.jqGrid.min.js"></script>
+	<script type="text/javascript" src="../js/main.js"></script>
+</head>
+<body>
+	<article class="panel panel-default">
+		<form class="form-inline panel-body">
+			<table class="grain_iframe">
+				<tr>
+					<td colspan="2">
+						<div class="input-group width-per-9">
+							<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;单据编号</span>
+							<input type="text" id="ct_out_ivy_no" class="form-control" placeholder="C0000001" aria-describedby="basic-addon1" />
+						</div>
+					</td>
+					<td colspan="2">
+						<div class="input-group width-per-8">
+							<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;原单据编号</span>
+							<input type="text" id="ct_oi_ivy_no" class="form-control" placeholder="S0000001" aria-describedby="basic-addon1">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<div class="input-group width-per-9">
+							<span class="input-group-addon">&nbsp;<i class="fa fa-map-marker"></i>&nbsp;承储地点</span>
+							<input type="text" id="ct_out_unit_nm" class="form-control" placeholder="承储地点Y12345678910" aria-describedby="basic-addon1" />
+						</div>
+					</td>
+					<td colspan="2">
+						<fieldset>
+							<div class="control-group">
+								<div class="controls">
+									<div class="input-prepend input-group width-per-5">
+										<span class="add-on input-group-addon"><i class="fa fa-calendar"></i>&nbsp;出库日期</span>
+										<input readonly type="text" id="ct_out_ivy_tm" style="width: 200px" name="inventory_out_tm" class="form-control inventory_tm"/> 
+									</div>
+								</div>
+							</div>
+						</fieldset>
+						<script type="text/javascript">
+							$(function() {
+								$('.inventory_tm').daterangepicker({ singleDatePicker: true }, function(start, end, label) {
+									console.log(start.toISOString(), end.toISOString(), label);
+								});
+							});
+						</script>
+					</td>
+				</tr>
+			</table>
+			<table class="grain_search" border="0px">
+				<tr>
+					<td colspan="1">
+						<div class="input-group width-per-8">
+							<span class="input-group-addon"><i class="fa fa-sign-in"></i>&nbsp;原粮食数量</span>
+							<input type="text" id="ct_oi_ivy_amt" class="form-control" />
+						</div>
+					</td>
+					<td colspan="1">
+						<div class="input-group width-per-8">
+							<span class="input-group-addon"><i class="fa fa-sign-out"></i>&nbsp;出库数量</span>
+							<input type="text" id="ct_out_ivy_amt" class="form-control" />
+						</div>
+					</td>
+					<td colspan="1">
+						<div class="input-group width-per-8">
+							<span class="input-group-addon"><i class="fa fa-minus-circle"></i>&nbsp;损耗数量</span>
+							<input type="text" id="ct_out_lt_amt" class="form-control" />
+						</div>
+					</td>
+					<td colspan="1">
+						<button type="submit" class="btn btn-primary width-per-8">生成损耗</button>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<label>调拨性质</label>
+						<select id="ct_out_ga" style="width:150px" class="form-control">
+						</select>
+					</td>
+					<td colspan="3">
+
+						<div class="input-group width-per-16">
+							<span class="input-group-addon" style="width:100px;"><i class="fa fa-map-marker"></i>&nbsp;收货单位</span>
+							<input type="text" id="ct_out_rsv_nm" class="form-control" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="6">
+						<label>备注</label><br/>
+						<textarea draggable="false" class="form-control" placeholder="Textarea" style="width:98%"></textarea>
+					</td>
+				</tr>				
+			</table>
+		</form>
+	</article>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/ui.jqgrid.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/daterangepicker-bs3.css">
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/bt_dropdown.js"></script>
+	<script type="text/javascript" src="../js/moment.js"></script>
+	<script type="text/javascript" src="../js/daterangepicker.js"></script>
+	<script type="text/javascript" src="../js/jquery-migrate-1.4.0.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.jqGrid.min.js"></script>
+	<script type="text/javascript" src="../js/main.js"></script>
+</head>
+<body>
+	<article class="panel panel-default">
+		<form class="form-inline panel-body">
+			<table class="grain_search">
+				<tr>
+					<td colspan="2">
+						<div class="input-group width-per-9">
+							<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;单据编号</span>
+							<input type="text" id="ct_in_ivy_no" class="form-control" placeholder="S0000001" aria-describedby="basic-addon1" />
+						</div>
+					</td>
+					<td colspan="2">
+						<div class="input-group width-per-9">
+							<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;入库通知书编号</span>
+							<input type="text" id="ct_in_note_no" class="form-control" placeholder="汉字000000" aria-describedby="basic-addon1" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<div class="input-group width-per-9">
+							<span class="input-group-addon">&nbsp;<i class="fa fa-map-marker"></i>&nbsp;承储地点</span>
+							<input type="text" id="ct_in_unit_nm" class="form-control" placeholder="承储地点X12345678910" aria-describedby="basic-addon1" />
+						</div>
+					</td>
+					<td colspan="2">
+						<div class="input-group width-per-5">
+							<span class="input-group-addon"><i class="fa fa-sign-in"></i>&nbsp;数量</span>
+							<input type="text" id="ct_in_ivy_amt" class="form-control" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="4">
+						<fieldset>
+							<div class="control-group">
+								<div class="controls">
+									<div class="input-prepend input-group">
+										<span class="add-on input-group-addon"><i class="fa fa-calendar"></i>&nbsp;入库日期</span>
+										<input readonly type="text" id="ct_in_ivy_tm"  style="width: 200px" name="inventory_in_tm" class="form-control inventory_tm"/> 
+									</div>
+								</div>
+							</div>
+						</fieldset>
+
+						<script type="text/javascript">
+							$(function() {
+								$('.inventory_tm').daterangepicker({ singleDatePicker: true }, function(start, end, label) {
+									console.log(start.toISOString(), end.toISOString(), label);
+								});
+							});
+						</script>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="1">
+						<label>粮油品种</label><br/>
+						<select id="ct_in_gv" style="width:150px" class="form-control">
+						</select>
+					</td>
+					<td colspan="1">
+						<label>粮油分类</label><br/>
+						<select id="ct_in_gc_l1" style="width:150px" class="form-control"></select>
+					</td>
+					<td colspan="1">
+						<label>等级</label><br/>
+						<select id="ct_in_gg" style="width:150px" class="form-control"></select>
+					</td>
+					<td colspan="1"><label>生产年度</label><br/>
+						<select id="ct_in_py" style="width:150px" class="form-control">
+						</select>
+					</td>
+				</tr>
+					<tr>
+						<td colspan="1">
+							<label>来源内容</label><br/>
+							<select id="ct_in_gs" style="width:150px" class="form-control"></select>
+						</td>
+						<td colspan="1">
+							<label>品质</label><br/>
+							<input type="text" class="form-control" />
+						</td>
+					</tr>
+					<tr>
+						<td colspan="4">
+							<label>备注</label><br/>
+							<textarea draggable="false" class="form-control" placeholder="Textarea" style="width:98%"></textarea></td>
+						</tr>				
+					</table>
+				</form>
+			</article>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/ui.jqgrid.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/daterangepicker-bs3.css">
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/bt_dropdown.js"></script>
+	<script type="text/javascript" src="../js/jquery-migrate-1.4.0.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.jqGrid.min.js"></script>
+	<script type="text/javascript">
+		$(function () { 
+			var json = {"cgItems":[
+						{"品名":"品名1","等级":"等级1","数量":"数量1","现存储地点":"2号仓1"},
+						{"品名":"品名2","等级":"等级2","数量":"数量2","现存储地点":"2号仓2"},
+						{"品名":"品名3","等级":"等级3","数量":"数量3","现存储地点":"2号仓3"},
+						{"品名":"品名4","等级":"等级4","数量":"数量4","现存储地点":"2号仓4"}
+								]};
+			if(json.cgItems.length > 0)
+			{
+				var title2 = "<thead><tr><th>#</th><th>品名</th><th>等级</th><th>数量</th><th>现存储地点</th></tr></thead>"
+				var title = document.getElementById("cgItems").createElement("thead");
+
+				for(var i=0; i<json.cgItems.length; i++){
+
+				}
+			} 
+			else
+			{
+
+
+			}
+		})
+
+	</script>
+</head>
+<body>
+	<article class="panel panel-default">
+		<form class="form-inline panel-body">
+			<table id="cgItems" class="table table-bordered">
+<!-- 				<thead>
+					<tr>
+						<th>#</th>
+						<th>品名</th>
+						<th>等级</th>
+						<th>数量</th>	
+						<th>现存储地点</th>
+					</tr>
+				</thead> -->
+				<tbody>
+					<tr>
+						<td><input type="checkbox"/></td>
+						<td>test1</td>
+						<td>test1</td>
+						<td>test1</td>
+						<td>test1</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</article>
+</body>
+</html>
