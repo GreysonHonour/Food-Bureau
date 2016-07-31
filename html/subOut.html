@@ -19,36 +19,28 @@
 </head>
 <body>
 	<article class="panel panel-default">
-		<form class="form-inline panel-body">
+		<form class="form-inline panel-body" id="outForm">
 			<table class="grain_iframe">
 				<tr>
-					<td colspan="2">
-						<div class="input-group width-per-9">
-							<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;单据编号</span>
-							<input type="text" id="ct_out_ivy_no" class="form-control" placeholder="C0000001" aria-describedby="basic-addon1" />
+					<td class="grain_search_td">
+						<div class="input-group">
+							<span class="input-group-addon" style="width:100px"><i class="fa fa-barcode"></i>&nbsp;单据编号</span>
+							<input type="text" id="ct_out_ivy_no" class="form-control" placeholder="C0000001" aria-describedby="basic-addon1" readonly="true" style="width: 190px"/>
 						</div>
 					</td>
-					<td colspan="2">
-						<div class="input-group width-per-8">
-							<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;原单据编号</span>
-							<input type="text" id="ct_oi_ivy_no" class="form-control" placeholder="S0000001" aria-describedby="basic-addon1">
+					<td class="grain_search_td">
+						<div class="input-group">
+							<span class="input-group-addon" style="width:100px"><i class="fa fa-barcode"></i>&nbsp;原单据编号</span>
+							<input type="text" id="ct_oi_ivy_no" class="form-control" placeholder="S0000001" aria-describedby="basic-addon1" readonly="true" style="width: 190px">
 						</div>
 					</td>
-				</tr>
-				<tr>
-					<td colspan="2">
-						<div class="input-group width-per-9">
-							<span class="input-group-addon">&nbsp;<i class="fa fa-map-marker"></i>&nbsp;承储地点</span>
-							<input type="text" id="ct_out_unit_nm" class="form-control" placeholder="承储地点Y12345678910" aria-describedby="basic-addon1" />
-						</div>
-					</td>
-					<td colspan="2">
+					<td class="grain_search_td">
 						<fieldset>
 							<div class="control-group">
 								<div class="controls">
 									<div class="input-prepend input-group width-per-5">
-										<span class="add-on input-group-addon"><i class="fa fa-calendar"></i>&nbsp;出库日期</span>
-										<input readonly type="text" id="ct_out_ivy_tm" style="width: 200px" name="inventory_out_tm" class="form-control inventory_tm"/> 
+										<span class="add-on input-group-addon" style="width:100px"><i class="fa fa-calendar"></i>&nbsp;出库日期</span>
+										<input readonly type="text" id="ct_out_ivy_tm" style="width: 190px" name="inventory_out_tm" class="form-control inventory_tm"/> 
 									</div>
 								</div>
 							</div>
@@ -62,51 +54,58 @@
 						</script>
 					</td>
 				</tr>
-			</table>
-			<table class="grain_search" border="0px">
 				<tr>
-					<td colspan="1">
-						<div class="input-group width-per-8">
-							<span class="input-group-addon"><i class="fa fa-sign-in"></i>&nbsp;原粮食数量</span>
-							<input type="text" id="ct_oi_ivy_amt" class="form-control" />
+					<td class="grain_search_td">
+						<div class="input-group">
+							<span class="input-group-addon" style="width:100px"><i class="fa fa-sign-in"></i>&nbsp;原粮食量</span>
+							<input type="number" id="ct_oi_ivy_amt" class="form-control" style="width: 190px"/>
 						</div>
 					</td>
-					<td colspan="1">
-						<div class="input-group width-per-8">
-							<span class="input-group-addon"><i class="fa fa-sign-out"></i>&nbsp;出库数量</span>
-							<input type="text" id="ct_out_ivy_amt" class="form-control" />
+					<td class="grain_search_td">
+						<div class="input-group">
+							<span class="input-group-addon" style="width:113px"><i class="fa fa-sign-out"></i>&nbsp;出库数量</span>
+							<input type="number" id="ct_out_ivy_amt" class="form-control" style="width: 190px"/>
 						</div>
 					</td>
-					<td colspan="1">
-						<div class="input-group width-per-8">
-							<span class="input-group-addon"><i class="fa fa-minus-circle"></i>&nbsp;损耗数量</span>
-							<input type="text" id="ct_out_lt_amt" class="form-control" />
+					<td class="grain_search_td">
+
+						<div class="input-group">
+							<span class="input-group-addon" style="width:100px"><i class="fa fa-minus-circle"></i>&nbsp;损耗数量</span>
+							<input type="text" id="ct_out_lt_amt" class="form-control" style="width: 190px"/>
 						</div>
-					</td>
-					<td colspan="1">
-						<button type="submit" class="btn btn-primary width-per-8">生成损耗</button>
 					</td>
 				</tr>
 				<tr>
-					<td colspan="1">
-						<label>调拨性质</label>
-						<select id="ct_out_ga" style="width:150px" class="form-control">
-						</select>
-					</td>
-					<td colspan="3">
-
-						<div class="input-group width-per-16">
+					<td colspan="2">
+						<div class="input-group" style="width:93.5%">
 							<span class="input-group-addon" style="width:100px;"><i class="fa fa-map-marker"></i>&nbsp;收货单位</span>
 							<input type="text" id="ct_out_rsv_nm" class="form-control" />
 						</div>
+					</td>
+					<td class=" psn-ab grain_search_td">
+						<button type="submit" class="btn btn-primary psn-rb width-per-4 bt-1">生成损耗</button>
+					</td>
+				</tr>
+				<tr>
+					<td class="grain_search_td">
+						<label>承储单位</label><br/>
+						<select id="ct_out_su" style="width:200px" class="form-control"></select>
+					</td>
+					<td class="grain_search_td">
+						<label>调出地点</label><br/>
+						<select id="ct_out_unit_nm" style="width:200px" class="form-control"></select>
+					</td>
+					<td class="grain_search_td">
+						<label>调拨性质</label><br/>
+						<select id="ct_out_ga" style="width:200px" class="form-control"></select>
 					</td>
 				</tr>
 				<tr>
 					<td colspan="6">
 						<label>备注</label><br/>
-						<textarea draggable="false" class="form-control" placeholder="Textarea" style="width:98%"></textarea>
+						<textarea draggable="false" class="form-control" placeholder="Textarea" style="width:94%"></textarea>
 					</td>
-				</tr>				
+				</tr>
 			</table>
 		</form>
 	</article>
