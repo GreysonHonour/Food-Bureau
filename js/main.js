@@ -1,4 +1,5 @@
 	$(function () {
+
 		var options = {
 				production_year:getYears(),
 				go_source:["","辽宁","吉林","黑龙江","河北","山东","河南","内蒙古","进口","本市","移库","加工回收"],//来源内容
@@ -35,7 +36,7 @@
 			getOptions(options.go_allcation, 'ct_out_ga');
 			//承储单位
 			getOptions(options.storage_unit, 'sc_in_su')
-
+			getOptions(options.storage_unit, 'ct_in_su')
 			//导航一级菜单
 			$(".dropdown-toggle").dropdown();
 
@@ -47,12 +48,8 @@
 					title: '新增粮油入库单',
 					shadeClose: true,
 					shade: 0.8,
-					area: ['1080px', '70%'],
-  					content: ['subIn.html', 'no'],
-    				btn:['确认'],
-  					confirm:function(){
-  						layer.msg('的确很重要');
-  					}
+					area: ['1280px', '70%'],
+  					content: ['subIn.html', 'no']
 				}); 
 			});
 
@@ -62,27 +59,19 @@
 					title: '新增粮油出库单',
 					shadeClose: true,
 					shade: 0.8,
-					area: ['1080px', '70%'],
-  					content: ['subOut.html', 'no'],
-    				btn:['确认'],
-  					confirm:function(){
-  						layer.msg('的确很重要');
-  					}
+					area: ['1280px', '70%'],
+  					content: ['subOut.html', 'no']
 				}); 
 			});
 
 			$("#subCg").on("click",function(){
 				layer.open({
 					type: 2,
-					title: '存储地点变更设定',
+					title: '储存地点变更设定',
 					shadeClose: true,
 					shade: 0.8,
-					area: ['1080px', '70%'],
-  					content: ['subCg.html', 'no'],
-    				btn:['确认'],
-  					confirm:function(){
-  						layer.msg('的确很重要');
-  					}
+					area: ['1280px', '70%'],
+  					content: ['subCg.html', 'no']
 				}); 
 			});
 
@@ -90,14 +79,14 @@
 			// <!-- 一览START -->
 			$("#view_in_tbl").jqGrid({
 				datatype: "local",
-				height: 250,
-				colNames:['单据编号','承储单位', '存储地点', '入库日期','粮油品种','粮油种类','粮油品质','粮食数量','粮食等级','修改'],
+				height: 240,
+				colNames:['单据编号','承储单位', '储存地点', '入库日期','粮油品种','粮油种类','粮油品质','粮食数量','粮食等级','修改'],
 				colModel:[
 				//单据编号
 				{name:'vw_in_ivy_no',index:'vw_in_ivy_no', width:80, sorttype:"text"},
 				//承储单位
 				{name:'vw_in_unit_nm',index:'vw_in_unit_nm', width:170, sorttype:false},
-				//存储地点
+				//储存地点
 				{name:'vw_in_rsv_nm',index:'vw_in_rsv_nm', width:330, sortable:false},
 				//入库日期
 				{name:'vw_in_tm',index:'vw_in_tm', width:100, align:"center", sorttype:"date"},
@@ -146,7 +135,7 @@
 			$("#view_out_tbl").jqGrid({
 				datatype: "local",
 				height: 250,
-				colNames:['单据编号','原单据编号','存储地点','收货单位','出库日期','原粮食数量','出库数量','损耗数量','调拨性质','修改'],
+				colNames:['单据编号','原单据编号','储存地点','收货单位','出库日期','原粮食数量','出库数量','损耗数量','调拨性质','修改'],
 				colModel:[
 				//单据编号
 				{name:'vw_out_ivy_no',index:'vw_out_ivy_no', width:80, sorttype:"text"},
@@ -174,15 +163,15 @@
 			});
 
 			var mydata = [
-			{vw_out_ivy_no:"C00000001",vw_oi_ivy_no:"S00000001", vw_out_unit_nm:"出库-存储地点12345678910", vw_out_rsv_nm:"出库-收货单位XXXX12345678910", vw_out_tm:"2016-05-30", vw_oi_ivy_amt:"10", vw_out_ivy_amt:"6", vw_out_lt_amt:"4", vw_out_ga:"加工付出"},
-			{vw_out_ivy_no:"C00000001",vw_oi_ivy_no:"S00000001", vw_out_unit_nm:"出库-存储地点12345678910", vw_out_rsv_nm:"出库-收货单位XXXX12345678910", vw_out_tm:"2016-05-30", vw_oi_ivy_amt:"10", vw_out_ivy_amt:"6", vw_out_lt_amt:"4", vw_out_ga:"加工付出"},
-			{vw_out_ivy_no:"C00000001",vw_oi_ivy_no:"S00000001", vw_out_unit_nm:"出库-存储地点12345678910", vw_out_rsv_nm:"出库-收货单位XXXX12345678910", vw_out_tm:"2016-05-30", vw_oi_ivy_amt:"10", vw_out_ivy_amt:"6", vw_out_lt_amt:"4", vw_out_ga:"加工付出"},
-			{vw_out_ivy_no:"C00000001",vw_oi_ivy_no:"S00000001", vw_out_unit_nm:"出库-存储地点12345678910", vw_out_rsv_nm:"出库-收货单位XXXX12345678910", vw_out_tm:"2016-05-30", vw_oi_ivy_amt:"10", vw_out_ivy_amt:"6", vw_out_lt_amt:"4", vw_out_ga:"加工付出"},
-			{vw_out_ivy_no:"C00000001",vw_oi_ivy_no:"S00000001", vw_out_unit_nm:"出库-存储地点12345678910", vw_out_rsv_nm:"出库-收货单位XXXX12345678910", vw_out_tm:"2016-05-30", vw_oi_ivy_amt:"10", vw_out_ivy_amt:"6", vw_out_lt_amt:"4", vw_out_ga:"加工付出"},
-			{vw_out_ivy_no:"C00000001",vw_oi_ivy_no:"S00000001", vw_out_unit_nm:"出库-存储地点12345678910", vw_out_rsv_nm:"出库-收货单位XXXX12345678910", vw_out_tm:"2016-05-30", vw_oi_ivy_amt:"10", vw_out_ivy_amt:"6", vw_out_lt_amt:"4", vw_out_ga:"加工付出"},
-			{vw_out_ivy_no:"C00000001",vw_oi_ivy_no:"S00000001", vw_out_unit_nm:"出库-存储地点12345678910", vw_out_rsv_nm:"出库-收货单位XXXX12345678910", vw_out_tm:"2016-05-30", vw_oi_ivy_amt:"10", vw_out_ivy_amt:"6", vw_out_lt_amt:"4", vw_out_ga:"加工付出"},
-			{vw_out_ivy_no:"C00000001",vw_oi_ivy_no:"S00000001", vw_out_unit_nm:"出库-存储地点12345678910", vw_out_rsv_nm:"出库-收货单位XXXX12345678910", vw_out_tm:"2016-05-30", vw_oi_ivy_amt:"10", vw_out_ivy_amt:"6", vw_out_lt_amt:"4", vw_out_ga:"加工付出"},
-			{vw_out_ivy_no:"C00000001",vw_oi_ivy_no:"S00000001", vw_out_unit_nm:"出库-存储地点12345678910", vw_out_rsv_nm:"出库-收货单位XXXX12345678910", vw_out_tm:"2016-05-30", vw_oi_ivy_amt:"10", vw_out_ivy_amt:"6", vw_out_lt_amt:"4", vw_out_ga:"加工付出"}
+			{vw_out_ivy_no:"C00000001",vw_oi_ivy_no:"S00000001", vw_out_unit_nm:"出库-储存地点12345678910", vw_out_rsv_nm:"出库-收货单位XXXX12345678910", vw_out_tm:"2016-05-30", vw_oi_ivy_amt:"10", vw_out_ivy_amt:"6", vw_out_lt_amt:"4", vw_out_ga:"加工付出"},
+			{vw_out_ivy_no:"C00000001",vw_oi_ivy_no:"S00000001", vw_out_unit_nm:"出库-储存地点12345678910", vw_out_rsv_nm:"出库-收货单位XXXX12345678910", vw_out_tm:"2016-05-30", vw_oi_ivy_amt:"10", vw_out_ivy_amt:"6", vw_out_lt_amt:"4", vw_out_ga:"加工付出"},
+			{vw_out_ivy_no:"C00000001",vw_oi_ivy_no:"S00000001", vw_out_unit_nm:"出库-储存地点12345678910", vw_out_rsv_nm:"出库-收货单位XXXX12345678910", vw_out_tm:"2016-05-30", vw_oi_ivy_amt:"10", vw_out_ivy_amt:"6", vw_out_lt_amt:"4", vw_out_ga:"加工付出"},
+			{vw_out_ivy_no:"C00000001",vw_oi_ivy_no:"S00000001", vw_out_unit_nm:"出库-储存地点12345678910", vw_out_rsv_nm:"出库-收货单位XXXX12345678910", vw_out_tm:"2016-05-30", vw_oi_ivy_amt:"10", vw_out_ivy_amt:"6", vw_out_lt_amt:"4", vw_out_ga:"加工付出"},
+			{vw_out_ivy_no:"C00000001",vw_oi_ivy_no:"S00000001", vw_out_unit_nm:"出库-储存地点12345678910", vw_out_rsv_nm:"出库-收货单位XXXX12345678910", vw_out_tm:"2016-05-30", vw_oi_ivy_amt:"10", vw_out_ivy_amt:"6", vw_out_lt_amt:"4", vw_out_ga:"加工付出"},
+			{vw_out_ivy_no:"C00000001",vw_oi_ivy_no:"S00000001", vw_out_unit_nm:"出库-储存地点12345678910", vw_out_rsv_nm:"出库-收货单位XXXX12345678910", vw_out_tm:"2016-05-30", vw_oi_ivy_amt:"10", vw_out_ivy_amt:"6", vw_out_lt_amt:"4", vw_out_ga:"加工付出"},
+			{vw_out_ivy_no:"C00000001",vw_oi_ivy_no:"S00000001", vw_out_unit_nm:"出库-储存地点12345678910", vw_out_rsv_nm:"出库-收货单位XXXX12345678910", vw_out_tm:"2016-05-30", vw_oi_ivy_amt:"10", vw_out_ivy_amt:"6", vw_out_lt_amt:"4", vw_out_ga:"加工付出"},
+			{vw_out_ivy_no:"C00000001",vw_oi_ivy_no:"S00000001", vw_out_unit_nm:"出库-储存地点12345678910", vw_out_rsv_nm:"出库-收货单位XXXX12345678910", vw_out_tm:"2016-05-30", vw_oi_ivy_amt:"10", vw_out_ivy_amt:"6", vw_out_lt_amt:"4", vw_out_ga:"加工付出"},
+			{vw_out_ivy_no:"C00000001",vw_oi_ivy_no:"S00000001", vw_out_unit_nm:"出库-储存地点12345678910", vw_out_rsv_nm:"出库-收货单位XXXX12345678910", vw_out_tm:"2016-05-30", vw_oi_ivy_amt:"10", vw_out_ivy_amt:"6", vw_out_lt_amt:"4", vw_out_ga:"加工付出"}
 			];
 
 			for(var i=0;i<=mydata.length;i++){
@@ -242,9 +231,11 @@
 
 		function getYears(){
 		var yearDate = new Date();
-			var startYear=yearDate.getFullYear()-10;//起始年份 
+		    var x = 5;
+			var startYear = yearDate.getFullYear()-x;//起始年份 
+			var endYear = yearDate.getFullYear()+x;//终止年份
 			var array = [];
-			for (var i=0;i<=10;i++) {
+			for (var i=0;i<=x*2;i++) {
 				array[i] = startYear + i;
 			}
 			return array;
@@ -257,8 +248,13 @@
 				for (var i=0;i<=opt.length-1;i++) {
 					obj.options.add(new Option(opt[i],i)); 
 				}
-				if(id == 'search_in_production_year'){
-					obj.options[obj.options.length-1].selected=1;
+				if(id == 'sc_in_py'|| id == 'ct_in_py'){
+					var nowYear = new Date().getFullYear();
+					for(var i=0; i<=opt.length-1; i++){
+						if(nowYear == opt[i]){
+							obj.options[i].selected=1;
+						}
+					}
 				} else {
 					obj.options[0].selected=1;
 				}
@@ -323,9 +319,6 @@
 		function changeInOut(){
 			$("div>aside>ul>li").click(function(){
 				var artArray = document.getElementsByTagName("article");
-				for(var x; x<artArray.length; x++){
-					artArray[x].style.display = "none";
-				}
 				if($(this).index() == 0){
 					artArray[1].style.display = "none";
 					artArray[2].style.display = "none";

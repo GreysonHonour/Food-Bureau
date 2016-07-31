@@ -11,14 +11,14 @@
 	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../js/skin/layer.css">
 	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/jquery-migrate-1.4.0.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.jqGrid.min.js"></script>
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../js/bt_dropdown.js"></script>
 	<script type="text/javascript" src="../js/moment.js"></script>
 	<script type="text/javascript" src="../js/daterangepicker.js"></script>
-	<script type="text/javascript" src="../js/jquery-migrate-1.4.0.min.js"></script>
-	<script type="text/javascript" src="../js/jquery.jqGrid.min.js"></script>
-	<script type="text/javascript" src="../js/main.js"></script>
 	<script type="text/javascript" src="../js/layer.js"></script>
+	<script type="text/javascript" src="../js/main.js"></script>
 </head>
 <body>
 	<header>
@@ -27,7 +27,7 @@
 			<a href="#" class="float-rt margin-rt-5p" id="login_out">退出</a>
 			<div class="float-rt" id="date_info"></div>
 		</nav>
-		<!-- <div id="nav_title"><span>市粮食储备粮油库存管理系统</span> -->
+		<!--<div id="nav_title"><span>市粮食储备粮油库存管理系统</span>-->
 		</div>
 	</header>
 	<div class="content">
@@ -62,7 +62,7 @@
 						<li class="dropdown-submenu">
 							<a tabindex="-1" href="#">粮食基础数据管理</a>
 							<ul class="dropdown-menu">
-								<li><a href="#">粮油品种设置</a></li>
+								<li><a href="#">粮油品种设置2</a></li>
 								<li><a href="#">粮油分类设置</a></li>
 								<li><a href="#">粮油品质设置</a></li>
 								<li><a href="#">粮油等级设置</a></li>
@@ -76,99 +76,102 @@
 
 		<section>
 			<!-- 入库检索区域 -->
-			<article class="panel panel-default">
+			<article class="panel panel-default dp-no">
 				<header class="panel-heading">市粮食储备粮油入库单&nbsp;&nbsp;检索&nbsp;&nbsp;<i class="fa fa-search"></i></header>
-				<form class="form-inline panel-body">
-					<table class="grain_search" border="0px solid #ccc">
+				<form class="form-inline panel-body" data-toggle="validator">
+					<table class="grain_search">
 						<tr>
-							<td colspan="2" class="grain_search_td">
-								<div class="input-group width-per-16">
-									<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;单据编号</span>
-									<input type="text" class="form-control" placeholder="S0000001" aria-describedby="basic-addon1" id="sc_in_ivy_no" />
-								</div>
-							</td>
-							<td colspan="2" class="grain_search_td">
-								<div class="input-group width-per-16">
-									<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;入库通知书编号</span>
-									<input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" id="sc_in_note_no" />
-								</div>
-							</td>
-							<td colspan="2" class="grain_search_td">
-								<fieldset>
-									<div class="control-group">
-										<div class="controls">
-											<div class="input-prepend input-group width-per-10">
-												<span class="add-on input-group-addon"><i class="fa fa-calendar"></i>&nbsp;入库日期</span>
-												<input readonly type="text" id="sc_in_ivy_tm" style="width: 221px" name="inventory_in_tm" class="form-control inventory_tm"/> 
+							<td colspan="6" class="m0">
+								<table class="width-per-10">
+									<tr>
+										<td class="width-per-2z5">
+											<div class="input-group width-per-8">
+												<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;单据编号</span>
+												<input type="text" class="form-control" placeholder="S0000001" aria-describedby="basic-addon1" id="sc_in_ivy_no" readonly="true" />
 											</div>
-										</div>
-									</div>
-								</fieldset>
+										</td>
+										<td class="width-per-2z5">
+											<div class="input-group width-per-8">
+												<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;入库编号</span>
+												<input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" id="sc_in_note_no" />
+											</div>
+										</td>
+										<td class="width-per-2z5">
+											<fieldset>
+												<div class="control-group">
+													<div class="controls">
+														<div class="input-prepend input-group">
+															<span class="add-on input-group-addon"><i class="fa fa-calendar"></i>&nbsp;入库日期</span>
+															<input readonly type="text" id="sc_in_ivy_tm" style="width: 125px" name="inventory_in_tm" class="form-control inventory_tm"/> 
+														</div>
+													</div>
+												</div>
+											</fieldset>
 
-								<script type="text/javascript">
-									$(function() {
-										$('.inventory_tm').daterangepicker({ singleDatePicker: true }, function(start, end, label) {
-											console.log(start.toISOString(), end.toISOString(), label);
-										});
-									});
-								</script>
+											<script type="text/javascript">
+												$(function() {
+													$('.inventory_tm').daterangepicker({ singleDatePicker: true }, function(start, end, label) {
+														console.log(start.toISOString(), end.toISOString(), label);
+													});
+												});
+											</script>
+										</td>
+										<td class="width-per-2z5">
+											<div class="input-group width-per-8">
+											<span class="input-group-addon"><i class="fa fa-sign-in"></i>&nbsp;数&nbsp;&nbsp;&nbsp;&nbsp;量</span>
+												<input type="number" id="sc_in_ivy_amt" name="sc_in_ivy_amt" class="form-control" min="0"/>
+											</div>
+										</td>
+									</tr>
+								</table>
 							</td>
 						</tr>
 						<tr>
-							<td colspan="2">
-								<div class="input-group width-per-16">
-									<span class="input-group-addon">&nbsp;<i class="fa fa-map-marker"></i>&nbsp;存储地点</span>
-									<input type="text" id="sc_in_unit_nm" class="form-control" placeholder="" aria-describedby="basic-addon1" />
-								</div>
-							</td>
-							<td colspan="2">
-								<div class="input-group width-per-16">
-									<span class="input-group-addon"><i class="fa fa-sign-in"></i>&nbsp;数　　　　　量</span>
-									<input type="text" id="sc_in_ivy_amt" class="form-control" />
-								</div>
-							</td>
-							<!-- TODO:待精查 -->
-							<td colspan="2">
-							</td>
-						</tr>
-						<tr>
-							<td colspan="6">
-								<div class="" >
-									<div class="float-lt margin-rt-5p">
-										<label>承储单位</label><br/>
-										<select id="sc_in_su" class="form-control" style="width:170px">						</select>
-									</div>
-									<div class="float-lt margin-rt-5p">
-										<label>粮油品种</label><br/>
-										<select id="sc_in_gv" class="form-control" style="width:170px">						</select>
-									</div>
-									<div class="float-lt margin-rt-5p">
-										<label>粮油分类</label><br/>
-										<select id="sc_in_gc_l1" class="form-control" style="width:150px"></select>
-									</div>
-									<div class="float-lt margin-rt-5p">
-										<label>等级</label><br/>
-										<select id="sc_in_gg" class="form-control" style="width:150px"></select>
-									</div>
-									<div class="float-lt margin-rt-5p">
-										<label>生产年度</label><br/>
-										<select id="sc_in_py" class="form-control" style="width:150px"></select>
-									</div>
-									<div class="float-lt margin-rt-5p">
-										<label>来源内容</label><br/>
-										<select id="sc_in_gs" class="form-control" style="width:150px"></select>
-									</div>
-									<div class="float-lt margin-rt-5p">
-										<label>品质</label><br/>
-										<select id="sc_in_gq" class="form-control" style="width:150px"></select>
-									</div>
-								</div>
+							<td colspan="6" class="m0">
+								<table class="width-per-10">
+									<tr>
+										<td class="width-per-2z5">
+											<label>储存地点</label><br/>
+											<select id="sc_in_unit_nm" class="form-control" style="width:200px"></select>
+										</td>
+										<td class="width-per-2z5">
+											<label>承储单位</label><br/>
+											<select id="sc_in_su" class="form-control" style="width:200px"></select>
+										</td>
+										<td class="width-per-2z5">
+											<label>粮油品种</label><br/>
+											<select id="sc_in_gv" class="form-control" style="width:200px"></select>
+										</td>
+										<td class="width-per-2z5">
+											<label>粮油分类</label><br/>
+											<select id="sc_in_gc_l1" class="form-control" style="width:200px"></select>
+										</td>
+									</tr>
+									<tr>
+										<td class="width-per-2z5">
+											<label>等级</label><br/>
+											<select id="sc_in_gg" class="form-control" style="width:200px"></select>
+										</td>
+										<td class="width-per-2z5">
+											<label>生产年度</label><br/>
+											<select id="sc_in_py" class="form-control" style="width:200px"></select>
+										</td>
+										<td class="width-per-2z5">
+											<label>来源内容</label><br/>
+											<select id="sc_in_gs" class="form-control" style="width:200px"></select>
+										</td>
+										<td class="width-per-2z5">
+											<label>品质</label><br/>
+											<select id="sc_in_gq" class="form-control" style="width:200px"></select>
+										</td>
+									</tr>
+								</table>
 							</td>
 						</tr>
 						<tr>
-							<td colspan="6">
+							<td colspan="6" class="comments">
 								<label>备注</label><br/>
-								<textarea draggable="false" class="form-control" placeholder="Textarea" style="width:96%"></textarea>
+								<textarea draggable="false" class="form-control" placeholder="" style="width:94.9%"></textarea>
 							</td>
 						</tr>				
 					</table>
@@ -191,24 +194,24 @@
 
 			</article>
 			<!-- 出库检索区域 -->
-			<article class="panel panel-default active">
+			<article class="panel panel-default dp-no">
 				<header class="panel-heading">市粮食储备粮油出库单&nbsp;&nbsp;检索&nbsp;&nbsp;<i class="fa fa-search"></i></header>
 				<form class="form-inline panel-body">
-					<table class="grain_search" border="1px">
+					<table class="grain_search">
 						<tr>
-							<td colspan="2" class="grain_search_td">
-								<div class="input-group width-per-16">
+							<td colspan="2">
+								<div class="input-group" style="width:90%;">
 									<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;单据编号</span>
 									<input type="text" id="sc_out_ivy_no" class="form-control" placeholder="C0000001" aria-describedby="basic-addon1" />
 								</div>
 							</td>
-							<td colspan="2" class="grain_search_td">
-								<div class="input-group width-per-16">
+							<td colspan="2">
+								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;原单据编号</span>
 									<input type="text" id="sc_oi_ivy_no" class="form-control" placeholder="S0000001" aria-describedby="basic-addon1"></div>
 									<!-- TODO:与入库编号id编号重复 -->
 							</td>
-							<td colspan="2" class="grain_search_td">
+							<td colspan="2">
 								<fieldset>
 									<div class="control-group">
 										<div class="controls">
@@ -231,27 +234,28 @@
 						</tr>
 						<tr>
 							<td colspan="2">
-								<div class="input-group width-per-16">
+								<div class="input-group width-per-9">
 									<span class="input-group-addon">&nbsp;<i class="fa fa-map-marker"></i>&nbsp;承储地点</span>
 									<input type="text" id="sc_out_unit_nm" class="form-control" placeholder="承储地点Y12345678910" aria-describedby="basic-addon1" />
 								</div>
 							</td>
-							<td colspan="4">
-								<div class="input-group width-per-3">
+							<td colspan="2">
+								<div class="input-group width-per-8">
 									<span class="input-group-addon"><i class="fa fa-sign-in"></i>&nbsp;原粮食数量</span>
 									<input type="text" id="sc_oi_ivy_amt" class="form-control" />
 								</div>
-								<div class="input-group width-per-3">
+							</td>
+							<td colspan="1">
+								<div class="input-group width-per-7">
 									<span class="input-group-addon"><i class="fa fa-sign-out"></i>&nbsp;出库数量</span>
 									<input type="text" id="sc_out_ivy_amt" class="form-control" />
 								</div>
-								<div class="input-group width-per-3">
+							</td>
+							<td colspan="1">
+								<div class="input-group width-per-7">
 									<span class="input-group-addon"><i class="fa fa-minus-circle"></i>&nbsp;损耗数量</span>
 									<input type="text" id="sc_out_lt_amt" class="form-control" />
 								</div>
-							</td>
-							<td colspan="1">
-
 							</td>
 						</tr>
 						<tr>
@@ -291,7 +295,7 @@
 			</article>
 
 			<!-- 变更区域 -->
-			<article class="panel panel-default active">
+			<article class="panel panel-default dp-no">
 				<header class="panel-heading">市粮食储备粮油储存地点变更</header>
 				<table class="grain_change" border="1px">
 					<tr>
