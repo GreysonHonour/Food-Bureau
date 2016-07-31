@@ -48,7 +48,7 @@
 					title: '新增粮油入库单',
 					shadeClose: true,
 					shade: 0.8,
-					area: ['1280px', '70%'],
+					area: ['1080px', '70%'],
   					content: ['subIn.html', 'no']
 				}); 
 			});
@@ -59,7 +59,7 @@
 					title: '新增粮油出库单',
 					shadeClose: true,
 					shade: 0.8,
-					area: ['1280px', '70%'],
+					area: ['1080px', '70%'],
   					content: ['subOut.html', 'no']
 				}); 
 			});
@@ -70,7 +70,7 @@
 					title: '储存地点变更设定',
 					shadeClose: true,
 					shade: 0.8,
-					area: ['1280px', '70%'],
+					area: ['1080px', '70%'],
   					content: ['subCg.html', 'no']
 				}); 
 			});

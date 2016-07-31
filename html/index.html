@@ -87,7 +87,7 @@
 										<td class="width-per-2z5">
 											<div class="input-group width-per-8">
 												<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;单据编号</span>
-												<input type="text" class="form-control" placeholder="S0000001" aria-describedby="basic-addon1" id="sc_in_ivy_no" readonly="true" />
+												<input type="text" class="form-control" placeholder="S0000001" aria-describedby="basic-addon1" id="sc_in_ivy_no"/>
 											</div>
 										</td>
 										<td class="width-per-2z5">
@@ -199,8 +199,30 @@
 				<form class="form-inline panel-body">
 					<table class="grain_search">
 						<tr>
+							<td colspan="6" class="m0">
+								<table class="width-per-10" border="1px">
+									<tr>
+										<td class="grain_search_td">
+											<div class="input-group width-per-8">
+												<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;单据编号</span>
+												<input type="text" id="sc_out_ivy_no" class="form-control" placeholder="C0000001" aria-describedby="basic-addon1" />
+											</div>
+										</td>
+										<td class="grain_search_td">
+										<div class="input-group width-per-8">
+											<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;原单据编号</span>
+											<input type="text" id="sc_oi_ivy_no" class="form-control" placeholder="S0000001" aria-describedby="basic-addon1" />
+										</div>
+										</td>
+										<td class="grain_search_td">
+											
+										</td>
+									</tr>	
+								</table>
+							</td>
+							<!--
 							<td colspan="2">
-								<div class="input-group" style="width:90%;">
+								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;单据编号</span>
 									<input type="text" id="sc_out_ivy_no" class="form-control" placeholder="C0000001" aria-describedby="basic-addon1" />
 								</div>
@@ -209,7 +231,6 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;原单据编号</span>
 									<input type="text" id="sc_oi_ivy_no" class="form-control" placeholder="S0000001" aria-describedby="basic-addon1"></div>
-									<!-- TODO:与入库编号id编号重复 -->
 							</td>
 							<td colspan="2">
 								<fieldset>
@@ -217,7 +238,7 @@
 										<div class="controls">
 											<div class="input-prepend input-group">
 												<span class="add-on input-group-addon"><i class="fa fa-calendar"></i>&nbsp;出库日期</span>
-												<input readonly type="text" id="sc_out_ivy_tm" style="width: 200px" name="inventory_out_tm" class="form-control inventory_tm"/> 
+												<input readonly type="text" id="sc_out_ivy_tm" style="width: 125px" name="inventory_out_tm" class="form-control inventory_tm"/> 
 											</div>
 										</div>
 									</div>
@@ -231,6 +252,7 @@
 									});
 								</script>
 							</td>
+						-->
 						</tr>
 						<tr>
 							<td colspan="2">

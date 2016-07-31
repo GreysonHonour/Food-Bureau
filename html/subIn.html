@@ -24,22 +24,24 @@
 				<tr>
 					<td class="width-per-3">
 						<div class="input-group width-per-9">
-							<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;单据编号</span>
-							<input type="text" id="ct_in_ivy_no" class="form-control" placeholder="S0000001" aria-describedby="basic-addon1" />
+							<span class="input-group-addon" style="width:100px"><i class="fa fa-barcode"></i>&nbsp;单据编号</span>
+							<input type="text" id="ct_in_ivy_no" class="form-control" placeholder="S0000001" aria-describedby="basic-addon1" readonly="true" style="width: 190px"/>
 						</div>
 					</td>
-					<td class="width-per-3">
+					<td class="width-per-7">
 						<div class="input-group width-per-9">
-							<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;通知书编号</span>
+							<span class="input-group-addon" style="width:100px"><i class="fa fa-barcode"></i>&nbsp;通知书编号</span>
 							<input type="text" id="ct_in_note_no" class="form-control" placeholder="" aria-describedby="basic-addon1" />
 						</div>
 					</td>
+				</tr>
+				<tr>
 					<td class="width-per-2z5">
 						<fieldset>
 							<div class="control-group">
 								<div class="controls">
 									<div class="input-prepend input-group">
-										<span class="add-on input-group-addon"><i class="fa fa-calendar"></i>&nbsp;入库日期</span>
+										<span class="add-on input-group-addon" style="width:100px"><i class="fa fa-calendar"></i>&nbsp;入库日期</span>
 										<input readonly type="text" id="ct_in_ivy_tm"  style="width: 190px" name="inventory_in_tm" class="form-control inventory_tm"/> 
 									</div>
 								</div>
@@ -56,22 +58,22 @@
 					</td>
 					<td class="width-per-1j5">
 						<div class="input-group width-per-9">
-							<span class="input-group-addon"><i class="fa fa-sign-in"></i>&nbsp;数量</span>
-							<input type="text" id="ct_in_ivy_amt" class="form-control" />
+							<span class="input-group-addon" style="width:113px"><i class="fa fa-sign-in"></i>&nbsp;数量</span>
+							<input type="text" id="ct_in_ivy_amt" class="form-control"  style="width:100px"/>
 						</div>
 					</td>
 				</tr>
 				<tr>
-					<td class="p10" colspan="4">
+					<td class="pt5" colspan="4">
 						<table class="width-per-10">
 							<tr>
 								<td class="width-per-2z5">
-									<label>存储地点</label><br/>
-									<select id="ct_in_unit_nm" class="form-control" style="width:200px"></select>	
-								</td>
-								<td class="width-per-2z5">
 									<label>承储单位</label><br/>
 									<select id="ct_in_su" class="form-control" style="width:200px"></select>	
+								</td>
+								<td class="width-per-2z5">
+									<label>储存地点</label><br/>
+									<select id="ct_in_unit_nm" class="form-control" style="width:200px"></select>	
 								</td>
 								<td class="width-per-2z5">
 									<label>粮油品种</label><br/>
@@ -106,7 +108,7 @@
 				<tr>
 					<td colspan="4">
 						<label>备注</label><br/>
-						<textarea draggable="false" class="form-control" placeholder="Textarea" style="width:99%"></textarea></td>
+						<textarea draggable="false" class="form-control" placeholder="Textarea" style="width:94%"></textarea></td>
 					</tr>				
 				</table>
 			</form>
