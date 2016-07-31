@@ -5,6 +5,7 @@
 	<title>市级储备粮油库存管理系统</title>
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/ui.jqgrid.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	<link rel="stylesheet" type="text/css" href="../css/jquery-ui.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/daterangepicker-bs3.css">
@@ -76,7 +77,7 @@
 
 		<section>
 			<!-- 入库检索区域 -->
-			<article class="panel panel-default dp-no">
+			<article class="panel panel-default none">
 				<header class="panel-heading">市粮食储备粮油入库单&nbsp;&nbsp;检索&nbsp;&nbsp;<i class="fa fa-search"></i></header>
 				<form class="form-inline panel-body" data-toggle="validator">
 					<table class="grain_search">
@@ -84,19 +85,19 @@
 							<td colspan="6" class="m0">
 								<table class="width-per-10">
 									<tr>
-										<td class="width-per-2">
-											<div class="input-group width-per-9">
+										<td class="width-per-2z5">
+											<div class="input-group width-per-7">
 												<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;单据编号</span>
-												<input type="text" class="form-control" placeholder="S0000001" aria-describedby="basic-addon1" id="sc_in_ivy_no"/>
+												<input type="text" class="form-control" placeholder="S0000001" aria-describedby="basic-addon1" id="sc_in_ivy_no" />
 											</div>
 										</td>
-										<td class="width-per-2">
+										<td class="width-per-2z5">
 											<div class="input-group width-per-9">
 												<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;入库编号</span>
 												<input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" id="sc_in_note_no" />
 											</div>
 										</td>
-										<td class="width-per-2">
+										<td class="width-per-2z5">
 											<fieldset>
 												<div class="control-group">
 													<div class="controls">
@@ -116,13 +117,12 @@
 												});
 											</script>
 										</td>
-										<td class="width-per-2">
-											<div class="input-group width-per-9">
+										<td class="width-per-2z5">
+											<div class="input-group width-per-7">
 											<span class="input-group-addon"><i class="fa fa-sign-in"></i>&nbsp;入库量</span>
 												<input type="number" id="sc_in_ivy_amt" name="sc_in_ivy_amt" class="form-control" min="0"/>
 											</div>
 										</td>
-										<td class="width-per-2"></td>
 									</tr>
 								</table>
 							</td>
@@ -195,7 +195,7 @@
 
 			</article>
 			<!-- 出库检索区域 -->
-			<article class="panel panel-default dp-no">
+			<article class="panel panel-default none">
 				<header class="panel-heading">市粮食储备粮油出库单&nbsp;&nbsp;检索&nbsp;&nbsp;<i class="fa fa-search"></i></header>
 				<form class="form-inline panel-body">
 					<table class="grain_search">
@@ -313,7 +313,7 @@
 			</article>
 
 			<!-- 变更区域 -->
-			<article class="panel panel-default dp-no">
+			<article class="panel panel-default none">
 				<header class="panel-heading">市粮食储备粮油储存地点变更</header>
 				<table class="grain_change" border="1px">
 					<tr>

@@ -3,10 +3,6 @@
 	padding : 0px;
 }
 
-body{
-/*blue*/
-}
-
 .login_min{
   position: absolute;
   bottom: 0%;
@@ -35,14 +31,6 @@ body{
   -webkit-box-shadow:0 0 10px rgba(153, 156, 168, .5);
   -moz-box-shadow:0 0 10px rgba(153, 156, 168, .5);
   box-shadow:0 0 10px rgba(153, 156, 168, .5);
-}
-
-.active{
-  display:block;
-}
-
-.none{
-  display:none;
 }
 
 .login_ipt_area{
