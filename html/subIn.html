@@ -9,7 +9,9 @@
 	<link rel="stylesheet" type="text/css" href="../css/jquery-ui.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/daterangepicker-bs3.css">
 	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
-	<script type="text/javascript" src="../js/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.min.css">
+	<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrapValidator.min.js"></script>
 	<script type="text/javascript" src="../js/jquery-migrate-1.4.0.min.js"></script>
 	<script type="text/javascript" src="../js/jquery.jqGrid.min.js"></script>
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
@@ -17,27 +19,30 @@
 	<script type="text/javascript" src="../js/moment.js"></script>
 	<script type="text/javascript" src="../js/daterangepicker.js"></script>
 	<script type="text/javascript" src="../js/main.js"></script>
+	<script type="text/javascript" src="../js/validation.js"></script>
 </head>
 <body>
 	<article class="panel panel-default">
 		<form class="form-inline panel-body" id="inForm">
 			<table class="grain_search">
 				<tr>
-					<td class="width-per-3">
+					<td class="width-per-3 vali-td">
 						<div class="input-group">
 							<span class="input-group-addon" style="width:100px"><i class="fa fa-barcode"></i>&nbsp;单据编号</span>
 							<input type="text" id="ct_in_ivy_no" class="form-control" placeholder="S0000001" aria-describedby="basic-addon1" readonly="true" style="width: 190px"/>
 						</div>
 					</td>
-					<td class="width-per-7">
-						<div class="input-group width-per-9">
-							<span class="input-group-addon" style="width:100px"><i class="fa fa-barcode"></i>&nbsp;通知书编号</span>
-							<input type="text" id="ct_in_note_no" class="form-control" placeholder="" aria-describedby="basic-addon1" />
+					<td class="width-per-7 vali-td">
+						<div class="form-group width-per-9">
+							<div class="input-group width-per-10">
+								<span class="input-group-addon" style="width:100px"><i class="fa fa-barcode"></i>&nbsp;通知书编号</span>
+								<input type="text" id="ct_in_note_no" name="ctInNoteNo" class="form-control" placeholder="" aria-describedby="basic-addon1" />
+							</div>
 						</div>
 					</td>
 				</tr>
 				<tr>
-					<td class="width-per-3">
+					<td class="width-per-3 vali-td">
 						<fieldset>
 							<div class="control-group">
 								<div class="controls">
@@ -57,10 +62,12 @@
 							});
 						</script>
 					</td>
-					<td class="width-per-7">
-						<div class="input-group width-per-9">
-							<span class="input-group-addon" style="width:113px"><i class="fa fa-sign-in"></i>&nbsp;入库量</span>
-							<input type="text" id="ct_in_ivy_amt" class="form-control"  style="width:100px"/>
+					<td class="width-per-7 vali-td">
+						<div class="form-group width-per-4">
+							<div class="input-group width-per-10">
+								<span class="input-group-addon"><i class="fa fa-sign-in"></i>&nbsp;入库量</span>
+								<input type="text" id="ct_in_ivy_amt" name="ctInIvyAmtNm" class="form-control"/>
+							</div>
 						</div>
 					</td>
 				</tr>
@@ -101,18 +108,20 @@
 									<label>品质</label><br/>
 									<select id="ct_in_gq" class="form-control" style="width:200px"></select>
 								</td>
-
 							</tr>
 						</table>
 					</td>
 				</tr>
 				<tr>
 					<td colspan="4">
-						<label>备注</label><br/>
-						<textarea draggable="false" class="form-control" placeholder="Textarea" style="width:94%"></textarea></td>
-					</tr>				
-				</table>
-			</form>
-		</article>
-	</body>
+						<div class="form-group width-per-10">
+							<label>备注</label><br/>
+							<textarea id="ct_in_rk" name="ctInRk" draggable="false" class="form-control" placeholder="Textarea" style="width:94%"></textarea>
+						</div>
+					</td>
+				</tr>				
+			</table>
+		</form>
+	</article>
+</body>
 </html>

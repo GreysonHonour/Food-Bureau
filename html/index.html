@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/daterangepicker-bs3.css">
 	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../js/skin/layer.css">
-	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="../js/jquery-migrate-1.4.0.min.js"></script>
 	<script type="text/javascript" src="../js/jquery.jqGrid.min.js"></script>
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
@@ -19,7 +19,10 @@
 	<script type="text/javascript" src="../js/moment.js"></script>
 	<script type="text/javascript" src="../js/daterangepicker.js"></script>
 	<script type="text/javascript" src="../js/layer.js"></script>
+	<script type="text/javascript" src="../js/bootstrapValidator.min.js"></script>
+	<script type="text/javascript" src="../js/validation.js"></script>
 	<script type="text/javascript" src="../js/main.js"></script>
+
 </head>
 <body>
 	<header>
@@ -79,7 +82,7 @@
 			<!-- 入库检索区域 -->
 			<article class="panel panel-default none">
 				<header class="panel-heading">市粮食储备粮油入库单&nbsp;&nbsp;检索&nbsp;&nbsp;<i class="fa fa-search"></i></header>
-				<form class="form-inline panel-body" data-toggle="validator">
+				<form class="form-inline panel-body">
 					<table class="grain_search">
 						<tr>
 							<td colspan="6" class="m0">
@@ -132,12 +135,12 @@
 								<table class="width-per-10">
 									<tr>
 										<td class="width-per-2z5">
-											<label>储存地点</label><br/>
-											<select id="sc_in_unit_nm" class="form-control" style="width:200px"></select>
-										</td>
-										<td class="width-per-2z5">
 											<label>承储单位</label><br/>
 											<select id="sc_in_su" class="form-control" style="width:200px"></select>
+										</td>
+										<td class="width-per-2z5">
+											<label>储存地点</label><br/>
+											<select id="sc_in_unit_nm" class="form-control" style="width:200px"></select>
 										</td>
 										<td class="width-per-2z5">
 											<label>粮油品种</label><br/>
@@ -172,7 +175,7 @@
 						<tr>
 							<td colspan="6" class="comments pt5">
 								<label>备注</label><br/>
-								<textarea draggable="false" class="form-control" placeholder="" style="width:98%"></textarea>
+								<textarea id="sc_in_rk" draggable="false" class="form-control" placeholder="" style="width:98%"></textarea>
 							</td>
 						</tr>				
 					</table>
@@ -290,7 +293,7 @@
 						<tr>
 							<td colspan="6" class="pt10">
 								<label>备注</label><br/>
-								<textarea draggable="false" class="form-control" placeholder="" style="width:98%"></textarea>
+								<textarea id="sc_out_rk" draggable="false" class="form-control" placeholder="" style="width:98%"></textarea>
 							</td>
 						</tr>				
 					</table>

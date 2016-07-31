@@ -9,7 +9,8 @@
 	<link rel="stylesheet" type="text/css" href="../css/jquery-ui.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/daterangepicker-bs3.css">
 	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
-	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrapValidator.min.js"></script>
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../js/bt_dropdown.js"></script>
 	<script type="text/javascript" src="../js/moment.js"></script>
@@ -17,25 +18,27 @@
 	<script type="text/javascript" src="../js/jquery-migrate-1.4.0.min.js"></script>
 	<script type="text/javascript" src="../js/jquery.jqGrid.min.js"></script>
 	<script type="text/javascript" src="../js/main.js"></script>
+
+	<script type="text/javascript" src="../js/validation.js"></script>
 </head>
 <body>
 	<article class="panel panel-default">
 		<form class="form-inline panel-body" id="outForm">
 			<table class="grain_iframe">
 				<tr>
-					<td class="grain_search_td">
+					<td class="grain_search_td vali-td">
 						<div class="input-group">
 							<span class="input-group-addon" style="width:100px"><i class="fa fa-barcode"></i>&nbsp;单据编号</span>
 							<input type="text" id="ct_out_ivy_no" class="form-control" placeholder="C0000001" aria-describedby="basic-addon1" readonly="true" style="width: 190px"/>
 						</div>
 					</td>
-					<td class="grain_search_td">
+					<td class="grain_search_td vali-td">
 						<div class="input-group">
 							<span class="input-group-addon" style="width:100px"><i class="fa fa-barcode"></i>&nbsp;原单据编号</span>
 							<input type="text" id="ct_oi_ivy_no" class="form-control" placeholder="S0000001" aria-describedby="basic-addon1" readonly="true" style="width: 190px">
 						</div>
 					</td>
-					<td class="grain_search_td">
+					<td class="grain_search_td vali-td">
 						<fieldset>
 							<div class="control-group">
 								<div class="controls">
@@ -56,34 +59,41 @@
 					</td>
 				</tr>
 				<tr>
-					<td class="grain_search_td">
-						<div class="input-group">
-							<span class="input-group-addon" style="width:100px"><i class="fa fa-sign-in"></i>&nbsp;原粮食量</span>
-							<input type="number" id="ct_oi_ivy_amt" class="form-control" style="width: 190px"/>
+					<td class="grain_search_td vali-td">
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon" style="width:100px"><i class="fa fa-sign-in"></i>&nbsp;原粮食量</span>
+								<input type="text" id="ct_oi_ivy_amt" name="ctOiIvyAmt" class="form-control" style="width: 190px"/>
+							</div>
 						</div>
 					</td>
-					<td class="grain_search_td">
-						<div class="input-group">
-							<span class="input-group-addon" style="width:113px"><i class="fa fa-sign-out"></i>&nbsp;出库数量</span>
-							<input type="number" id="ct_out_ivy_amt" class="form-control" style="width: 190px"/>
+					<td class="grain_search_td vali-td">
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon" style="width:113px"><i class="fa fa-sign-out"></i>&nbsp;出库数量</span>
+								<input type="text" id="ct_out_ivy_amt" name="ctOutIvyAmt" class="form-control" style="width: 190px"/>
+							</div>
 						</div>
 					</td>
-					<td class="grain_search_td">
-
-						<div class="input-group">
-							<span class="input-group-addon" style="width:100px"><i class="fa fa-minus-circle"></i>&nbsp;损耗数量</span>
-							<input type="text" id="ct_out_lt_amt" class="form-control" style="width: 190px"/>
+					<td class="grain_search_td vali-td">
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon" style="width:100px"><i class="fa fa-minus-circle"></i>&nbsp;损耗数量</span>
+								<input type="text" id="ct_out_lt_amt" name="ctOutLtAmt" class="form-control" style="width: 190px"/>
+							</div>
 						</div>
 					</td>
 				</tr>
 				<tr>
-					<td colspan="2">
-						<div class="input-group" style="width:93.5%">
-							<span class="input-group-addon" style="width:100px;"><i class="fa fa-map-marker"></i>&nbsp;收货单位</span>
-							<input type="text" id="ct_out_rsv_nm" class="form-control" />
-						</div>
+					<td colspan="2" class="vali-td">
+						<div class="form-group" style="width:93.5%">
+							<div class="input-group width-per-10">
+								<span class="input-group-addon" style="width:100px;"><i class="fa fa-map-marker"></i>&nbsp;收货单位</span>
+								<input type="text" id="ct_out_rsv_nm" name="ctOutRsvNm" class="form-control" />
+							</div>
+							<div class="form-group">
 					</td>
-					<td class=" psn-ab grain_search_td">
+					<td class="psn-ab grain_search_td vali-td">
 						<button type="submit" class="btn btn-primary psn-rb width-per-4 bt-1">生成损耗</button>
 					</td>
 				</tr>
@@ -104,7 +114,7 @@
 				<tr>
 					<td colspan="6">
 						<label>备注</label><br/>
-						<textarea draggable="false" class="form-control" placeholder="Textarea" style="width:94%"></textarea>
+						<textarea id="ct_out_rk" draggable="false" class="form-control" placeholder="Textarea" style="width:94%"></textarea>
 					</td>
 				</tr>
 			</table>
