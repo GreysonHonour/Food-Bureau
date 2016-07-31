@@ -111,11 +111,6 @@ button{
 	height: 300px;
 }
 
-/*行间距*/
-.grain_iframe td{
-	height: 40px;
-}
-
 .grain_search tr:not(:last-child){
 	height: 40px;
 }
@@ -174,4 +169,22 @@ button{
 	line-height: 30px;
 	position: relative;
 	bottom: 0px;
+}
+
+.vali-td{
+	height: 60px;
+	vertical-align:top;
+}
+
+#inForm .has-feedback .form-control-feedback,
+#outForm .has-feedback .form-control-feedback {
+    top: 10px;
+    right: 10px;
+}
+
+#inForm .has-feedback .input-group .form-control-feedback,
+#outForm .has-feedback .input-group .form-control-feedback
+ {
+    top: 10px;
+    right: 10px;
 }
