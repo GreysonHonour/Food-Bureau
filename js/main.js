@@ -79,7 +79,7 @@
 			// <!-- 一览START -->
 			$("#view_in_tbl").jqGrid({
 				datatype: "local",
-				height: 240,
+				height: 230,
 				colNames:['单据编号','承储单位', '储存地点', '入库日期','粮油品种','粮油种类','粮油品质','粮食数量','粮食等级','修改'],
 				colModel:[
 				//单据编号
@@ -134,7 +134,7 @@
 			// <!-- 一览START -->
 			$("#view_out_tbl").jqGrid({
 				datatype: "local",
-				height: 250,
+				height: 230,
 				colNames:['单据编号','原单据编号','储存地点','收货单位','出库日期','原粮食数量','出库数量','损耗数量','调拨性质','修改'],
 				colModel:[
 				//单据编号

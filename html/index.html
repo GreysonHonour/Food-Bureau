@@ -24,7 +24,7 @@
 	<header>
 		<nav id="nav_info">
 			<div class="float-lt" id="user_info">欢迎: 郭宇佳</div>
-			<a href="#" class="float-rt margin-rt-5p" id="login_out">退出</a>
+			<a href="#" class="float-rt mr5" id="login_out">退出</a>
 			<div class="float-rt" id="date_info"></div>
 		</nav>
 		<!--<div id="nav_title"><span>市粮食储备粮油库存管理系统</span>-->
@@ -84,25 +84,25 @@
 							<td colspan="6" class="m0">
 								<table class="width-per-10">
 									<tr>
-										<td class="width-per-2z5">
-											<div class="input-group width-per-8">
+										<td class="width-per-2">
+											<div class="input-group width-per-9">
 												<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;单据编号</span>
 												<input type="text" class="form-control" placeholder="S0000001" aria-describedby="basic-addon1" id="sc_in_ivy_no"/>
 											</div>
 										</td>
-										<td class="width-per-2z5">
-											<div class="input-group width-per-8">
+										<td class="width-per-2">
+											<div class="input-group width-per-9">
 												<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;入库编号</span>
 												<input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" id="sc_in_note_no" />
 											</div>
 										</td>
-										<td class="width-per-2z5">
+										<td class="width-per-2">
 											<fieldset>
 												<div class="control-group">
 													<div class="controls">
 														<div class="input-prepend input-group">
 															<span class="add-on input-group-addon"><i class="fa fa-calendar"></i>&nbsp;入库日期</span>
-															<input readonly type="text" id="sc_in_ivy_tm" style="width: 125px" name="inventory_in_tm" class="form-control inventory_tm"/> 
+															<input readonly type="text" id="sc_in_ivy_tm" style="width: 105px" name="inventory_in_tm" class="form-control inventory_tm"/> 
 														</div>
 													</div>
 												</div>
@@ -116,12 +116,13 @@
 												});
 											</script>
 										</td>
-										<td class="width-per-2z5">
-											<div class="input-group width-per-8">
-											<span class="input-group-addon"><i class="fa fa-sign-in"></i>&nbsp;数&nbsp;&nbsp;&nbsp;&nbsp;量</span>
+										<td class="width-per-2">
+											<div class="input-group width-per-9">
+											<span class="input-group-addon"><i class="fa fa-sign-in"></i>&nbsp;入库量</span>
 												<input type="number" id="sc_in_ivy_amt" name="sc_in_ivy_amt" class="form-control" min="0"/>
 											</div>
 										</td>
+										<td class="width-per-2"></td>
 									</tr>
 								</table>
 							</td>
@@ -169,18 +170,18 @@
 							</td>
 						</tr>
 						<tr>
-							<td colspan="6" class="comments">
+							<td colspan="6" class="comments pt5">
 								<label>备注</label><br/>
-								<textarea draggable="false" class="form-control" placeholder="" style="width:94.9%"></textarea>
+								<textarea draggable="false" class="form-control" placeholder="" style="width:98%"></textarea>
 							</td>
 						</tr>				
 					</table>
 					<!-- BTN区域_开始 -->
-					<div class="margin-tp-5p">
-						<button type="button" class="btn btn-info">检　　索</button>
-						<button type="button" class="btn btn-primary" id="subIn">添　　加</button>
-						<button type="button" class="btn btn-primary" id="subIn">打　　印</button>
-						<button type="button" class="btn btn-warning">重　　置</button>
+					<div class="mt5">
+						<button type="button" class="btn btn-primary">检&nbsp;&nbsp;&nbsp;&nbsp;索</button>
+						<button type="button" class="btn btn-info" id="subIn">添&nbsp;&nbsp;&nbsp;&nbsp;加</button>
+						<button type="button" class="btn btn-info" id="printIn">打&nbsp;&nbsp;&nbsp;&nbsp;印</button>
+						<button type="button" class="btn btn-warning">重&nbsp;&nbsp;&nbsp;&nbsp;置</button>
 					</div>
 					<!-- BTN区域_结束 -->
 				</form>
@@ -200,111 +201,106 @@
 					<table class="grain_search">
 						<tr>
 							<td colspan="6" class="m0">
-								<table class="width-per-10" border="1px">
+								<table class="width-per-10">
 									<tr>
-										<td class="grain_search_td">
-											<div class="input-group width-per-8">
+										<td class="width-per-2">
+											<div class="input-group width-per-9">
 												<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;单据编号</span>
 												<input type="text" id="sc_out_ivy_no" class="form-control" placeholder="C0000001" aria-describedby="basic-addon1" />
 											</div>
 										</td>
-										<td class="grain_search_td">
-										<div class="input-group width-per-8">
-											<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;原单据编号</span>
-											<input type="text" id="sc_oi_ivy_no" class="form-control" placeholder="S0000001" aria-describedby="basic-addon1" />
-										</div>
+										<td class="width-per-2">
+											<div class="input-group width-per-9">
+												<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;原单据号</span>
+												<input type="text" id="sc_oi_ivy_no" class="form-control" placeholder="S0000001" aria-describedby="basic-addon1" />
+											</div>
 										</td>
-										<td class="grain_search_td">
-											
+										<td class="width-per-2">
+											<fieldset>
+												<div class="control-group">
+													<div class="controls">
+														<div class="input-prepend input-group">
+															<span class="add-on input-group-addon"><i class="fa fa-calendar"></i>&nbsp;出库日期</span>
+															<input readonly type="text" id="sc_out_ivy_tm" style="width: 105px" name="inventory_out_tm" class="form-control inventory_tm"/> 
+														</div>
+													</div>
+												</div>
+											</fieldset>
+
+											<script type="text/javascript">
+												$(function() {
+													$('.inventory_tm').daterangepicker({ singleDatePicker: true }, function(start, end, label) {
+														console.log(start.toISOString(), end.toISOString(), label);
+													});
+												});
+											</script>
+										</td>
+										<td class="width-per-2">
+											<div class="input-group width-per-9">
+												<span class="input-group-addon"><i class="fa fa-sign-in"></i>&nbsp;原粮食量</span>
+												<input type="number" id="sc_oi_ivy_amt" class="form-control" min="0"/>
+											</div>
+										</td>
+										<td class="width-per-2">
+											<div class="input-group width-per-9">
+												<span class="input-group-addon"><i class="fa fa-sign-out"></i>&nbsp;出库量</span>
+												<input type="number" id="sc_out_ivy_amt" class="form-control" min="0"/>
+											</div>
 										</td>
 									</tr>	
 								</table>
 							</td>
-							<!--
-							<td colspan="2">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;单据编号</span>
-									<input type="text" id="sc_out_ivy_no" class="form-control" placeholder="C0000001" aria-describedby="basic-addon1" />
-								</div>
-							</td>
-							<td colspan="2">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-barcode"></i>&nbsp;原单据编号</span>
-									<input type="text" id="sc_oi_ivy_no" class="form-control" placeholder="S0000001" aria-describedby="basic-addon1"></div>
-							</td>
-							<td colspan="2">
-								<fieldset>
-									<div class="control-group">
-										<div class="controls">
-											<div class="input-prepend input-group">
-												<span class="add-on input-group-addon"><i class="fa fa-calendar"></i>&nbsp;出库日期</span>
-												<input readonly type="text" id="sc_out_ivy_tm" style="width: 125px" name="inventory_out_tm" class="form-control inventory_tm"/> 
+						</tr>
+						<tr>
+							<td colspan="6" class="m0 pt10">
+								<table class="width-per-10">
+									<tr>
+										<td class="width-per-8">
+											<div class="input-group" style="width:97.5%">
+												<span class="input-group-addon" style="width:99px;">&nbsp;<i class="fa fa-map-marker"></i>&nbsp;收货单位</span>
+												<input type="text" id="sc_out_rsv_nm" class="form-control"/>
 											</div>
-										</div>
-									</div>
-								</fieldset>
-
-								<script type="text/javascript">
-									$(function() {
-										$('.inventory_tm').daterangepicker({ singleDatePicker: true }, function(start, end, label) {
-											console.log(start.toISOString(), end.toISOString(), label);
-										});
-									});
-								</script>
+										</td>
+										<td class="width-per-2">
+											<div class="input-group width-per-9">
+												<span class="input-group-addon"><i class="fa fa-minus-circle"></i>&nbsp;损耗量</span>
+												<input type="number" id="sc_out_lt_amt" class="form-control" min="0"/>
+											</div>
+										</td>
+									</tr>
+								</table>
 							</td>
-						-->
 						</tr>
 						<tr>
-							<td colspan="2">
-								<div class="input-group width-per-9">
-									<span class="input-group-addon">&nbsp;<i class="fa fa-map-marker"></i>&nbsp;承储地点</span>
-									<input type="text" id="sc_out_unit_nm" class="form-control" placeholder="承储地点Y12345678910" aria-describedby="basic-addon1" />
+							<td colspan="6" class="pt10">
+								<div class="float-lt mr30">
+									<label>承储单位</label><br/>
+									<select id="sc_out_su" style="width:200px" class="form-control"></select>
 								</div>
-							</td>
-							<td colspan="2">
-								<div class="input-group width-per-8">
-									<span class="input-group-addon"><i class="fa fa-sign-in"></i>&nbsp;原粮食数量</span>
-									<input type="text" id="sc_oi_ivy_amt" class="form-control" />
+								<div class="float-lt mr30">
+									<label>调出地点</label><br/>
+									<select id="sc_out_unit_nm" style="width:200px" class="form-control"></select>
 								</div>
-							</td>
-							<td colspan="1">
-								<div class="input-group width-per-7">
-									<span class="input-group-addon"><i class="fa fa-sign-out"></i>&nbsp;出库数量</span>
-									<input type="text" id="sc_out_ivy_amt" class="form-control" />
-								</div>
-							</td>
-							<td colspan="1">
-								<div class="input-group width-per-7">
-									<span class="input-group-addon"><i class="fa fa-minus-circle"></i>&nbsp;损耗数量</span>
-									<input type="text" id="sc_out_lt_amt" class="form-control" />
+								<div class="float-lt mr30">
+									<label>调拨性质</label><br/>
+									<select id="sc_out_ga" style="width:200px" class="form-control"></select>
 								</div>
 							</td>
 						</tr>
 						<tr>
-							<td colspan="2">
-								<label>调拨性质</label>
-								<select id="sc_out_ga" style="width:150px" class="form-control">
-								</select>
-							</td>
-							<td colspan="4">
-
-								<div class="input-group width-per-9">
-									<span class="input-group-addon" style="width:95px;">&nbsp;<i class="fa fa-map-marker"></i>&nbsp;收货单位</span>
-									<input type="text" id="sc_out_rsv_nm" class="form-control" />
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td colspan="6">
+							<td colspan="6" class="pt10">
 								<label>备注</label><br/>
-								<textarea draggable="false" class="form-control" placeholder="Textarea" style="width:98%"></textarea>
+								<textarea draggable="false" class="form-control" placeholder="" style="width:98%"></textarea>
 							</td>
 						</tr>				
 					</table>
 					<!-- BTN区域_开始 -->
-					<button type="button" class="btn btn-primary">检&nbsp;&nbsp;&nbsp;&nbsp;索</button>
-					<button type="button" class="btn btn-info" id="subOut">添&nbsp;&nbsp;&nbsp;&nbsp;加</button>
-					<button type="button" class="btn btn-warning">重&nbsp;&nbsp;&nbsp;&nbsp;置</button>
+					<div class="mt5">
+						<button type="button" class="btn btn-primary">检&nbsp;&nbsp;&nbsp;&nbsp;索</button>
+						<button type="button" class="btn btn-info" id="subOut">添&nbsp;&nbsp;&nbsp;&nbsp;加</button>
+						<button type="button" class="btn btn-info" id="printOut">打&nbsp;&nbsp;&nbsp;&nbsp;印</button>
+						<button type="button" class="btn btn-warning">重&nbsp;&nbsp;&nbsp;&nbsp;置</button>
+					</div>
 					<!-- BTN区域_结束 -->
 				</form>
 				<div class="view_tbl">
