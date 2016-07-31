@@ -58,10 +58,6 @@ header>nav div{
 	height:95px;
 }
 
-article{
-	display:none;
-}
-
 div>aside{
 	float: left;
 	margin: 0px 2px;
@@ -138,7 +134,7 @@ button{
 	height: 40px;
 }
 
-.grain_search tr:last-child{
+.comments{
 	height: 80px;
 }
 
@@ -217,16 +213,32 @@ button{
 	width:50%;
 }
 
+.width-per-4z5{
+	width:45%;
+}
+
 .width-per-4{
 	width:40%;
+}
+
+.width-per-3z5{
+	width:35%;
 }
 
 .width-per-3{
 	width:30%;
 }
 
+.width-per-2z5{
+	width:25%;
+}
+
 .width-per-2{
 	width:20%;
+}
+
+.width-per-1z5{
+	width:15%;
 }
 
 .width-per-1{
@@ -254,4 +266,44 @@ button{
 }
 .margin-tp-5p{
 	margin-top:5px;
+}
+
+.p10{
+	padding:10px;
+}
+
+.p5{
+	padding:5px;
+}
+
+.p0{
+	padding:0px;
+}
+
+.pt5{
+	padding-top: 5px;
+}
+
+.m10{
+	margin:10px;
+}
+
+.m5{
+	margin:5px;
+}
+
+.m0{
+	margin:0px;
+}
+
+.mt5{
+	margin-top: 5px;
+}
+
+.dp-no{
+	display: none;
+}
+
+.dp-bl{
+	display: block;
 }
