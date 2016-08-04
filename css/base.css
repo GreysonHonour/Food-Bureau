@@ -6,6 +6,15 @@ a:active{text-decoration:none;}
 .psn-ab{position: absolute;}
 .psn-rb{position: relative;}
 
+.x-left{text-align: left}
+.x-center{text-align: center}
+.x-right{text-align: right}
+
+.y-left{vertical-align: left}
+.y-center{vertical-align: center}
+.y-right{vertical-align: right}
+
+
 /*宽度比例*/
 .width-per-10{width:100%;}
 .width-per-9z5{width:95%;}
@@ -26,6 +35,47 @@ a:active{text-decoration:none;}
 .width-per-2{width:20%;}
 .width-per-1z5{width:15%;}
 .width-per-1{width:10%;}
+
+.w1{width:10px;}
+.w2{width:20px;}
+.w3{width:30px;}
+.w4{width:40px;}
+.w5{width:50px;}
+.w6{width:60px;}
+.w7{width:70px;}
+.w8{width:80px;}
+.w9{width:90px;}
+
+.w10{width:100px;}
+.w20{width:200px;}
+.w30{width:300px;}
+.w40{width:400px;}
+.w50{width:500px;}
+.w60{width:600px;}
+.w70{width:700px;}
+.w80{width:800px;}
+.w90{width:900px;}
+
+/*高度像素*/
+.h1{height:10px;}
+.h2{height:20px;}
+.h3{height:30px;}
+.h4{height:40px;}
+.h5{height:50px;}
+.h6{height:60px;}
+.h7{height:70px;}
+.h8{height:80px;}
+.h9{height:90px;}
+
+.h10{height:100px;}
+.h20{height:200px;}
+.h30{height:300px;}
+.h40{height:400px;}
+.h50{height:500px;}
+.h60{height:600px;}
+.h70{height:700px;}
+.h80{height:800px;}
+.h90{height:900px;}
 
 /*浮动方向*/
 .float-lt{float: left;}
