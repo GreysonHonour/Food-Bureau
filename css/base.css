@@ -47,6 +47,11 @@ a:active{text-decoration:none;}
 .mr20{margin-right: 20px;}
 .mr10{margin-right: 10px;}
 .mr5{margin-right: 5px;}
+
+.mr-30{margin-right: 30%;}
+.mr-20{margin-right: 20%;}
+.mr-10{margin-right: 10%;}
+.mr-5{margin-right: 5%;}
 /*外上边距*/
 .mt30{margin-top: 30px;}
 .mt20{margin-top: 20px;}
@@ -75,6 +80,16 @@ a:active{text-decoration:none;}
 .tp-7{top:70%;}
 .tp-8{top:80%;}
 .tp-9{top:90%;}
+
+.tp1{top:1px;}
+.tp2{top:2px;}
+.tp3{top:3px;}
+.tp4{top:4px;}
+.tp5{top:5px;}
+.tp6{top:6px;}
+.tp7{top:7px;}
+.tp8{top:8px;}
+.tp9{top:9px;}
 /*横向位置*/
 .rt-1{right:10%;}
 .rt-2{right:20%;}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
@@ -35,7 +35,7 @@
 					<td class="width-per-7 vali-td">
 						<div class="form-group width-per-9">
 							<div class="input-group width-per-10">
-								<span class="input-group-addon" style="width:100px"><i class="fa fa-barcode"></i>&nbsp;通知书编号</span>
+								<span class="input-group-addon" style="width:100px"><i class="fa fa-barcode"></i>&nbsp;入库编号</span>
 								<input type="text" id="ct_in_note_no" name="ctInNoteNo" class="form-control" placeholder="" aria-describedby="basic-addon1" />
 							</div>
 						</div>
@@ -71,42 +71,60 @@
 						</div>
 					</td>
 				</tr>
-				<tr>
+				<tr>	
 					<td class="pt5" colspan="4">
 						<table class="width-per-10">
 							<tr>
-								<td class="width-per-2z5">
+								<td class="width-per-2z5 vali-sl-td">
 									<label>承储单位</label><br/>
-									<select id="ct_in_su" class="form-control" style="width:200px"></select>	
+									<div class="form-group">
+										<select id="ct_in_su" name="ctInSu" class="form-control" style="width:200px">
+										</div>
+									</select>
 								</td>
-								<td class="width-per-2z5">
+								<td class="width-per-2z5 vali-sl-td">
 									<label>储存地点</label><br/>
-									<select id="ct_in_unit_nm" class="form-control" style="width:200px"></select>	
+									<div class="form-group">
+										<select id="ct_in_unit_nm" name="ctInUnitNm"  class="form-control" style="width:200px"></select>
+									</div>
 								</td>
-								<td class="width-per-2z5">
+								<td class="width-per-2z5 vali-sl-td">
 									<label>粮油品种</label><br/>
-									<select id="ct_in_gv" style="width:200px" class="form-control"></select>
+									<div class="form-group">
+										<select id="ct_in_gv" name="ctInGv" style="width:200px" class="form-control"></select>
+									</div>
 								</td>
-								<td class="width-per-2z5">
+								<td class="width-per-2z5 vali-sl-td">
 									<label>粮油分类</label><br/>
-									<select id="ct_in_gc_l1" style="width:200px" class="form-control"></select>
+									<div class="form-group">
+										<select id="ct_in_gc_l1" name="ctInGcL1" style="width:200px" class="form-control"></select>
+									</div>
 								</td>
 							</tr>
 							<tr>
-								<td class="width-per-2z5">
+								<td class="width-per-2z5 vali-sl-td">
 									<label>等级</label><br/>
-									<select id="ct_in_gg" style="width:200px" class="form-control"></select>
+									<div class="form-group">
+										<select id="ct_in_gg" name="ctInGg" style="width:200px" class="form-control"></select>
+									</div>
 								</td>
-								<td class="width-per-2z5"><label>生产年度</label><br/>
-									<select id="ct_in_py" style="width:200px" class="form-control"></select>
+								<td class="width-per-2z5 vali-sl-td">
+									<label>生产年度</label><br/>
+									<div class="form-group">
+										<select id="ct_in_py" name="ctInPy" style="width:200px" class="form-control"></select>
+									</div>
 								</td>
-								<td class="width-per-2z5">
+								<td class="width-per-2z5 vali-sl-td">
 									<label>来源内容</label><br/>
-									<select id="ct_in_gs" style="width:200px" class="form-control"></select>
+									<div class="form-group">
+										<select id="ct_in_gs" name="ctInGs" style="width:200px" class="form-control"></select>
+									</div>
 								</td>
-								<td class="width-per-2z5">
+								<td class="width-per-2z5 vali-sl-td">
 									<label>品质</label><br/>
-									<select id="ct_in_gq" class="form-control" style="width:200px"></select>
+									<div class="form-group">
+										<select id="ct_in_gq" name="ctInGq" class="form-control" style="width:200px"></select>
+									</div>
 								</td>
 							</tr>
 						</table>
@@ -119,7 +137,14 @@
 							<textarea id="ct_in_rk" name="ctInRk" draggable="false" class="form-control" placeholder="Textarea" style="width:94%"></textarea>
 						</div>
 					</td>
-				</tr>				
+				</tr>
+				<tr>
+					<td colspan="4">
+						<div class="form-group float-rt mr-5">
+							<button type="submit" class="btn btn-info">提&nbsp;&nbsp;&nbsp;&nbsp;交</button>
+						</div>
+					</td>
+				</tr>	
 			</table>
 		</form>
 	</article>

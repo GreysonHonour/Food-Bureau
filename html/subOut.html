@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
@@ -9,16 +9,16 @@
 	<link rel="stylesheet" type="text/css" href="../css/jquery-ui.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/daterangepicker-bs3.css">
 	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.min.css">
 	<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="../js/bootstrapValidator.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-migrate-1.4.0.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.jqGrid.min.js"></script>
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../js/bt_dropdown.js"></script>
 	<script type="text/javascript" src="../js/moment.js"></script>
 	<script type="text/javascript" src="../js/daterangepicker.js"></script>
-	<script type="text/javascript" src="../js/jquery-migrate-1.4.0.min.js"></script>
-	<script type="text/javascript" src="../js/jquery.jqGrid.min.js"></script>
 	<script type="text/javascript" src="../js/main.js"></script>
-
 	<script type="text/javascript" src="../js/validation.js"></script>
 </head>
 <body>
@@ -75,12 +75,15 @@
 							</div>
 						</div>
 					</td>
-					<td class="grain_search_td vali-td">
-						<div class="form-group">
+					<td class="grain_search_td vali-td psn-ab">
+						<div class="form-group float-lt mr5">
 							<div class="input-group">
 								<span class="input-group-addon" style="width:100px"><i class="fa fa-minus-circle"></i>&nbsp;损耗数量</span>
-								<input type="text" id="ct_out_lt_amt" name="ctOutLtAmt" class="form-control" style="width: 190px"/>
+								<input type="text" id="ct_out_lt_amt" name="ctOutLtAmt" class="form-control" style="width: 190px;"/>
 							</div>
+						</div>
+						<div class="float-lt">
+							<a href="#" class="psn-rb tp3" id="btn_amt"><i class="fa fa-refresh fa-2x fa-rotate-90"></i></a>
 						</div>
 					</td>
 				</tr>
@@ -91,24 +94,34 @@
 								<span class="input-group-addon" style="width:100px;"><i class="fa fa-map-marker"></i>&nbsp;收货单位</span>
 								<input type="text" id="ct_out_rsv_nm" name="ctOutRsvNm" class="form-control" />
 							</div>
-							<div class="form-group">
 					</td>
 					<td class="psn-ab grain_search_td vali-td">
-						<button type="submit" class="btn btn-primary psn-rb width-per-4 bt-1">生成损耗</button>
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon" style="width:100px"><i class="fa fa-barcode"></i>&nbsp;出库编号</span>
+								<input type="text" id="ct_out_note_no" name="ctOutNoteNo" class="form-control" aria-describedby="basic-addon1" style="width: 190px"/>
+							</div>
+						</div>
 					</td>
 				</tr>
 				<tr>
-					<td class="grain_search_td">
+					<td class="grain_search_td vali-sl-td">
 						<label>承储单位</label><br/>
-						<select id="ct_out_su" style="width:200px" class="form-control"></select>
+						<div class="form-group">
+							<select id="ct_out_su" name="ctOutSu" style="width:200px" class="form-control"></select>
+						</div>
 					</td>
-					<td class="grain_search_td">
+					<td class="grain_search_td vali-sl-td">
 						<label>调出地点</label><br/>
-						<select id="ct_out_unit_nm" style="width:200px" class="form-control"></select>
+						<div class="form-group">
+							<select id="ct_out_unit_nm" name="ctOutUnitNm" style="width:200px" class="form-control"></select>
+						</div>
 					</td>
-					<td class="grain_search_td">
+					<td class="grain_search_td vali-sl-td">
 						<label>调拨性质</label><br/>
-						<select id="ct_out_ga" style="width:200px" class="form-control"></select>
+						<div class="form-group">
+							<select id="ct_out_ga" name="ctOutGa" style="width:200px" class="form-control"></select>
+						</div>
 					</td>
 				</tr>
 				<tr>
@@ -116,8 +129,12 @@
 						<label>备注</label><br/>
 						<textarea id="ct_out_rk" draggable="false" class="form-control" placeholder="Textarea" style="width:94%"></textarea>
 					</td>
-				</tr>
+				</tr>	
 			</table>
+			<div class="form-group float-rt mr-5">
+				<!--<button type="submit" class="btn btn-primary">生成损耗</button>-->
+				<button type="submit" class="btn btn-info">提&nbsp;&nbsp;&nbsp;&nbsp;交</button>
+			</div>			
 		</form>
 	</article>
 </body>
