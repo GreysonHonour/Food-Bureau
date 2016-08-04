@@ -88,6 +88,10 @@ a:active{text-decoration:none;}
 .pt10{padding-top: 10px;}
 .pt5{padding-top: 5px;}
 .pt0{padding-top: 0px;}
+
+.pl-20{padding-left: 20%;}
+.pl-10{padding-left: 10%;}
+.pl-5{padding-left: 5%;}
 /*外边距*/
 .m10{margin:10px;}
 .m5{margin:5px;}
@@ -150,3 +154,5 @@ a:active{text-decoration:none;}
 .rt-7{right:70%;}
 .rt-8{right:80%;}
 .rt-9{right:90%;}
+/*纵向溢出*/
+.ow-to{overflow:auto};

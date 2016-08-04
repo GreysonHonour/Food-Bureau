@@ -56,6 +56,34 @@
         caption: "一览"
       });
 
+        $("#gc_tbl").jqGrid({
+        datatype: "local",
+        height: 260,
+        colNames:['Name','Action'],
+        colModel:[
+        //
+        {name:'name',index:'name', width:300, sorttype:"text",editable:true,sortable:false},
+        //
+        {name:'action',index:'action', width:200, sorttype:"text",sortable:false}],
+        multiselect: false,
+        rowNum:10,
+        hidegrid:false,
+        sortorder: "desc",
+        gridComplete: function(){
+            var ids = $("#gc_tbl").jqGrid('getDataIDs');
+            for(var i=0;i < ids.length;i++){
+                var cl = ids[i];
+                var re = "<input class='w8 h2' style='margin-left:10px' type='button' value='更新' onclick=\"$('#gc_tbl').saveRow('"+cl+"');\"  />"; 
+                var de = "<input class='w8 h2' style='margin-left:10px'type='button' value='删除' onclick=\"$('#gc_tbl').delRowData('"+cl+"');\"  />";
+                $("#gc_tbl").jqGrid('setRowData',ids[i],{action:re+de});
+            }
+        },
+        onSelectRow:function(id){
+          $("#gc_tbl").editRow(id, true);  
+        },
+        caption: "一览"
+      });
+
       var mydata = [
         {name:"储备分公司"},
         {name:"军粮城库"},
@@ -102,6 +130,13 @@
             $("#whs_tbl").jqGrid('addRowData',i+1,mydata2[i]);
       }
 
+      var mydata3 = [
+        {name:"硬麦"},
+        {name:"软麦"}];
+        for(var i=0;i<=mydata2.length;i++){
+            $("#gc_tbl").jqGrid('addRowData',i+1,mydata2[i]);
+      }
+
       $("#su_add_row").live('click',function(){
         if($('#suForm').data('bootstrapValidator').isValid()){
           var ids = $("#su_tbl").jqGrid('getDataIDs');
@@ -127,6 +162,20 @@
             action:re+de
           }
           $("#whs_tbl").addRowData(cl, rowdata, "first");
+        }
+      });
+
+      $("#gc_add_row").live('click',function(){
+        if($('#gcForm').data('bootstrapValidator').isValid()){
+          var ids = $("#gc_tbl").jqGrid('getDataIDs');
+          var cl = ids[ids.length];
+          var re = "<input class='w8 h2' style='margin-left:10px' type='button' value='更新' onclick=\"$('#gc_tbl').saveRow('"+cl+"');\"  />"; 
+          var de = "<input class='w8 h2' style='margin-left:10px'type='button' value='删除' onclick=\"$('#gc_tbl').delRowData('"+cl+"');\"  />";
+          var rowdata = {
+            name: $("#gc_input").val(),
+            action:re+de
+          }
+          $("#gc_tbl").addRowData(cl, rowdata, "first");
         }
       });
 });
