@@ -86,6 +86,17 @@
 				}); 
 			});
 
+			$("#cog_gvc").on("click",function(){
+				layer.open({
+					type: 2,
+					title: '粮油品种・分类设置',
+					shadeClose: true,
+					shade: 0.8,
+					area: ['1080px', '70%'],
+  					content: ['subCogGvc.html', 'no']
+				}); 
+			});
+
 			//关于入库一览
 			// <!-- 一览START -->
 			$("#view_in_tbl").jqGrid({

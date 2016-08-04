@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/jquery-ui.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/metroStyle.css">
 	<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="../js/bootstrapValidator.min.js"></script>
 	<script type="text/javascript" src="../js/jquery-migrate-1.4.0.min.js"></script>
@@ -16,22 +17,24 @@
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../js/validation.js"></script>
 	<script type="text/javascript" src="../js/grid.js"></script>
+	<script type="text/javascript" src="../js/tree.js"></script>
+	<script type="text/javascript" src="../js/jquery.ztree.all.min.js"></script>
 </head>
 <body>
 	<article class="panel panel-default">
 			<table class="grain_search">
 				<tr>
-					<td class="width-per-5">
-					<form class="form-inline panel-body" id="suForm" onsubmit="return false">
-						<table class="width-per-10">
+					<td class="width-per-5 psn-ab pl-5">
+					<form class="form-inline panel-body" id="gvForm" onsubmit="return false">
+						<table class="width-per-10 psn-rb">
 							<tr>
 								<td class="width-per-10 h10">
-									<label>承储单位设置</label><br/>
+									<label>粮油品种设置</label><br/>
 									<div class="form-group width-per-7 h6">
 										<div class="input-group width-per-10">
-											<input id="su_input" name="suInput" type="text" class="form-control">
+											<input id="gv_input" name="gvInput" type="text" class="form-control">
 											<span class="input-group-btn">
-												<button id="su_add_row" class="btn btn-default" type="submit">添加</button>
+												<button id="gv_add_row" class="btn btn-default" type="submit">添加</button>
 											</span>
 										</div>
 									</div>
@@ -39,31 +42,33 @@
 							</tr>
 							<tr>
 								<td class="width-per-10">
-									<table id="su_tbl"></table>
+									<div class="width-per-7 zTreeDemoBackground left well well-lg ow-to" style="height:310px;">
+										<ul id="treeDemo" class="ztree"></ul>
+									</div>
 								</td>
 							</tr>
 						</table>
 					</form>
 					</td>
 					<td class="width-per-5">
-					<form class="form-inline panel-body" id="whsForm" onsubmit="return false">
+					<form class="form-inline panel-body" id="gcForm" onsubmit="return false">
 						<table class="width-per-10">
 							<tr>
 								<td class="width-per-10 h10">
-									<label>仓垛位置设定</label><br/>
+									<label>粮油分类设置</label><br/>
 									<div class="form-group width-per-7 h6">
 										<div class="input-group width-per-10">
-											<input id="whs_input" name="whsInput" type="text" class="form-control">
+											<input id="gc_input" name="gcInput" type="text" class="form-control">
 											<span class="input-group-btn">
-												<button id="whs_add_row" class="btn btn-default" type="submit">添加</button>
+												<button id="gc_add_row" class="btn btn-default" type="submit">添加</button>
 											</span>
 										</div>
 									</div>
 								</td>
 							</tr>
 							<tr>
-								<td class="width-per-10">
-									<table id="whs_tbl"></table>
+								<td class="width-per-10 x-center">
+									<table id="gc_tbl"></table>
 								</td>
 							</tr>
 						</table>
