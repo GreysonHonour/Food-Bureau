@@ -14,6 +14,52 @@ $(function(){
 		});
 	}
 
+	if($('#suForm').length >= 1){
+		$('#suForm').bootstrapValidator({
+			feedbackIcons: {
+				valid: 'fa fa-check',
+				invalid: 'fa fa-times',
+				validating: 'fa fa-refresh'
+			},
+			fields: {
+				suInput:{
+					validators: {
+						notEmpty: {
+							message: '内容不能为空'
+						},
+                   		regexp: {
+                   			regexp: /^[0-9\u4e00-\u9fa5]+$/,
+                   			message: '内容只能包含数字、汉字'
+                   		}
+					}
+				}
+			}
+		})
+	}
+
+	if($('#whsForm').length >= 1){
+		$('#whsForm').bootstrapValidator({
+			feedbackIcons: {
+				valid: 'fa fa-check',
+				invalid: 'fa fa-times',
+				validating: 'fa fa-refresh'
+			},
+			fields: {
+				whsInput:{
+					validators: {
+						notEmpty: {
+							message: '内容不能为空'
+						},
+                   		regexp: {
+                   			regexp: /^[0-9\u4e00-\u9fa5]+$/,
+                   			message: '内容只能包含数字、汉字'
+                   		}
+					}
+				}
+			}
+		})
+	}
+
 
 	if($('#inForm').length >= 1){
 

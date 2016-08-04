@@ -75,6 +75,17 @@
 				}); 
 			});
 
+			$("#cog_su_whs").on("click",function(){
+				layer.open({
+					type: 2,
+					title: '承储单位・仓垛设置',
+					shadeClose: true,
+					shade: 0.8,
+					area: ['1080px', '70%'],
+  					content: ['subCogSuWhs.html', 'no']
+				}); 
+			});
+
 			//关于入库一览
 			// <!-- 一览START -->
 			$("#view_in_tbl").jqGrid({
