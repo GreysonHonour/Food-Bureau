@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
 	<meta charset="UTF-8">
 	<title>登录界面</title>
@@ -7,15 +7,19 @@
 	<link rel="stylesheet" type="text/css" href="../css/login_style.css">
 	<link rel="stylesheet" type="text/css" href="../css/base.css">
 	<link rel="stylesheet" type="text/css" href="../css/daterangepicker-bs3.css">
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+
 	<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrapValidator.min.js"></script>
+	<script type="text/javascript" src="../js/validation.js"></script>
 </head>
 <header></header>
 <body>
 <div class="login_min">
 </div>
 <div class="login_content">
-		<form action="">
+		<form id="loginForm" action="">
 			<table class="login_ipt_area">
 				<tr>
 					<td class="login_ipt_title">
@@ -25,7 +29,7 @@
 				<tr>
 					<td>
 						<div class="form-group input-group-lg">
-							<i class="glyphicon glyphicon-user"></i><input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1"></input>
+							<i class="fa fa-user fa-fw"></i><input type="text" name="userName" class="form-control" placeholder="Username" aria-describedby="sizing-addon1"></input>
 						</div>
 						<hr>
 					</td>
@@ -33,13 +37,15 @@
 				<tr>
 					<td>
 						<div class="form-group input-group-lg">
-							<i class="glyphicon glyphicon-lock"></i><input type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon1"></input>
+							<i class="fa fa-lock fa-fw"></i><input type="password" name="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon1"></input>
 						</div>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<button type="submit" class="btn btn-success">登录</button>
+						<div class="form-group">
+							<button type="submit" class="btn btn-success">登录</button>
+						</div>
 					</td>
 				</tr>
 			</table>

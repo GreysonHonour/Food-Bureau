@@ -230,7 +230,7 @@
 		});
 
 		function getYears(){
-		var yearDate = new Date();
+			var yearDate = new Date();
 		    var x = 5;
 			var startYear = yearDate.getFullYear()-x;//起始年份 
 			var endYear = yearDate.getFullYear()+x;//终止年份
@@ -246,7 +246,11 @@
 			var obj=document.getElementById(id);
 			if(obj != undefined && obj != null && obj != ''){
 				for (var i=0;i<=opt.length-1;i++) {
-					obj.options.add(new Option(opt[i],i)); 
+					if(i == 0){
+						obj.options.add(new Option(opt[i],"")); 
+					} else{
+						obj.options.add(new Option(opt[i],i)); 
+					}
 				}
 				if(id == 'sc_in_py'|| id == 'ct_in_py'){
 					var nowYear = new Date().getFullYear();

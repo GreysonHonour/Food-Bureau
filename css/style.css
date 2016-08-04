@@ -78,6 +78,13 @@ div>aside>ul>li a:focus
 	color: #555;
 }
 
+#btn_amt,
+#btn_amt:hover,
+#btn_amt:focus
+{
+	color: #99999b;
+}
+
 .view_tbl{
 	margin-left: 1%;
 }
@@ -173,6 +180,11 @@ button{
 
 .vali-td{
 	height: 60px;
+	vertical-align:top;
+}
+
+.vali-sl-td{
+	height: 85px;
 	vertical-align:top;
 }
 
