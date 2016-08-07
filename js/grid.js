@@ -84,6 +84,98 @@
         caption: "一览"
       });
 
+      $("#gg_tbl").jqGrid({
+        datatype: "local",
+        height: 260,
+        colNames:['Name','Action'],
+        colModel:[
+        //
+        {name:'name',index:'name', width:300, sorttype:"text",editable:true,sortable:false},
+        //
+        {name:'action',index:'action', width:200, sorttype:"text",sortable:false}],
+        multiselect: false,
+        rowNum:10,
+        hidegrid:false,
+        sortorder: "desc",
+        gridComplete: function(){
+            var ids = $("#gg_tbl").jqGrid('getDataIDs');
+            for(var i=0;i < ids.length;i++){
+                var cl = ids[i];
+                var re = "<input class='w8 h2' style='margin-left:10px' type='button' value='更新' onclick=\"$('#gg_tbl').saveRow('"+cl+"');\"  />"; 
+                var de = "<input class='w8 h2' style='margin-left:10px'type='button' value='删除' onclick=\"$('#gg_tbl').delRowData('"+cl+"');\"  />";
+                $("#gg_tbl").jqGrid('setRowData',ids[i],{action:re+de});
+            }
+        },
+        onSelectRow:function(id){
+          $("#gg_tbl").editRow(id, true);  
+        },
+        caption: "一览"
+      });
+
+      $("#gq_tbl").jqGrid({
+        datatype: "local",
+        height: 260,
+        colNames:['Name','Action'],
+        colModel:[
+        //
+        {name:'name',index:'name', width:300, sorttype:"text",editable:true,sortable:false},
+        //
+        {name:'action',index:'action', width:200, sorttype:"text",sortable:false}],
+        multiselect: false,
+        rowNum:10,
+        hidegrid:false,
+        sortorder: "desc",
+        gridComplete: function(){
+            var ids = $("#gq_tbl").jqGrid('getDataIDs');
+            for(var i=0;i < ids.length;i++){
+                var cl = ids[i];
+                var re = "<input class='w8 h2' style='margin-left:10px' type='button' value='更新' onclick=\"$('#gq_tbl').saveRow('"+cl+"');\"  />"; 
+                var de = "<input class='w8 h2' style='margin-left:10px'type='button' value='删除' onclick=\"$('#gq_tbl').delRowData('"+cl+"');\"  />";
+                $("#gq_tbl").jqGrid('setRowData',ids[i],{action:re+de});
+            }
+        },
+        onSelectRow:function(id){
+          $("#gq_tbl").editRow(id, true);  
+        },
+        caption: "一览"
+      });
+
+      $("#ui_tbl").jqGrid({
+        datatype: "local",
+        height: 310,
+        colNames:['Name','Action'],
+        colModel:[
+        //
+        {name:'name',index:'name', width:240, sorttype:"text",editable:true,sortable:false},
+        //
+        {name:'action',index:'action', width:230, sorttype:"text",sortable:false}],
+        multiselect: false,
+        rowNum:10,
+        hidegrid:false,
+        sortorder: "desc",
+        gridComplete: function(){
+            var ids = $("#ui_tbl").jqGrid('getDataIDs');
+            for(var i=0;i < ids.length;i++){
+                var cl = ids[i];
+                var ed = "<input class='w6 h2' style='margin-left:10px' type='button' value='编辑' onclick=\"$('#ui_tbl').editRow('"+cl+"');\"  />";
+                var sa = "<input class='w6 h2' style='margin-left:10px' type='button' value='保存' onclick=\"$('#ui_tbl').saveRow('"+cl+"');\"  />"; 
+                var de = "<input class='w6 h2' style='margin-left:10px'type='button' value='删除' onclick=\"$('#ui_tbl').delRowData('"+cl+"');\"  />";
+                $("#ui_tbl").jqGrid('setRowData',ids[i],{action:ed+sa+de});
+            }
+        },
+        onSelectRow:function(id){
+            //根据id取值 异步加载
+            if(id == 1){
+                var zTreeObj = $.fn.zTree.init($("#rt_tree"), setting2, zNodes2);
+                zTreeObj.expandAll(true);
+            } else{
+                var zTreeObj = $.fn.zTree.init($("#rt_tree"), setting2, zNodes3);
+                zTreeObj.expandAll(true);
+            }
+        },
+        caption: "一览"
+      });
+
       var mydata = [
         {name:"储备分公司"},
         {name:"军粮城库"},
@@ -133,8 +225,44 @@
       var mydata3 = [
         {name:"硬麦"},
         {name:"软麦"}];
-        for(var i=0;i<=mydata2.length;i++){
-            $("#gc_tbl").jqGrid('addRowData',i+1,mydata2[i]);
+        for(var i=0;i<=mydata3.length;i++){
+            $("#gc_tbl").jqGrid('addRowData',i+1,mydata3[i]);
+      }
+
+      var mydata4 = [
+        {name:"一等"},
+        {name:"二等"},
+        {name:"三等"},
+        {name:"四等"},
+        {name:"三等"},
+        {name:"三等"},
+        {name:"三等"},
+        {name:"三等"},
+        {name:"三等"},
+        {name:"三等"},
+        {name:"三等"},
+        {name:"三等"},
+        {name:"三等"},
+        {name:"三等"},
+        {name:"三等"},
+        {name:"三等"},
+        {name:"三等"},
+        {name:"三等"}];
+        for(var i=0;i<=mydata4.length;i++){
+            $("#gg_tbl").jqGrid('addRowData',i+1,mydata4[i]);
+      }
+
+      var mydata5 = [
+        {name:"宜存"}];
+        for(var i=0;i<=mydata5.length;i++){
+            $("#gq_tbl").jqGrid('addRowData',i+1,mydata5[i]);
+      }
+
+      var mydata6 = [
+        {name:"郭宇佳"},
+        {name:"乔旭"}];
+        for(var i=0;i<=mydata6.length;i++){
+            $("#ui_tbl").jqGrid('addRowData',i+1,mydata6[i]);
       }
 
       $("#su_add_row").live('click',function(){
@@ -176,6 +304,49 @@
             action:re+de
           }
           $("#gc_tbl").addRowData(cl, rowdata, "first");
+        }
+      });
+
+      $("#gg_add_row").live('click',function(){
+        if($('#ggForm').data('bootstrapValidator').isValid()){
+          var ids = $("#gg_tbl").jqGrid('getDataIDs');
+          var cl = ids[ids.length];
+          var re = "<input class='w8 h2' style='margin-left:10px' type='button' value='更新' onclick=\"$('#gg_tbl').saveRow('"+cl+"');\"  />"; 
+          var de = "<input class='w8 h2' style='margin-left:10px'type='button' value='删除' onclick=\"$('#gg_tbl').delRowData('"+cl+"');\"  />";
+          var rowdata = {
+            name: $("#gg_input").val(),
+            action:re+de
+          }
+          $("#gg_tbl").addRowData(cl, rowdata, "first");
+        }
+      });
+
+      $("#gq_add_row").live('click',function(){
+        if($('#gqForm').data('bootstrapValidator').isValid()){
+          var ids = $("#gq_tbl").jqGrid('getDataIDs');
+          var cl = ids[ids.length];
+          var re = "<input class='w8 h2' style='margin-left:10px' type='button' value='更新' onclick=\"$('#gq_tbl').saveRow('"+cl+"');\"  />"; 
+          var de = "<input class='w8 h2' style='margin-left:10px'type='button' value='删除' onclick=\"$('#gq_tbl').delRowData('"+cl+"');\"  />";
+          var rowdata = {
+            name: $("#gq_input").val(),
+            action:re+de
+          }
+          $("#gq_tbl").addRowData(cl, rowdata, "first");
+        }
+      });
+
+      $("#ui_add_row").live('click',function(){
+        if($('#uiForm').data('bootstrapValidator').isValid()){
+          var ids = $("#ui_tbl").jqGrid('getDataIDs');
+          var cl = ids[ids.length];
+          var ed = "<input class='w6 h2' style='margin-left:10px' type='button' value='编辑' onclick=\"$('#ui_tbl').editRow('"+cl+"');\"  />"; 
+          var sa = "<input class='w6 h2' style='margin-left:10px'type='button' value='保存' onclick=\"$('#ui_tbl').saveRow('"+cl+"');\"  />";
+          var de = "<input class='w6 h2' style='margin-left:10px'type='button' value='删除' onclick=\"$('#ui_tbl').delRowData('"+cl+"');\"  />";
+          var rowdata = {
+            name: $("#ui_name").val(),
+            action:ed+sa+de
+          }
+          $("#ui_tbl").addRowData(cl, rowdata, "first");
         }
       });
 });
