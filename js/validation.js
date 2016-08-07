@@ -14,6 +14,59 @@ $(function(){
 		});
 	}
 
+	if($('#uiForm').length >= 1){
+		$('#uiForm').bootstrapValidator({
+			feedbackIcons: {
+				valid: 'fa fa-check',
+				invalid: 'fa fa-times',
+				validating: 'fa fa-refresh'
+			},
+			fields: {
+				uiName:{
+					validators: {
+						notEmpty: {
+							message: '内容不能为空'
+						},
+                   		regexp: {
+                   			regexp: /^[0-9\u4e00-\u9fa5]+$/,
+                   			message: '内容只能包含汉字、数字'
+                   		}
+					}
+				},
+				uiPsw:{
+					validators: {
+						notEmpty: {
+							message: '内容不能为空'
+						},
+						identical: {
+							field: 'uiPswCfm',
+							message: '两次输入不一致'
+						},
+						regexp: {
+							regexp: /^[a-zA-Z0-9]+$/,
+							message: '内容只能是数字、大小写英文'
+						}
+					}
+				},
+				uiPswCfm:{
+					validators: {
+						notEmpty: {
+							message: '内容不能为空'
+						},
+						identical: {
+							field: 'uiPsw',
+							message: '两次输入不一致'
+						},
+						regexp: {
+							regexp: /^[a-zA-Z0-9]+$/,
+							message: '内容只能是数字、大小写英文'
+						}
+					}
+				}		
+			}
+		})
+	}
+
 	if($('#suForm').length >= 1){
 		$('#suForm').bootstrapValidator({
 			feedbackIcons: {
@@ -46,6 +99,52 @@ $(function(){
 			},
 			fields: {
 				whsInput:{
+					validators: {
+						notEmpty: {
+							message: '内容不能为空'
+						},
+                   		regexp: {
+                   			regexp: /^[0-9\u4e00-\u9fa5]+$/,
+                   			message: '内容只能包含数字、汉字'
+                   		}
+					}
+				}
+			}
+		})
+	}
+
+	if($('#ggForm').length >= 1){
+		$('#ggForm').bootstrapValidator({
+			feedbackIcons: {
+				valid: 'fa fa-check',
+				invalid: 'fa fa-times',
+				validating: 'fa fa-refresh'
+			},
+			fields: {
+				ggInput:{
+					validators: {
+						notEmpty: {
+							message: '内容不能为空'
+						},
+                   		regexp: {
+                   			regexp: /^[0-9\u4e00-\u9fa5]+$/,
+                   			message: '内容只能包含数字、汉字'
+                   		}
+					}
+				}
+			}
+		})
+	}
+
+	if($('#gqForm').length >= 1){
+		$('#gqForm').bootstrapValidator({
+			feedbackIcons: {
+				valid: 'fa fa-check',
+				invalid: 'fa fa-times',
+				validating: 'fa fa-refresh'
+			},
+			fields: {
+				gqInput:{
 					validators: {
 						notEmpty: {
 							message: '内容不能为空'

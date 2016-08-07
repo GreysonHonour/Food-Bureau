@@ -11,7 +11,7 @@ a:active{text-decoration:none;}
 .x-right{text-align: right}
 
 .y-left{vertical-align: left}
-.y-center{vertical-align: center}
+.y-center{vertical-align: middle}
 .y-right{vertical-align: right}
 
 
@@ -35,6 +35,7 @@ a:active{text-decoration:none;}
 .width-per-2{width:20%;}
 .width-per-1z5{width:15%;}
 .width-per-1{width:10%;}
+.width-per-0z5{width:5%;}
 
 .w1{width:10px;}
 .w2{width:20px;}
@@ -55,27 +56,26 @@ a:active{text-decoration:none;}
 .w70{width:700px;}
 .w80{width:800px;}
 .w90{width:900px;}
-
 /*高度像素*/
-.h1{height:10px;}
-.h2{height:20px;}
-.h3{height:30px;}
-.h4{height:40px;}
-.h5{height:50px;}
-.h6{height:60px;}
-.h7{height:70px;}
-.h8{height:80px;}
-.h9{height:90px;}
+.ht1{height:10px;}
+.ht2{height:20px;}
+.ht3{height:30px;}
+.ht4{height:40px;}
+.ht5{height:50px;}
+.ht6{height:60px;}
+.ht7{height:70px;}
+.ht8{height:80px;}
+.ht9{height:90px;}
 
-.h10{height:100px;}
-.h20{height:200px;}
-.h30{height:300px;}
-.h40{height:400px;}
-.h50{height:500px;}
-.h60{height:600px;}
-.h70{height:700px;}
-.h80{height:800px;}
-.h90{height:900px;}
+.ht10{height:100px;}
+.ht20{height:200px;}
+.ht30{height:300px;}
+.ht40{height:400px;}
+.ht50{height:500px;}
+.ht60{height:600px;}
+.ht70{height:700px;}
+.ht80{height:800px;}
+.ht90{height:900px;}
 
 /*浮动方向*/
 .float-lt{float: left;}
@@ -102,15 +102,30 @@ a:active{text-decoration:none;}
 .mr10{margin-right: 10px;}
 .mr5{margin-right: 5px;}
 
+.ml30{margin-left: 30px;}
+.ml20{margin-left: 20px;}
+.ml10{margin-left: 10px;}
+.ml5{margin-left: 5px;}
+
 .mr-30{margin-right: 30%;}
 .mr-20{margin-right: 20%;}
 .mr-10{margin-right: 10%;}
 .mr-5{margin-right: 5%;}
+
+.ml-30{margin-left: 30%;}
+.ml-20{margin-left: 20%;}
+.ml-10{margin-left: 10%;}
+.ml-5{margin-left: 5%;}
 /*外上边距*/
 .mt30{margin-top: 30px;}
 .mt20{margin-top: 20px;}
 .mt10{margin-top: 10px;}
 .mt5{margin-top: 5px;}
+
+.mt-30{margin-top: 30%;}
+.mt-20{margin-top: 20%;}
+.mt-10{margin-top: 10%;}
+.mt-5{margin-top: 5%;}
 /*显示与否*/
 .none{display: none;}
 .active{display: block;}
@@ -156,3 +171,7 @@ a:active{text-decoration:none;}
 .rt-9{right:90%;}
 /*纵向溢出*/
 .ow-to{overflow:auto};
+
+.noborder{border:none;}
+.noborder-l{border-left: none}
+.noborder-r{border-right: none}

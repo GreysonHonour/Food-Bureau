@@ -42,7 +42,7 @@
 
 			$("#date_info").html(getTime() + " 星期" + getWeek());
 
-			$("#subIn").on("click",function(){
+			$("#sub_in").on("click",function(){
 				layer.open({
 					type: 2,
 					title: '新增粮油入库单',
@@ -53,7 +53,7 @@
 				}); 
 			});
 
-			$("#subOut").on("click",function(){
+			$("#sub_out").on("click",function(){
 				layer.open({
 					type: 2,
 					title: '新增粮油出库单',
@@ -72,6 +72,17 @@
 					shade: 0.8,
 					area: ['1080px', '70%'],
   					content: ['subCg.html', 'no']
+				}); 
+			});
+
+			$("#cog_ui").on("click",function(){
+				layer.open({
+					type: 2,
+					title: '用户管理',
+					shadeClose: true,
+					shade: 0.8,
+					area: ['1080px', '90%'],
+  					content: ['subCogUserInfo.html', 'no']
 				}); 
 			});
 
@@ -95,6 +106,28 @@
 					area: ['1080px', '70%'],
   					content: ['subCogGvc.html', 'no']
 				}); 
+			});
+
+			$("#cog_g3q").on("click",function(){
+				layer.open({
+					type: 2,
+					title: '粮油等级・品质设置',
+					shadeClose: true,
+					shade: 0.8,
+					area: ['1080px', '70%'],
+  					content: ['subCogG3q.html', 'no']
+				}); 
+			});
+
+			$("#sub_in_pt").on("click",function(){
+				layer.open({
+					type: 2,
+					title: '新增粮油入库单',
+					shadeClose: true,
+					shade: 0.8,
+					area: ['756px','700px'],
+					content: ['subInPrint.html', 'no'],
+				});
 			});
 
 			//关于入库一览

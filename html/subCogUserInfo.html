@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/ui.jqgrid.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/metroStyle.css">
+	<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrapValidator.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-migrate-1.4.0.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.jqGrid.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/validation.js"></script>
+	<script type="text/javascript" src="../js/grid.js"></script>
+	<script type="text/javascript" src="../js/tree.js"></script>
+	<script type="text/javascript" src="../js/jquery.ztree.all.min.js"></script>
+</head>
+<body>
+	<article class="panel panel-default">
+			<table class="grain_search">
+				<tr>
+					<td class="width-per-5">
+						<form class="form-horizontal panel-body" id="uiForm" onsubmit="return false">
+							<table class="width-per-10">
+								<tr>
+									<td class="width-per-10 ht10">
+										<label>用户信息设置</label><br/>
+										<div class="form-group ht6 pl-10 m0">
+											<label for="ui_name" class="float-lt control-label">用户名称</label>
+											<div class="col-sm-8">
+												<input class="form-control" id="ui_name" name="uiName" type="text">
+											</div>
+										</div>
+										<div class="form-group ht6 pl-10 m0">
+											<label for="ui_psw" class="float-lt control-label">用户密码</label>
+											<div class="col-sm-8">
+												<input class="form-control" id="ui_psw" name="uiPsw" type="password">
+											</div>
+										</div>
+										<div class="form-group ht6 pl-10 m0">
+											<label for="ui_psw_cfm" class="float-lt control-label">密码确认</label>
+											<div class="col-sm-8">
+												<input class="form-control" id="ui_psw_cfm" name="uiPswCfm" type="password">
+											</div>
+											<button id="ui_add_row" class="btn btn-default" type="submit">添加</button>
+										</div>
+
+									</td>
+								</tr>
+								<tr>
+									<td class="width-per-10 pl-5">
+										<table id="ui_tbl"></table>
+									</td>
+								</tr>
+							</table>
+						</form>
+					</td> 
+					<td class="width-per-5 psn-ab">
+					<form class="form-inline panel-body" id="rgtForm" onsubmit="return false">
+							<table class="width-per-10 psn-rb">
+								<tr>
+									<td class="width-per-10">
+										<label>权限信息设置</label><br/>
+										<div class="width-per-8 zTreeDemoBackground left well well-lg ow-to pl-10 m0 ml-10" style="height:540px;">
+											<ul id="rt_tree" class="ztree"></ul>
+										</div>
+									</td>
+								</tr>
+							</table>
+					</form>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</article>
+</body>
+</html>

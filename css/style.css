@@ -183,20 +183,24 @@ textarea{
 }
 
 #inForm .has-feedback .form-control-feedback,
-#outForm .has-feedback .form-control-feedback{
+#outForm .has-feedback .form-control-feedback,
+#uiForm .has-feedback .form-control-feedback{
     top: 10px;
     right: 10px;
 }
 
 #suForm .has-feedback .form-control-feedback,
 #whsForm .has-feedback .form-control-feedback,
-#gcForm .has-feedback .form-control-feedback{
+#gcForm .has-feedback .form-control-feedback,
+#ggForm .has-feedback .form-control-feedback,
+#gqForm .has-feedback .form-control-feedback{
 	top: 10px;
-    right: 90px;	
+    right: 90px;
 }
 
 #inForm .has-feedback .input-group .form-control-feedback,
-#outForm .has-feedback .input-group .form-control-feedback
+#outForm .has-feedback .input-group .form-control-feedback,
+#uiForm .has-feedback .input-group .form-control-feedback
  {
     top: 10px;
     right: 10px;
@@ -204,7 +208,13 @@ textarea{
 
 #suForm .has-feedback .input-group .form-control-feedback,
 #whsForm .has-feedback .input-group .form-control-feedback,
-#gcForm .has-feedback .input-group .form-control-feedback{
+#gcForm .has-feedback .input-group .form-control-feedback,
+#ggForm .has-feedback .input-group .form-control-feedback,
+#gqForm .has-feedback .input-group .form-control-feedback{
 	top: 10px;
     right: 90px;
+}
+
+#sc_in_ex .panel-heading{
+	padding:6px;
 }
