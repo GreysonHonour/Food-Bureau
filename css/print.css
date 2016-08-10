@@ -1,0 +1,12 @@
+@media print{
+	#in_pt_tbl td,
+	#in_pt_tbl th,
+	#sc_in_ex table th,
+	#sc_in_ex table td{
+		border:1px solid #000 !important;
+	}
+
+	#sc_in_ex{
+		border:none !important;
+	}
+}
