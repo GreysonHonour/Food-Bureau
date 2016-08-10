@@ -1,9 +1,15 @@
 @media print{
 	#in_pt_tbl td,
-	#in_pt_tbl th,
+	.print div:nth-child(2),
 	#sc_in_ex table th,
 	#sc_in_ex table td{
 		border:1px solid #000 !important;
+	}
+
+	#in_pt_tbl th{
+		border-left:1px solid #000 !important;
+		border-right:1px solid #000 !important;
+		border-bottom:1px solid #000 !important;
 	}
 
 	#sc_in_ex{
