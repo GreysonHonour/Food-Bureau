@@ -7,17 +7,16 @@
 	<link rel="stylesheet" type="text/css" href="../css/base.css">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	<link rel="stylesheet" type="text/css" href="../css/jquery-ui.min.css">
-	<link rel="stylesheet" type="text/css" href="../css/daterangepicker-bs3.css">
 	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap-datepicker.min.css">
 	<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript" src="../js/bootstrapValidator.min.js"></script>
 	<script type="text/javascript" src="../js/jquery-migrate-1.4.0.min.js"></script>
 	<script type="text/javascript" src="../js/jquery.jqGrid.min.js"></script>
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrapValidator.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap-datepicker.js"></script>
 	<script type="text/javascript" src="../js/bt_dropdown.js"></script>
-	<script type="text/javascript" src="../js/moment.js"></script>
-	<script type="text/javascript" src="../js/daterangepicker.js"></script>
 	<script type="text/javascript" src="../js/main.js"></script>
 	<script type="text/javascript" src="../js/validation.js"></script>
 </head>
@@ -28,14 +27,14 @@
 				<tr>
 					<td class="width-per-3 vali-td">
 						<div class="input-group">
-							<span class="input-group-addon" style="width:100px"><i class="fa fa-barcode"></i>&nbsp;单据编号</span>
+							<span class="input-group-addon" style="width:100px">单据编号</span>
 							<input type="text" id="ct_in_ivy_no" class="form-control" placeholder="S0000001" aria-describedby="basic-addon1" readonly="true" style="width: 190px"/>
 						</div>
 					</td>
 					<td class="width-per-7 vali-td">
 						<div class="form-group width-per-9">
 							<div class="input-group width-per-10">
-								<span class="input-group-addon" style="width:100px"><i class="fa fa-barcode"></i>&nbsp;入库编号</span>
+								<span class="input-group-addon" style="width:100px">入库编号</span>
 								<input type="text" id="ct_in_note_no" name="ctInNoteNo" class="form-control" placeholder="" aria-describedby="basic-addon1" />
 							</div>
 						</div>
@@ -43,29 +42,19 @@
 				</tr>
 				<tr>
 					<td class="width-per-3 vali-td">
-						<fieldset>
-							<div class="control-group">
-								<div class="controls">
-									<div class="input-prepend input-group">
-										<span class="add-on input-group-addon" style="width:100px"><i class="fa fa-calendar"></i>&nbsp;入库日期</span>
-										<input readonly type="text" id="ct_in_ivy_tm"  style="width: 190px" name="inventory_in_tm" class="form-control inventory_tm"/> 
-									</div>
+						<div class="control-group">
+							<div class="controls">
+								<div class="input-prepend input-group">
+									<span class="add-on input-group-addon" style="width:100px">入库日期</span>
+										<input readonly="true" type="text" id="ct_in_ivy_tm"  style="width: 190px" class="form-control tmClass"/> 
 								</div>
 							</div>
-						</fieldset>
-
-						<script type="text/javascript">
-							$(function() {
-								$('.inventory_tm').daterangepicker({ singleDatePicker: true }, function(start, end, label) {
-									console.log(start.toISOString(), end.toISOString(), label);
-								});
-							});
-						</script>
+						</div>
 					</td>
 					<td class="width-per-7 vali-td">
 						<div class="form-group width-per-4">
 							<div class="input-group width-per-10">
-								<span class="input-group-addon"><i class="fa fa-sign-in"></i>&nbsp;入库量</span>
+								<span class="input-group-addon" style="width:100px">入库量</span>
 								<input type="text" id="ct_in_ivy_amt" name="ctInIvyAmtNm" class="form-control"/>
 							</div>
 						</div>
