@@ -193,7 +193,10 @@ textarea{
 #whsForm .has-feedback .form-control-feedback,
 #gcForm .has-feedback .form-control-feedback,
 #ggForm .has-feedback .form-control-feedback,
-#gqForm .has-feedback .form-control-feedback{
+#gqForm .has-feedback .form-control-feedback,
+#gsForm .has-feedback .form-control-feedback,
+#gaForm .has-feedback .form-control-feedback
+{
 	top: 10px;
     right: 90px;
 }
@@ -210,7 +213,10 @@ textarea{
 #whsForm .has-feedback .input-group .form-control-feedback,
 #gcForm .has-feedback .input-group .form-control-feedback,
 #ggForm .has-feedback .input-group .form-control-feedback,
-#gqForm .has-feedback .input-group .form-control-feedback{
+#gqForm .has-feedback .input-group .form-control-feedback,
+#gsForm .has-feedback .input-group .form-control-feedback,
+#gaForm .has-feedback .input-group .form-control-feedback
+{
 	top: 10px;
     right: 90px;
 }
