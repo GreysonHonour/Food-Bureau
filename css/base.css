@@ -14,8 +14,6 @@ a:active{text-decoration:none;}
 .y-center{vertical-align: middle}
 .y-right{vertical-align: right}
 
-
-/*宽度比例*/
 .width-per-10{width:100%;}
 .width-per-9z5{width:95%;}
 .width-per-9{width:90%;}
@@ -56,7 +54,7 @@ a:active{text-decoration:none;}
 .w70{width:700px;}
 .w80{width:800px;}
 .w90{width:900px;}
-/*高度像素*/
+
 .ht1{height:10px;}
 .ht2{height:20px;}
 .ht3{height:30px;}
@@ -68,7 +66,9 @@ a:active{text-decoration:none;}
 .ht9{height:90px;}
 
 .ht10{height:100px;}
+.ht15{height:150px;}
 .ht20{height:200px;}
+.ht25{height:150px;}
 .ht30{height:300px;}
 .ht40{height:400px;}
 .ht50{height:500px;}
@@ -77,10 +77,8 @@ a:active{text-decoration:none;}
 .ht80{height:800px;}
 .ht90{height:900px;}
 
-/*浮动方向*/
 .float-lt{float: left;}
 .float-rt{float: right;}
-/*内边距*/
 .p10{padding:10px;}
 .p5{padding:5px;}
 .p0{padding:0px;}
@@ -92,11 +90,10 @@ a:active{text-decoration:none;}
 .pl-20{padding-left: 20%;}
 .pl-10{padding-left: 10%;}
 .pl-5{padding-left: 5%;}
-/*外边距*/
 .m10{margin:10px;}
 .m5{margin:5px;}
 .m0{margin:0px;}
-/*外右边距*/
+
 .mr30{margin-right: 30px;}
 .mr20{margin-right: 20px;}
 .mr10{margin-right: 10px;}
@@ -116,7 +113,7 @@ a:active{text-decoration:none;}
 .ml-20{margin-left: 20%;}
 .ml-10{margin-left: 10%;}
 .ml-5{margin-left: 5%;}
-/*外上边距*/
+
 .mt30{margin-top: 30px;}
 .mt20{margin-top: 20px;}
 .mt10{margin-top: 10px;}
@@ -126,10 +123,10 @@ a:active{text-decoration:none;}
 .mt-20{margin-top: 20%;}
 .mt-10{margin-top: 10%;}
 .mt-5{margin-top: 5%;}
-/*显示与否*/
-.none{display: none;}
-.active{display: block;}
-/*纵向位置*/
+
+.ds-ne{display: none;}
+.ds-bk{display: block;}
+
 .bt-1{bottom:10%;}
 .bt-2{bottom:20%;}
 .bt-3{bottom:30%;}
@@ -159,7 +156,7 @@ a:active{text-decoration:none;}
 .tp7{top:7px;}
 .tp8{top:8px;}
 .tp9{top:9px;}
-/*横向位置*/
+
 .rt-1{right:10%;}
 .rt-2{right:20%;}
 .rt-3{right:30%;}
@@ -169,7 +166,7 @@ a:active{text-decoration:none;}
 .rt-7{right:70%;}
 .rt-8{right:80%;}
 .rt-9{right:90%;}
-/*纵向溢出*/
+
 .ow-to{overflow:auto};
 
 .noborder{border:none;}

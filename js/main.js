@@ -1,20 +1,22 @@
 	$(function () {
 
 		var options = {
-				production_year:getYears(),
+			production_year:getYears(),
 				go_source:["","辽宁","吉林","黑龙江","河北","山东","河南","内蒙古","进口","本市","移库","加工回收"],//来源内容
 				go_varity:["","小麦","国产小麦","稻谷","玉米","大米","面粉","原油", "成品油"],//粮油品种
 				go_grade:["","一等","二等","三等","标准","一号","二号","标准","优质","一级"],//粮油等级
 				go_classification_lev1:["","美麦","加麦","澳麦","红麦","白麦","谷","无","特一粉","大豆原油","豆"],//粮油分类一级
 				go_classification_lev2:["","软","硬"],//粮油分类一级
 				go_allcation:["","销售","加工付出","转出","损耗","其他"],//调拨性质
-				storage_unit:["","军粮城库","静海库","西营门库","利达临港库","东丽贯庄库","津南国存库","津南八里台","西青张窝库","北辰朱唐庄","唐库国储库","汉沽东风库","大港太平镇库","蓟县上仓库","宝坻储备库","武清运东库","静海古城库","宁河一库","津沽工业","黄庄桂米业"]//承储单位
+				storage_unit:["","军粮城库","静海库","西营门库","利达临港库","东丽贯庄库","津南国存库","津南八里台","西青张窝库","北辰朱唐庄","唐库国储库","汉沽东风库","大港太平镇库","蓟县上仓库","宝坻储备库","武清运东库","静海古城库","宁河一库","津沽工业","黄庄桂米业"],//承储单位
+				go_whs:["","仓垛01|美红软麦|一等","仓垛02|美红软麦|二等","仓垛03|白硬麦|三等","仓垛04|白硬麦|三等","仓垛05|白硬麦|三等","仓垛06|白硬麦|三等","仓垛07|白硬麦|二等","仓垛08|白硬麦|一等","仓垛09|美红软麦|一等","仓垛10|美红软麦|一等","仓垛11|美红软麦|一等","仓垛12|美红软麦|一等","仓垛13|美红软麦|一等","仓垛14|美红软麦|二等"]//变更至
 				// go_quality:,//粮油品质
-			};
+			},
+			tabCount = 0;
 
 			changeInOut();
 			//日期时间
-			getNewDate();
+			// getNewDate();
 			//下拉列表
 			//TODO:年度 需要做成无下限的那种
 			getOptions(options.production_year, 'sc_in_py');
@@ -35,8 +37,11 @@
 			getOptions(options.go_allcation, 'sc_out_ga');
 			getOptions(options.go_allcation, 'ct_out_ga');
 			//承储单位
-			getOptions(options.storage_unit, 'sc_in_su')
-			getOptions(options.storage_unit, 'ct_in_su')
+			getOptions(options.storage_unit, 'sc_in_su');
+			getOptions(options.storage_unit, 'ct_in_su');
+			//变更至
+			getOptions(options.go_whs, 'sc_cg_tw');
+
 			//导航一级菜单
 			$(".dropdown-toggle").dropdown();
 
@@ -49,7 +54,7 @@
 					shadeClose: true,
 					shade: 0.8,
 					area: ['1080px', '70%'],
-  					content: ['subIn.html', 'no']
+					content: ['subIn.html', 'no']
 				}); 
 			});
 
@@ -60,7 +65,7 @@
 					shadeClose: true,
 					shade: 0.8,
 					area: ['1080px', '70%'],
-  					content: ['subOut.html', 'no']
+					content: ['subOut.html', 'no']
 				}); 
 			});
 
@@ -71,7 +76,7 @@
 					shadeClose: true,
 					shade: 0.8,
 					area: ['1080px', '70%'],
-  					content: ['subCg.html', 'no']
+					content: ['subCg.html', 'no']
 				}); 
 			});
 
@@ -82,7 +87,7 @@
 					shadeClose: true,
 					shade: 0.8,
 					area: ['1080px', '90%'],
-  					content: ['subCogUserInfo.html', 'no']
+					content: ['subCogUserInfo.html', 'no']
 				}); 
 			});
 
@@ -93,7 +98,7 @@
 					shadeClose: true,
 					shade: 0.8,
 					area: ['1080px', '70%'],
-  					content: ['subCogSuWhs.html', 'no']
+					content: ['subCogSuWhs.html', 'no']
 				}); 
 			});
 
@@ -104,7 +109,7 @@
 					shadeClose: true,
 					shade: 0.8,
 					area: ['1080px', '70%'],
-  					content: ['subCogGvc.html', 'no']
+					content: ['subCogGvc.html', 'no']
 				}); 
 			});
 
@@ -115,7 +120,7 @@
 					shadeClose: true,
 					shade: 0.8,
 					area: ['1080px', '70%'],
-  					content: ['subCogG3q.html', 'no']
+					content: ['subCogG3q.html', 'no']
 				}); 
 			});
 
@@ -128,6 +133,41 @@
 					area: ['756px','700px'],
 					content: ['subInPrint.html', 'no'],
 				});
+			});
+
+			//DatePicker
+			$('.input-daterange').each(function(){
+				$(this).datepicker({
+					format: 'yyyy-mm-dd'
+				})
+			});
+
+			$('.tmClass').datepicker({
+				format: 'yyyy-mm-dd'
+			});
+
+    		//Tabs
+    		$('.nav-tabs a').click(function (e) {
+    			e.preventDefault();
+    			$(this).tab('show');
+    		});
+
+    		$('#add_tw').click(function(e){
+    			var selectIndex = $('#sc_cg_tw').val();
+    			var seletedText = $('#sc_cg_tw').find('option:selected').text();
+    			if(selectIndex == '' || seletedText == ''){
+    				$('#sc_cg_tw').tooltip('toggle');
+    			} else{
+    				if(selectIndex.length == 1){
+    					selectIndex = '0' + selectIndex;
+    				}
+    				addTabs({id: selectIndex, title: seletedText.split('|')[0], close: true, navTitle: seletedText.split('|')[1] + seletedText.split('|')[2], content: "取出的array"});
+    			}
+    		});
+
+    		$(".nav-tabs").on("click","[tabclose]", function (e) {
+ 				id = $(this).attr("tabclose");
+				closeTab(id);
 			});
 
 			//关于入库一览
@@ -158,9 +198,9 @@
 				//修改
 				{name:'revise',index:'revise', width:60, sortable:false, align:"center", formatter:function(cellvalue, options, rowObject){
 					return "<a onclick=\"viewInfo()\" style='text-decoration:underline;color:blue'>"+cellvalue+"</a>";}}],
-				multiselect: false,
-				rowNum:10,
-				rowList:[10,20,30],
+					multiselect: false,
+					rowNum:10,
+					rowList:[10,20,30],
 				// pager: '#go_in_pages',
 				// sortname: 'inventoryIn_id',
 				// viewrecords: true,
@@ -215,7 +255,7 @@
 					return "<a onclick=\"viewInfo()\" style='text-decoration:underline;color:blue'>"+cellvalue+"</a>";}}],
 					multiselect: false,
 					caption: "市粮食储备粮油出库单一览"
-			});
+				});
 
 			var mydata = [
 			{vw_out_ivy_no:"C00000001",vw_oi_ivy_no:"S00000001", vw_out_unit_nm:"出库-储存地点12345678910", vw_out_rsv_nm:"出库-收货单位XXXX12345678910", vw_out_tm:"2016-05-30", vw_oi_ivy_amt:"10", vw_out_ivy_amt:"6", vw_out_lt_amt:"4", vw_out_ga:"加工付出"},
@@ -233,6 +273,9 @@
 				$("#view_out_tbl").jqGrid('addRowData',i+1,mydata[i]);
 			}
 			// <!-- 一览END -->
+
+			//关于变更一览
+			// <!-- 一览START -->
 
 			//关于变更一览
 			// <!-- 一览START -->
@@ -264,7 +307,7 @@
 					return "<a onclick=\"viewInfo()\" style='text-decoration:underline;color:blue'>"+cellvalue+"</a>";}}],
 					multiselect: false,
 					caption: "市粮食储备粮油变更一览"
-			});
+				});
 
 			var mydata = [
 			{vw_cg_ivy_no:"B00000001",vw_ci_ivy_no:"S00000001", vw_cg_rsv_nm:"变更-填报单位12345678910", vw_cg_tm:"2016-04-30", vw_ci_ivy_amt:"100", vw_cg_ci_amt:"32", vw_cg_co_amt:"40", vw_cg_ows:"C0815", vw_cg_iws:"C9080"},
@@ -284,9 +327,99 @@
 			// <!-- 一览END -->
 		});
 
+		function addTabs(obj) {
+		id ="tab_"+ obj.id;	
+		$('.active').removeClass('active');
+
+			//如果TAB不存在，创建一个新的TAB
+			if (!$("#"+ id)[0]) {
+				title = '<li role="presentation" id="' + id + '"><a href="#con_' + obj.id + '" aria-controls="' + id + '" role="tab" data-toggle="tab">' + obj.title;
+				if (obj.close) {
+					title += ' <i class="fa fa-close" tabclose="' + obj.id + '"></i>';
+				}
+				title += '</a></li>';
+
+				content = '<div role="tabpanel" class="tab-pane" id="con_' + obj.id + '">';
+				content += '<div class="list-group width-per-1z5 float-lt ht15">';
+				content += '<a href="#" class="list-group-item disabled ht4" id="nt_' + obj.id + '">' + obj.navTitle + '</a>';
+				content += '<a href="#" class="list-group-item" id="ci' + obj.id + '">导入</a>';
+				content += '<a href="#" class="list-group-item" id="ca' + obj.id + '">修改</a>';
+				content += '<a href="#" class="list-group-item" id="cc' + obj.id + '">确认</a>';
+				content += '</div>';
+				content += '<div class="float-lt width-per-8 ml20 view_tbl" style="height:180px">';
+				content += '<form>';
+				content += '<table id="view_whs_tbl' + obj.id + '">';
+				content += '<div id="view_whs_pages' + obj.id + '"></div>';
+				content += '</table>';
+				content += '</form></div></div>';
+
+				$(".nav-tabs").append(title);
+				$(".tab-content").append(content);
+				getGrid(obj.id);
+			}
+
+			$("#tab_"+ obj.id).addClass('active');
+			$("#con_"+ obj.id).addClass('active');
+
+		}
+
+		function getGrid(id){
+			$('#view_whs_tbl' + id).jqGrid({
+				datatype: "local",
+				height: 155,
+				colNames:['仓垛号','粮油品种・分类','粮油等级','原粮食量','导出量','剩余量'],
+				colModel:[
+				//仓垛号
+				{name:'vw_whs_no',index:'vw_whs_no', width:120, sorttype:"text", sortable:true, align:"center"},
+				//粮油品种・分类
+				{name:'vw_whs_vg_nm',index:'vw_whs_vg_nm', width:220, sorttype:"text", align:"center"},
+				//粮油等级
+				{name:'vw_whs_gg_nm',index:'vw_whs_gg_nm', width:100, sortable:true, align:"center"},
+				//原粮食量
+				{name:'vw_whs_ivy_amt',index:'vw_whs_ivy_amt', width:180, align:"right", sorttype:"int"},	
+				//导出量
+				{name:'vw_whs_co_amt',index:'vw_whs_co_amt', width:150, align:"right", sorttype:"int"},
+				//剩余量
+				{name:'vw_whs_fs_amt',index:'vw_whs_fs_amt', width:150, align:"right", sorttype:"int"}],
+			multiselect: true
+			});
+
+			var mydata = [
+				{vw_whs_no:"仓垛09",vw_whs_vg_nm:"美红软麦", vw_whs_gg_nm:"一等", vw_whs_ivy_amt:"123456789012345", vw_whs_co_amt:"1234567890", vw_whs_fs_amt:"123455554444455"},
+				{vw_whs_no:"仓垛11",vw_whs_vg_nm:"美红软麦", vw_whs_gg_nm:"一等", vw_whs_ivy_amt:"123456789012345", vw_whs_co_amt:"1234567890", vw_whs_fs_amt:"123455554444455"},
+				{vw_whs_no:"仓垛12",vw_whs_vg_nm:"美红软麦", vw_whs_gg_nm:"一等", vw_whs_ivy_amt:"123456789012345", vw_whs_co_amt:"1234567890", vw_whs_fs_amt:"123455554444455"},
+				{vw_whs_no:"仓垛13",vw_whs_vg_nm:"美红软麦", vw_whs_gg_nm:"一等", vw_whs_ivy_amt:"123456789012345", vw_whs_co_amt:"1234567890", vw_whs_fs_amt:"123455554444455"},						{vw_whs_no:"仓垛09",vw_whs_vg_nm:"美红软麦", vw_whs_gg_nm:"一等", vw_whs_ivy_amt:"123456789012345", vw_whs_co_amt:"1234567890", vw_whs_fs_amt:"123455554444455"},
+				{vw_whs_no:"仓垛1",vw_whs_vg_nm:"美红软麦", vw_whs_gg_nm:"一等", vw_whs_ivy_amt:"123456789012345", vw_whs_co_amt:"1234567890", vw_whs_fs_amt:"123455554444455"},
+				{vw_whs_no:"仓垛2",vw_whs_vg_nm:"美红软麦", vw_whs_gg_nm:"一等", vw_whs_ivy_amt:"123456789012345", vw_whs_co_amt:"1234567890", vw_whs_fs_amt:"123455554444455"},
+				{vw_whs_no:"仓垛3",vw_whs_vg_nm:"美红软麦", vw_whs_gg_nm:"一等", vw_whs_ivy_amt:"123456789012345", vw_whs_co_amt:"1234567890", vw_whs_fs_amt:"123455554444455"}
+			];
+
+			for(var i=0;i<=mydata.length;i++){
+				$('#view_whs_tbl' + id).jqGrid('addRowData',i+1,mydata[i]);
+			}
+		}
+
+		// function addClose(obj){
+  //   		$(".fa-close").live('click',function(){
+  //   			$(this).parent().parent().remove();
+  //   			$("#con_" + obj.id).remove();
+  //   		})
+		// }
+		var closeTab = function (id) {
+			//如果关闭的是当前激活的TAB，激活他的前一个TAB
+			if ($("li.active").attr('id') == "tab_" + id) {
+				$("#tab_"+ id).prev().addClass('active');
+				$("#con_"+ id).prev().addClass('active');
+			}
+			//关闭TAB
+			$("#tab_"+ id).remove();
+			$("#con_"+ id).remove();
+		};
+
+
 		function getYears(){
 			var yearDate = new Date();
-		    var x = 5;
+			var x = 5;
 			var startYear = yearDate.getFullYear()-x;//起始年份 
 			var endYear = yearDate.getFullYear()+x;//终止年份
 			var array = [];
@@ -338,41 +471,41 @@
 			switch(week)
 			{
 				case 1: 
-					week = "一";
-					break;
+				week = "一";
+				break;
 				case 2:
-					week = "二";
-					break;
+				week = "二";
+				break;
 				case 3:
-					week = "三";
-					break;
+				week = "三";
+				break;
 				case 4:
-					week = "四";
-					break;
+				week = "四";
+				break;
 				case 5:
-					week = "五";
-					break;
+				week = "五";
+				break;
 				case 6:
-					week = "六";
-					break;
+				week = "六";
+				break;
 				case 0:
-					week = "日";
-					break;
+				week = "日";
+				break;
 				default:;
 			}
 			return week;
 		}
 
 		//获取最新日期_初期化用
-		function getNewDate(){
-			var day = getTime();
-			// 输出当前日期
-			var inTrm = $(".inventory_tm");
+		// function getNewDate(){
+		// 	var day = getTime();
+		// 	// 输出当前日期
+		// 	var now = $(".input-daterange input");
 
-			if(typeof(inTrm) != "undefined"){
-				$(".inventory_tm").val(day);				
-			} 
-		}
+		// 	if(typeof(now) != "undefined"){
+		// 		$(".input-daterange input").val(day);				
+		// 	} 
+		// }
 
 		//TODO:切换标签页
 		function changeInOut(){
@@ -395,17 +528,17 @@
 		}
 
 		Date.prototype.Format = function(formatStr)   
-		{   
-			var str = formatStr;   
+		{	
+			var str = formatStr;	
 
-			str=str.replace(/yyyy|YYYY/,this.getFullYear());   
-			str=str.replace(/yy|YY/,(this.getYear() % 100)>9?(this.getYear() % 100).toString():'0' + (this.getYear() % 100));   
+			str=str.replace(/yyyy|YYYY/,this.getFullYear());	
+			str=str.replace(/yy|YY/,(this.getYear() % 100)>9?(this.getYear() % 100).toString():'0' + (this.getYear() % 100));	
 
-			str=str.replace(/MM/,this.getMonth()>9?this.getMonth().toString():'0' + this.getMonth());   
-			str=str.replace(/M/g,this.getMonth());   
+			str=str.replace(/MM/,this.getMonth()>9?this.getMonth().toString():'0' + this.getMonth());	
+			str=str.replace(/M/g,this.getMonth());	
 
-			str=str.replace(/dd|DD/,this.getDate()>9?this.getDate().toString():'0' + this.getDate());   
-			str=str.replace(/d|D/g,this.getDate());    
+			str=str.replace(/dd|DD/,this.getDate()>9?this.getDate().toString():'0' + this.getDate());	
+			str=str.replace(/d|D/g,this.getDate());	
 
 			return str;   
 		} 
@@ -415,34 +548,34 @@
 			this.placeholder=this.dropdown.find(".placeholder");
 			this.options=this.dropdown.find("ul.dropdown-menu > li");
 			this.val='';
-            this.index=-1;//默认为-1;
-            this.initEvents();
-        }
+			this.index=-1;//默认为-1;
+			this.initEvents();
+		}
 
-        customDropDown.prototype={
-        	initEvents:function(){
-        		var obj=this;
-                //这个方法可以不写，因为点击事件被Bootstrap本身就捕获了，显示下面下拉列表
-                obj.dropdown.on("click",function(event){
-                	$(this).toggleClass("active");
-                });
-                
-                //点击下拉列表的选项
-                obj.options.on("click",function(){
-                	var opt=$(this);
-                	obj.text=opt.find("a").text();
-                	obj.val=opt.attr("value");
-                	obj.index=opt.index();
-                	obj.placeholder.text(obj.text);
-                });
-            },
-            getText:function(){
-            	return this.text;
-            },
-            getValue:function(){
-            	return this.val;
-            },
-            getIndex:function(){
-            	return this.index;
-            }
-        }
+		customDropDown.prototype={
+			initEvents:function(){
+				var obj=this;
+			//这个方法可以不写，因为点击事件被Bootstrap本身就捕获了，显示下面下拉列表
+			obj.dropdown.on("click",function(event){
+				$(this).toggleClass("active");
+			});
+			
+			//点击下拉列表的选项
+			obj.options.on("click",function(){
+				var opt=$(this);
+				obj.text=opt.find("a").text();
+				obj.val=opt.attr("value");
+				obj.index=opt.index();
+				obj.placeholder.text(obj.text);
+			});
+		},
+		getText:function(){
+			return this.text;
+		},
+		getValue:function(){
+			return this.val;
+		},
+		getIndex:function(){
+			return this.index;
+		}
+	}

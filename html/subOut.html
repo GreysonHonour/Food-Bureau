@@ -7,17 +7,16 @@
 	<link rel="stylesheet" type="text/css" href="../css/base.css">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	<link rel="stylesheet" type="text/css" href="../css/jquery-ui.min.css">
-	<link rel="stylesheet" type="text/css" href="../css/daterangepicker-bs3.css">
 	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap-datepicker.min.css">
 	<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript" src="../js/bootstrapValidator.min.js"></script>
 	<script type="text/javascript" src="../js/jquery-migrate-1.4.0.min.js"></script>
 	<script type="text/javascript" src="../js/jquery.jqGrid.min.js"></script>
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrapValidator.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap-datepicker.js"></script>
 	<script type="text/javascript" src="../js/bt_dropdown.js"></script>
-	<script type="text/javascript" src="../js/moment.js"></script>
-	<script type="text/javascript" src="../js/daterangepicker.js"></script>
 	<script type="text/javascript" src="../js/main.js"></script>
 	<script type="text/javascript" src="../js/validation.js"></script>
 </head>
@@ -28,41 +27,32 @@
 				<tr>
 					<td class="grain_search_td vali-td">
 						<div class="input-group">
-							<span class="input-group-addon" style="width:100px"><i class="fa fa-barcode"></i>&nbsp;单据编号</span>
+							<span class="input-group-addon" style="width:100px">单据编号</span>
 							<input type="text" id="ct_out_ivy_no" class="form-control" placeholder="C0000001" aria-describedby="basic-addon1" readonly="true" style="width: 190px"/>
 						</div>
 					</td>
 					<td class="grain_search_td vali-td">
 						<div class="input-group">
-							<span class="input-group-addon" style="width:100px"><i class="fa fa-barcode"></i>&nbsp;原单据编号</span>
+							<span class="input-group-addon" style="width:100px">原单据编号</span>
 							<input type="text" id="ct_oi_ivy_no" class="form-control" placeholder="S0000001" aria-describedby="basic-addon1" readonly="true" style="width: 190px">
 						</div>
 					</td>
 					<td class="grain_search_td vali-td">
-						<fieldset>
-							<div class="control-group">
-								<div class="controls">
-									<div class="input-prepend input-group width-per-5">
-										<span class="add-on input-group-addon" style="width:100px"><i class="fa fa-calendar"></i>&nbsp;出库日期</span>
-										<input readonly type="text" id="ct_out_ivy_tm" style="width: 190px" name="inventory_out_tm" class="form-control inventory_tm"/> 
-									</div>
+						<div class="control-group">
+							<div class="controls">
+								<div class="input-prepend input-group">
+									<span class="add-on input-group-addon" style="width:100px">出库日期</span>
+									<input readonly type="text" id="ct_out_ivy_tm" style="width: 190px" class="form-control tmClass"/> 
 								</div>
 							</div>
-						</fieldset>
-						<script type="text/javascript">
-							$(function() {
-								$('.inventory_tm').daterangepicker({ singleDatePicker: true }, function(start, end, label) {
-									console.log(start.toISOString(), end.toISOString(), label);
-								});
-							});
-						</script>
+						</div>
 					</td>
 				</tr>
 				<tr>
 					<td class="grain_search_td vali-td">
 						<div class="form-group">
 							<div class="input-group">
-								<span class="input-group-addon" style="width:100px"><i class="fa fa-sign-in"></i>&nbsp;原粮食量</span>
+								<span class="input-group-addon" style="width:100px">原粮食量</span>
 								<input type="text" id="ct_oi_ivy_amt" name="ctOiIvyAmt" class="form-control" style="width: 190px"/>
 							</div>
 						</div>
@@ -70,7 +60,7 @@
 					<td class="grain_search_td vali-td">
 						<div class="form-group">
 							<div class="input-group">
-								<span class="input-group-addon" style="width:113px"><i class="fa fa-sign-out"></i>&nbsp;出库数量</span>
+								<span class="input-group-addon" style="width:100px">出库数量</span>
 								<input type="text" id="ct_out_ivy_amt" name="ctOutIvyAmt" class="form-control" style="width: 190px"/>
 							</div>
 						</div>
@@ -78,7 +68,7 @@
 					<td class="grain_search_td vali-td psn-ab">
 						<div class="form-group float-lt mr5">
 							<div class="input-group">
-								<span class="input-group-addon" style="width:100px"><i class="fa fa-minus-circle"></i>&nbsp;损耗数量</span>
+								<span class="input-group-addon" style="width:100px">损耗数量</span>
 								<input type="text" id="ct_out_lt_amt" name="ctOutLtAmt" class="form-control" style="width: 190px;"/>
 							</div>
 						</div>
@@ -91,7 +81,7 @@
 					<td colspan="2" class="vali-td">
 						<div class="form-group" style="width:93.5%">
 							<div class="input-group width-per-10">
-								<span class="input-group-addon" style="width:100px;"><i class="fa fa-map-marker"></i>&nbsp;收货单位</span>
+								<span class="input-group-addon" style="width:100px;">收货单位</span>
 								<input type="text" id="ct_out_rsv_nm" name="ctOutRsvNm" class="form-control" />
 							</div>
 						</div>
@@ -99,7 +89,7 @@
 					<td class="psn-ab grain_search_td vali-td">
 						<div class="form-group">
 							<div class="input-group">
-								<span class="input-group-addon" style="width:100px"><i class="fa fa-barcode"></i>&nbsp;出库编号</span>
+								<span class="input-group-addon" style="width:100px">出库编号</span>
 								<input type="text" id="ct_out_note_no" name="ctOutNoteNo" class="form-control" aria-describedby="basic-addon1" style="width: 190px"/>
 							</div>
 						</div>
@@ -133,7 +123,6 @@
 				</tr>	
 			</table>
 			<div class="form-group float-rt mr-5">
-				<!--<button type="submit" class="btn btn-primary">生成损耗</button>-->
 				<button type="submit" class="btn btn-info">提&nbsp;&nbsp;&nbsp;&nbsp;交</button>
 			</div>			
 		</form>
