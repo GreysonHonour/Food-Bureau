@@ -159,6 +159,52 @@ $(function(){
 		})
 	}
 
+	if($('#gsForm').length >= 1){
+		$('#gsForm').bootstrapValidator({
+			feedbackIcons: {
+				valid: 'fa fa-check',
+				invalid: 'fa fa-times',
+				validating: 'fa fa-refresh'
+			},
+			fields: {
+				gsInput:{
+					validators: {
+						notEmpty: {
+							message: '内容不能为空'
+						},
+                   		regexp: {
+                   			regexp: /^[0-9\u4e00-\u9fa5]+$/,
+                   			message: '内容只能包含数字、汉字'
+                   		}
+					}
+				}
+			}
+		})
+	}
+
+	if($('#gaForm').length >= 1){
+		$('#gaForm').bootstrapValidator({
+			feedbackIcons: {
+				valid: 'fa fa-check',
+				invalid: 'fa fa-times',
+				validating: 'fa fa-refresh'
+			},
+			fields: {
+				gaInput:{
+					validators: {
+						notEmpty: {
+							message: '内容不能为空'
+						},
+                   		regexp: {
+                   			regexp: /^[0-9\u4e00-\u9fa5]+$/,
+                   			message: '内容只能包含数字、汉字'
+                   		}
+					}
+				}
+			}
+		})
+	}
+
 	if($('#gcForm').length >= 1){
 		$('#gcForm').bootstrapValidator({
 			feedbackIcons: {

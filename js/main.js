@@ -124,6 +124,17 @@
 				}); 
 			});
 
+			$("#cog_gsa").on("click",function(){
+				layer.open({
+					type: 2,
+					title: '粮油来源・调拨性质设置',
+					shadeClose: true,
+					shade: 0.8,
+					area: ['1080px', '70%'],
+					content: ['subCogGsa.html', 'no']
+				}); 
+			});
+
 			$("#sub_in_pt").on("click",function(){
 				layer.open({
 					type: 2,
@@ -342,9 +353,9 @@
 				content = '<div role="tabpanel" class="tab-pane" id="con_' + obj.id + '">';
 				content += '<div class="list-group width-per-1z5 float-lt ht15">';
 				content += '<a href="#" class="list-group-item disabled ht4" id="nt_' + obj.id + '">' + obj.navTitle + '</a>';
-				content += '<a href="#" class="list-group-item" id="ci' + obj.id + '">导入</a>';
-				content += '<a href="#" class="list-group-item" id="ca' + obj.id + '">修改</a>';
-				content += '<a href="#" class="list-group-item" id="cc' + obj.id + '">确认</a>';
+				content += '<a href="#" class="list-group-item" id="ci_' + obj.id + '">导入</a>';
+				content += '<a href="#" class="list-group-item" id="ca_' + obj.id + '">修改</a>';
+				content += '<a href="#" class="list-group-item" id="cc_' + obj.id + '">确认</a>';
 				content += '</div>';
 				content += '<div class="float-lt width-per-8 ml20 view_tbl" style="height:180px">';
 				content += '<form>';
@@ -355,7 +366,10 @@
 
 				$(".nav-tabs").append(title);
 				$(".tab-content").append(content);
-				getGrid(obj.id);
+				$("#ci_" + obj.id).live('click', function(){
+					getGrid(obj.id);
+				})
+				
 			}
 
 			$("#tab_"+ obj.id).addClass('active');

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/ui.jqgrid.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.min.css">
+	<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrapValidator.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-migrate-1.4.0.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.jqGrid.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/validation.js"></script>
+	<script type="text/javascript" src="../js/grid.js"></script>
+</head>
+<body>
+	<article class="panel panel-default">
+			<table class="grain_search">
+				<tr>
+					<td class="width-per-5">
+					<form class="form-inline panel-body" id="gsForm" onsubmit="return false">
+						<table class="width-per-10">
+							<tr>
+								<td class="width-per-10 ht10">
+									<label>粮油来源设置</label><br/>
+									<div class="form-group width-per-7 ht6">
+										<div class="input-group width-per-10">
+											<input id="gs_input" name="gsInput" type="text" class="form-control">
+											<span class="input-group-btn">
+												<button id="gs_add_row" class="btn btn-default" type="submit">添加</button>
+											</span>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="width-per-10">
+									<table id="gs_tbl"></table>
+								</td>
+							</tr>
+						</table>
+					</form>
+					</td>
+					<td class="width-per-5">
+					<form class="form-inline panel-body" id="gaForm" onsubmit="return false">
+						<table class="width-per-10">
+							<tr>
+								<td class="width-per-10 ht10">
+									<label>调拨性质设定</label><br/>
+									<div class="form-group width-per-7 ht6">
+										<div class="input-group width-per-10">
+											<input id="ga_input" name="gaInput" type="text" class="form-control">
+											<span class="input-group-btn">
+												<button id="ga_add_row" class="btn btn-default" type="submit">添加</button>
+											</span>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="width-per-10">
+									<table id="ga_tbl"></table>
+								</td>
+							</tr>
+						</table>
+					</form>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</article>
+</body>
+</html>
