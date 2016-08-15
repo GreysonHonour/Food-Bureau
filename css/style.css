@@ -109,7 +109,7 @@ textarea{
 }
 
 .grain_change{
-	height: 300px;
+	height: 200px;
 }
 
 .grain_search tr:not(:last-child){
@@ -180,6 +180,15 @@ textarea{
 .vali-sl-td{
 	height: 85px;
 	vertical-align:top;
+}
+
+#cgForm .form-group{
+	margin-left: 0px;
+	padding: 5px;
+}
+
+.grain_change .form-horizontal .form-group{
+	margin-left: 0px;
 }
 
 #inForm .has-feedback .form-control-feedback,
