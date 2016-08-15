@@ -68,8 +68,9 @@ a:active{text-decoration:none;}
 .ht10{height:100px;}
 .ht15{height:150px;}
 .ht20{height:200px;}
-.ht25{height:150px;}
+.ht25{height:250px;}
 .ht30{height:300px;}
+.ht35{height:350px;}
 .ht40{height:400px;}
 .ht50{height:500px;}
 .ht60{height:600px;}
@@ -87,9 +88,18 @@ a:active{text-decoration:none;}
 .pt5{padding-top: 5px;}
 .pt0{padding-top: 0px;}
 
+.pl10{padding-left: 10px;}
+.pl5{padding-left: 5px;}
+.pl0{padding-left: 0px;}
+
 .pl-20{padding-left: 20%;}
 .pl-10{padding-left: 10%;}
 .pl-5{padding-left: 5%;}
+
+.pr-20{padding-right: 20%;}
+.pr-10{padding-right: 10%;}
+.pr-5{padding-right: 5%;}
+
 .m10{margin:10px;}
 .m5{margin:5px;}
 .m0{margin:0px;}

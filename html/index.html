@@ -79,7 +79,7 @@
 				<form class="form-inline panel-body">
 					<table class="grain_search">
 						<tr>
-							<td colspan="6" class="m0">
+							<td colspan="4" class="m0">
 								<table class="width-per-10">
 									<tr>
 										<td class="width-per-2z5">
@@ -112,7 +112,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td colspan="6" class="m0">
+							<td colspan="4" class="m0">
 								<table class="width-per-10">
 									<tr>
 										<td class="width-per-2z5">
@@ -282,38 +282,28 @@
 				<header class="panel-heading">市粮食储备粮油储存地点变更</header>
 				<table class="grain_change">
 					<tr>
-						<td class="m0">
-							<form class="form-horizontal"> 
+						<td>
+							<form class="form-horizontal m10"> 
 								<table class="width-per-10">
-
-									<tr class="ht4">
-										<td class="width-per-2z5">
-											<div class="form-group pl-10 m0"> 
+									<tr>
+										<td class="width-per-3">
+											<div class="form-group width-per-10 m0 pl10"> 
 												<label class="control-label float-lt">承储单位</label>
 												<div class="col-sm-8"> 
 													<select id="sc_cg_su" class="form-control" style="width:180px"></select>
 												</div>
 											</div>
 										</td>
-										<td class="width-per-2z5">
-											<div class="form-group pl-10 m0"> 
-												<label class="control-label float-lt">变更至</label>
-												<div class="col-sm-8"> 
-													<select id="sc_cg_tw" class="form-control red-tooltip" style="width:180px"></select>
-												</div>
-												<label class="control-label"><a href="#" id="add_tw"><i class="fa fa-plus-square fa-lg"></i></a></label>
-											</div>
-										</td>
-										<td class="width-per-2z5">
-											<div class="form-group pl-10 m0">
+										<td class="width-per-3">
+											<div class="form-group width-per-10 m0 pl10">
 												<label class="control-label float-lt">变更日期</label>
 												<div class="col-sm-8"> 
 													<input type="text" id="sc_cg_tm" class="form-control tmClass">
 												</div>
 											</div>
 										</td>
-										<td class="width-per-2z5">
-											<div class="form-group pl-10 m0">
+										<td class="width-per-3">
+											<div class="form-group width-per-10 m0 pl10">
 												<label class="control-label float-lt">单据编号</label>
 												<div class="col-sm-8"> 
 													<input type="text" id="sc_cg_ivy_no" class="form-control" placeholder="B0000001">
@@ -321,13 +311,19 @@
 											</div>
 										</td>
 									</tr>
-									<tr style="height:250px">
-										<td colspan="4">
-											<div class="p10">
-												<ul class="nav nav-tabs" role="tablist">
-												</ul>
-												<div class="tab-content ht20 p10">
-												</div>
+									<tr style="height:100px">
+										<td colspan="3" class="pl10 pt10">
+											<label>备注</label><br/>
+											<textarea id="sc_out_rk" draggable="false" class="form-control" placeholder="" style="width:98%"></textarea>
+										</td>
+									</tr>
+									<tr style="height:50px">
+										<td colspan="3">
+											<div class="ml5">
+												<button type="button" class="btn btn-primary">检&nbsp;&nbsp;&nbsp;&nbsp;索</button>
+												<button type="button" class="btn btn-info" id="sub_cg">变&nbsp;&nbsp;&nbsp;&nbsp;更</button>
+												<button type="button" class="btn btn-info" id="sub_cg_pt">打&nbsp;&nbsp;&nbsp;&nbsp;印</button>
+												<button type="button" class="btn btn-warning">重&nbsp;&nbsp;&nbsp;&nbsp;置</button>
 											</div>
 										</td>
 									</tr>
