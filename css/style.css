@@ -187,7 +187,8 @@ textarea{
 	padding: 5px;
 }
 
-.grain_change .form-horizontal .form-group{
+.grain_change .form-horizontal .form-group,
+.width-per-10 .form-horizontal .form-group{
 	margin-left: 0px;
 }
 

@@ -73,6 +73,7 @@ a:active{text-decoration:none;}
 .ht35{height:350px;}
 .ht40{height:400px;}
 .ht50{height:500px;}
+.ht55{height:550px;}
 .ht60{height:600px;}
 .ht70{height:700px;}
 .ht80{height:800px;}
@@ -91,6 +92,10 @@ a:active{text-decoration:none;}
 .pl10{padding-left: 10px;}
 .pl5{padding-left: 5px;}
 .pl0{padding-left: 0px;}
+
+.pr20{padding-right: 20px;}
+.pr10{padding-right: 10px;}
+.pr5{padding-right: 5px;}
 
 .pl-20{padding-left: 20%;}
 .pl-10{padding-left: 10%;}

@@ -16,13 +16,21 @@
 	<script type="text/javascript" src="../js/jquery-migrate-1.4.0.min.js"></script>
 	<script type="text/javascript" src="../js/jquery.jqGrid.min.js"></script>
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="../js/bt_dropdown.js"></script>
+<!-- 	<script type="text/javascript" src="../js/bt_dropdown.js"></script> -->
 	<script type="text/javascript" src="../js/bootstrap-datepicker.js"></script>
 	<script type="text/javascript" src="../js/layer.js"></script>
 	<script type="text/javascript" src="../js/bootstrapValidator.min.js"></script>
 	<script type="text/javascript" src="../js/validation.js"></script>
 	<script type="text/javascript" src="../js/main.js"></script>
-
+	<script type="text/javascript" src="../js/jquery.PrintArea.js"></script>
+	<script type="text/javascript" src="../js/print.js"></script>
+	<style type="text/css" media="screen">
+		#sc_cscb_title, #sc_csdr_title, #sc_cscr_title{ display: none !important; }
+	</style>
+	<style type="text/css" media="print">
+		@page { size: landscape; }
+		#sc_cscb_title, #sc_csdr_title, #sc_cscr_title{ display: block !important; }
+	</style>
 </head>
 <body>
 	<header>
@@ -38,7 +46,8 @@
 				<li><a href="#"><i class="fa fa-sign-in"></i>&nbsp;入库管理</a></li>
 				<li><a href="#"><i class="fa fa-sign-out"></i>&nbsp;出库管理</a></li>
 				<li><a href="#"><i class="fa fa-exchange"></i>&nbsp;存储地点变更</a></li>
-				<li><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-print"></i>&nbsp;报表打印<span class="caret"></span></a>
+				<li><a href="#"><i class="fa fa-print"></i>&nbsp;报表打印</a></li>
+<!-- 				<li><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-print"></i>&nbsp;报表打印<span class="caret"></span></a>
 					<ul class="dropdown-menu pull-left" role="menu" aria-labelledby="dLabel">
 						<li class="dropdown-header muted">下拉菜单标题</li>
 						<li><a href="#">市级储备粮进销存业务管理平衡表</a></li>
@@ -50,7 +59,7 @@
 						<li><a href="#">市级储备油库存管理表</a></li>
 						<li><a href="#">市级储备油存储年限表</a></li>
 					</ul>
-				</li> 
+				</li>  -->
 				<li><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-cog"></i>&nbsp;设置<span class="caret"></span></a>
 					<ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dLabel">
 						<li><a id="cog_ui" href="#">用户管理</a></li>
@@ -311,13 +320,13 @@
 											</div>
 										</td>
 									</tr>
-									<tr style="height:100px">
+									<tr class="ht10">
 										<td colspan="3" class="pl10 pt10">
 											<label>备注</label><br/>
 											<textarea id="sc_out_rk" draggable="false" class="form-control" placeholder="" style="width:98%"></textarea>
 										</td>
 									</tr>
-									<tr style="height:50px">
+									<tr class="ht5">
 										<td colspan="3">
 											<div class="ml5">
 												<button type="button" class="btn btn-primary">检&nbsp;&nbsp;&nbsp;&nbsp;索</button>
@@ -339,10 +348,427 @@
 						</table>
 					</form>
 				</div>
+			</article>
 
+			<!-- 新规追加画面： -->
+			<article class="panel panel-default ds-ne">
+				<header class="panel-heading">报表打印</header>
+ 				<table class="width-per-10">
+					<tr>
+						<td>
+							<form class="form-horizontal m10"> 
+								<table class="width-per-10">
+									<tr>
+										<td class="width-per-2z5">
+											<div class="dropdown">
+												<button class="btn btn-default dropdown-toggle width-per-9 x-left" type="button" id="rt_menu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+													报表选择
+													<span class="caret"></span>
+												</button>
+												<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+													<li>
+														<a href="#">市级储备粮进销存业务管理平衡表</a>
+													</li>
+													<li>
+														<a href="#">市储油进销存业务管理平衡表</a>
+													</li>
+													<li>
+														<a href="#">市级储备粮食库存管理表</a>
+													</li>
+													<li>
+														<a href="#">市级储备油库存管理表</a>
+													</li>
+													<li class="divider"></li>
+													<li>
+														<a href="#">市级储备油存储年限月报表</a>
+													</li>
+													<li>
+														<a href="#">市级存储粮食（月份）存储年限报表</a>
+													</li>
+												</ul>
+												<script type="text/javascript">
+												$(function(){
+													$('.dropdown-menu').on('click', function(e) {
+														var $target = $(e.target);
+														$target.is('li a') && $('#rt_menu1').text($target.text());
+
+													});
+
+													$('#sc_pt_svw').on('click', function(){
+														if($('#rt_menu1').text() == "市储油进销存业务管理平衡表"){
+															$("#view_pt_cscb").css("display", "block");
+															$("#view_pt_csdr").css("display", "none");
+															$("#view_pt_cscr").css("display", "none");
+														} else if($('#rt_menu1').text() == "市级储备油存储年限月报表"){
+															$("#view_pt_csdr").css("display", "block");
+															$("#view_pt_cscb").css("display", "none");
+															$("#view_pt_cscr").css("display", "none");
+														} else if($('#rt_menu1').text() == "市级储备油库存管理表"){
+															$("#view_pt_cscr").css("display", "block");
+															$("#view_pt_csdr").css("display", "none");
+															$("#view_pt_cscb").css("display", "none");
+														}
+													})
+												});
+
+												</script>
+											</div>
+										</td>
+										<td class="width-per-2z5">
+											<div class="form-group width-per-10 m0 pl10"> 
+												<label class="control-label float-lt">承储单位</label>
+												<div class="col-sm-8"> 
+													<select id="sc_pt_su" class="form-control" style="width:180px"></select>
+												</div>
+											</div>
+										</td>
+										<td class="width-per-2z5">
+											<div class="form-group width-per-10 m0 pl10">
+												<label class="control-label float-lt">年月</label>
+												<div class="col-sm-8"> 
+													<input type="text" id="sc_pt_ym" class="form-control ymClass" style="width:180px">
+												</div>
+											</div>
+										</td>
+										<td class="width-per-2z5">
+											<button type="button" class="btn btn-default" id="sc_pt_svw">预&nbsp;&nbsp;&nbsp;&nbsp;览</button>
+											<button type="submit" class="btn btn-default" id="sc_pt_pa">打&nbsp;&nbsp;&nbsp;&nbsp;印</button>
+										</td>
+									</tr>
+								</table>
+								<hr>
+							</form>
+						</td>
+					</tr>
+				</table>
+ 				<div id="view_pt_cscb" class="ds-ne">
+					<form>
+						<div id="sc_cscb_title" class="x-center h3">市储油进销存业务管理平衡表</div>
+						<table class="width-per-10 ht55" id="">
+							<tr>
+								<td class="ht3 pl10">
+									<table class="width-per-10 x-left">
+										<tr>
+											<td class="width-per-9" colspan="2"></td>
+											<td class="width-per-1">表&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号:油01</td>
+										</tr>
+										<tr>
+											<td class="width-per-5">承储单位：<label id="sc_cscb_su">入库—承储单位test</label></td>
+											<td class="width-per-4"><label id="sc_cscb_y">2016</label>年<label id="sc_cscb_m">9</label>月</td>
+											<td class="width-per-1">计量单位:公斤</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="ht20 p10">
+									<table class="width-per-10 x-center" border="1px">
+										<thead>
+											<tr>
+												<td class="width-per-0z5 ht3" rowspan="2">品种・项目</td>
+												<td class="width-per-0z5 ht3" rowspan="2">期初库存</td>
+												<td class="ht3" colspan="5">本期收入</td>
+												<td class="ht3" colspan="5">本期支出</td>
+												<td class="width-per-0z5 ht3" rowspan="2">期末库存</td>
+											</tr>
+											<tr>
+												<td class="width-per-0z5 ht3">合计</td>
+												<td class="width-per-0z5 ht3">购入</td>
+												<td class="width-per-0z5 ht3">进口</td>
+												<td class="width-per-0z5 ht3">加工回收</td>
+												<td class="width-per-0z5 ht3">其他</td>
+												<td class="width-per-0z5 ht3">合计</td>
+												<td class="width-per-0z5 ht3">销售</td>
+												<td class="width-per-0z5 ht3">加工付出</td>
+												<td class="width-per-0z5 ht3">损耗</td>
+												<td class="width-per-0z5 ht3">其他</td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="width-per-0z5 ht4">豆油合计</td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+											</tr>
+											<tr>
+												<td class="width-per-0z5 ht4">1.大豆原油</td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+											</tr>
+											<tr>
+												<td class="width-per-0z5 ht4">2.一级豆油</td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+											</tr>
+											<tr>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+												<td class="width-per-0z5 ht4"></td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="ht5 p10" colspan="13">
+									<table class="width-per-10 x-left">
+										<tr>
+											<td class="width-per-2">承储单位：</td>
+											<td class="width-per-2">科长：</td>
+											<td class="width-per-2">制表：</td>
+											<td class="width-per-2">填表日期：</td>
+											<td class="width-per-2">电话：</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+ 				<div id="view_pt_csdr" class="ds-ne">
+					<form>
+						<div id="sc_csdr_title" class="x-center h3">市级储备油存储年限月报表</div>
+						<table class="width-per-10 ht55" id="">
+							<tr>
+								<td class="ht3 pl10">
+									<table class="width-per-10 x-left">
+										<tr>
+											<td class="width-per-9" colspan="2"></td>
+											<td class="width-per-1">表&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号:油03</td>
+										</tr>
+										<tr>
+											<td class="width-per-5">承储单位：<label id="sc_csdr_su">入库—承储单位test</label></td>
+											<td class="width-per-4"><label id="sc_csdr_y">2016</label>年<label id="sc_csdr_m">9</label>月</td>
+											<td class="width-per-1">计量单位:公斤</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="ht20 p10">
+									<table class="width-per-10 x-center" border="1px">
+										<thead>
+											<tr>
+												<td class="width-per-2 ht3" rowspan="2" colspan="2">项目</td>
+												<td class="width-per-1 ht3" rowspan="2">期末库存</td>
+												<td class="ht3" colspan="7">按&nbsp;&nbsp;生&nbsp;&nbsp;产&nbsp;&nbsp;年&nbsp;&nbsp;度&nbsp;&nbsp;划&nbsp;&nbsp;分</td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht3">2011年</td>
+												<td class="width-per-1 ht3">2012年</td>
+												<td class="width-per-1 ht3">2013年</td>
+												<td class="width-per-1 ht3">2014年</td>
+												<td class="width-per-1 ht3">2015年</td>
+												<td class="width-per-1 ht3">2016年</td>
+												<td class="width-per-1 ht3">2017年</td>
+											</tr>
+										</thead>
+										<tbody>
+										<tr>
+												<td class="width-per-0z5" rowspan="4">市级储备油</td>
+												<td class="width-per-1z5 ht4">食油及折料</td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1z5 ht4 x-right pr20">其中：大豆原油</td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1z5 ht4 x-right pr20">一级原油</td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1z5 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-1 ht4"></td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="ht5 p10" colspan="10">
+									<table class="width-per-10 x-left">
+										<tr>
+											<td class="width-per-3">单位负责人：</td>
+											<td class="width-per-3">科长：</td>
+											<td class="width-per-4">填表人：</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+ 				<div id="view_pt_cscr" class="ds-ne">
+					<form>
+						<div id="sc_cscr_title" class="x-center h3">市级储备油库存管理表</div>
+						<table class="width-per-10 ht55" id="">
+							<tr>
+								<td class="ht3 pl10">
+									<table class="width-per-10 x-left">
+										<tr>
+											<td class="width-per-9" colspan="2"></td>
+											<td class="width-per-1">表&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号:002</td>
+										</tr>
+										<tr>
+											<td class="width-per-5">承储单位：<label id="sc_cscr_su">天津市粮食储备有限公司</label></td>
+											<td class="width-per-4"><label id="sc_cscr_y">2016</label>年<label id="sc_cscr_m">9</label>月</td>
+											<td class="width-per-1">计量单位:公斤</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="ht20 p10">
+									<table class="width-per-10 x-center" border="1px">
+										<thead>
+											<tr>
+												<td class="width-per-3 ht3" rowspan="2">单位・项目</td>
+												<td class="width-per-1 ht3" rowspan="2">期末库存</td>
+												<td class="ht3" colspan="3">大&nbsp;&nbsp;豆&nbsp;&nbsp;油</td>
+											</tr>
+											<tr>
+												<td class="width-per-2 ht3">原油</td>
+												<td class="width-per-2 ht3">一级油</td>
+												<td class="width-per-2 ht3"></td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="width-per-3 ht4">合计</td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-2 ht4"></td>
+												<td class="width-per-2 ht4"></td>
+												<td class="width-per-2 ht4"></td>
+											</tr>
+											<tr>
+												<td class="width-per-3 ht4">天津静海国家粮食储备库</td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-2 ht4"></td>
+												<td class="width-per-2 ht4"></td>
+												<td class="width-per-2 ht4"></td>
+											</tr>
+											<tr>
+												<td class="width-per-3 ht4">西营门国家粮食储备库</td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-2 ht4"></td>
+												<td class="width-per-2 ht4"></td>
+												<td class="width-per-2 ht4"></td>
+											</tr>
+											<tr>
+												<td class="width-per-3 ht4">中粮佳悦（天津）有限公司</td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-2 ht4"></td>
+												<td class="width-per-2 ht4"></td>
+												<td class="width-per-2 ht4"></td>
+											</tr>
+											<tr>
+												<td class="width-per-3 ht4">嘉里粮油（天津）有限公司</td>
+												<td class="width-per-1 ht4"></td>
+												<td class="width-per-2 ht4"></td>
+												<td class="width-per-2 ht4"></td>
+												<td class="width-per-2 ht4"></td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="ht5 p10" colspan="10">
+									<table class="width-per-10 x-left">
+										<tr>
+											<td class="width-per-3">单位负责人：</td>
+											<td class="width-per-4">科长：</td>
+											<td class="width-per-3">制表：</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
 			</article>
 		</section>
-
 	</div>
 	<footer></footer>
 </body>
