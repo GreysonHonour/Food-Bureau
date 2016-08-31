@@ -154,8 +154,15 @@
 				})
 			});
 
-			$('.tmClass').datepicker({
-				format: 'yyyy-mm-dd'
+			$('.ymClass').datepicker({
+				format: 'yyyymm', 
+				weekStart: 1, 
+				autoclose: true, 
+
+				startView: 2, 
+				maxViewMode: 2,
+				minViewMode:1,
+				forceParse: false 
 			});
 
 			//关于入库一览
@@ -410,14 +417,22 @@
 					artArray[1].style.display = "none";
 					artArray[2].style.display = "none";
 					artArray[0].style.display = "block";
+					artArray[3].style.display = "none";
 				} else if ($(this).index() == 1){
 					artArray[0].style.display = "none";
 					artArray[2].style.display = "none";
+					artArray[3].style.display = "none";
 					artArray[1].style.display = "block";
 				} else if ($(this).index() == 2){
 					artArray[0].style.display = "none";
 					artArray[1].style.display = "none";
 					artArray[2].style.display = "block";
+					artArray[3].style.display = "none";
+				} else {
+					artArray[0].style.display = "none";
+					artArray[1].style.display = "none";
+					artArray[2].style.display = "none";
+					artArray[3].style.display = "block";
 				}
 			});
 		}
