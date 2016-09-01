@@ -14,20 +14,23 @@ $(function(){
 			$("#view_pt_cscb").printArea();
 		}
 
-		if($("#view_pt_csdr").css("display") == "block"){
+		else if($("#view_pt_csdr").css("display") == "block"){
 			$("#view_pt_csdr").printArea();
 		} 
 
-		if($("#view_pt_cscr").css("display") == "block"){
+		else if($("#view_pt_cscr").css("display") == "block"){
 			$("#view_pt_cscr").printArea();
 		} 
 
-		if($("#view_pt_csmy").css("display") == "block"){
+		else if($("#view_pt_csmy").css("display") == "block"){
 			$("#view_pt_csmy").printArea();
 		} 
 
-		if($("#view_pt_csic").css("display") == "block"){
+		else if($("#view_pt_csic").css("display") == "block"){
 			$("#view_pt_csic").printArea();
+		} 
+		else{
+			$("#view_pt_csibm").printArea();
 		} 
 	}
 });

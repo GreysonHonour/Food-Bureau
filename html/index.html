@@ -25,12 +25,12 @@
 	<script type="text/javascript" src="../js/jquery.PrintArea.js"></script>
 	<script type="text/javascript" src="../js/print.js"></script>
 	<style type="text/css" media="screen">
-		.pt-shw, #sc_cscb_title, #sc_csdr_title, #sc_cscr_title, #sc_csmy_title, #sc_csic_title{ display: none !important; }
-		#tbl_pt_cscb, #tbl_pt_csdr, #tbl_pt_cscr, #tbl_pt_csmy, #tbl_pt_csic, #tbl_pt_cscb td, #tbl_pt_csdr td, #tbl_pt_cscr td, #tbl_pt_csmy td, #tbl_pt_csic td{ border:1px solid #ccc; }
+		.pt-shw, #sc_cscb_title, #sc_csdr_title, #sc_cscr_title, #sc_csmy_title, #sc_csic_title, #sc_csibm_title{ display: none !important; }
+		#tbl_pt_cscb, #tbl_pt_csdr, #tbl_pt_cscr, #tbl_pt_csmy, #tbl_pt_csic, #tbl_pt_csibm, #tbl_pt_cscb td, #tbl_pt_csdr td, #tbl_pt_cscr td, #tbl_pt_csmy td, #tbl_pt_csic td, #tbl_pt_csibm td{ border:1px solid #ccc; }
 	</style>
 	<style type="text/css" media="print">
 		@page { size: landscape; }
-		.pt-shw, #sc_cscb_title, #sc_csdr_title, #sc_cscr_title, #sc_csmy_title, #sc_csic_title{ display: block !important; }
+		.pt-shw, #sc_cscb_title, #sc_csdr_title, #sc_cscr_title, #sc_csmy_title, #sc_csic_title, #sc_csibm_title{ display: block !important; }
 	</style>
 </head>
 <body>
@@ -389,26 +389,38 @@
 															$("#view_pt_cscr").css("display", "none");
 															$("#view_pt_csmy").css("display", "none");
 															$("#view_pt_csic").css("display", "none");
+															$("view_pt_csibm").css("display", "none");
 														} else if($('#rt_menu1').text() == "市级储备油存储年限月报表"){
 															$("#view_pt_csdr").css("display", "block");
 															$("#view_pt_cscb").css("display", "none");
 															$("#view_pt_cscr").css("display", "none");
 															$("#view_pt_csmy").css("display", "none");
 															$("#view_pt_csic").css("display", "none");
+															$("view_pt_csibm").css("display", "none");
 														} else if($('#rt_menu1').text() == "市级储备油库存管理表"){
 															$("#view_pt_cscr").css("display", "block");
 															$("#view_pt_csdr").css("display", "none");
 															$("#view_pt_cscb").css("display", "none");
 															$("#view_pt_csmy").css("display", "none");
 															$("#view_pt_csic").css("display", "none");
+															$("view_pt_csibm").css("display", "none");
 														} else if ($('#rt_menu1').text() == "市级存储粮食(月份)存储年限报表"){
 															$("#view_pt_csmy").css("display", "block");
 															$("#view_pt_cscr").css("display", "none");
 															$("#view_pt_csdr").css("display", "none");
 															$("#view_pt_cscb").css("display", "none");
 															$("#view_pt_csic").css("display", "none");
+															$("view_pt_csibm").css("display", "none");
 														} else if ($('#rt_menu1').text() == "市级储备粮库存管理表"){
 															$("#view_pt_csic").css("display", "block");
+															$("#view_pt_csmy").css("display", "none");
+															$("#view_pt_cscr").css("display", "none");
+															$("#view_pt_csdr").css("display", "none");
+															$("#view_pt_cscb").css("display", "none");
+															$("view_pt_csibm").css("display", "none");
+														} else {
+															$("#view_pt_csibm").css("display", "block");
+															$("#view_pt_csic").css("display", "none");
 															$("#view_pt_csmy").css("display", "none");
 															$("#view_pt_cscr").css("display", "none");
 															$("#view_pt_csdr").css("display", "none");
@@ -1016,7 +1028,7 @@
 									<table class="width-per-10 x-left">
 										<tr>
 											<td class="width-per-9" colspan="2"></td>
-											<td class="width-per-1">表&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号:油01</td>
+											<td class="width-per-1">表&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号:002</td>
 										</tr>
 										<tr>
 											<td class="width-per-5">承储单位：<label id="sc_csic_su">入库—承储单位test</label></td>
@@ -1440,6 +1452,519 @@
 											<td class="width-per-4">单位负责人：</td>
 											<td class="width-per-4">科长：</td>
 											<td class="width-per-2">制表：</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<!-- 市级储备粮进销存业务管理平衡表 -->
+ 				<div id="view_pt_csibm" class="ds-ne">
+					<form>
+						<div id="sc_csibm_title" class="x-center h3">市级储备粮进销存业务管理平衡表</div>
+						<table class="width-per-10 ht55" id="">
+							<tr class="pt-shw">
+								<td class="ht3 pl10">
+									<table class="width-per-10 x-left">
+										<tr>
+											<td class="width-per-9" colspan="2"></td>
+											<td class="width-per-1">表&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号:001</td>
+										</tr>
+										<tr>
+											<td class="width-per-5">承储单位：<label id="sc_csibm_su">入库—承储单位test</label></td>
+											<td class="width-per-4"><label id="sc_csibm_y">2016</label>年<label id="sc_csibm_m">9</label>月</td>
+											<td class="width-per-1">计量单位:公斤</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="ht20 p10">
+									<table id="tbl_pt_csibm" class="width-per-10 x-center" border="1px">
+										<thead>
+											<tr>
+												<td class="width-per-1 ht2" rowspan="2">位・项目单</td>
+												<td class="width-per-1 ht2" rowspan="2">期初库存</td>
+												<td class="width-per-3 ht2" colspan="6">本期收入</td>
+												<td class="width-per-3 ht2" colspan="6">本期之处</td>
+												<td class="width-per-1 ht2" rowspan="2">期末库存</td>
+											</tr>
+											<tr>
+												<td class="width-per-0z5 ht2">合计</td>
+												<td class="width-per-0z5 ht2">购入</td>
+												<td class="width-per-0z5 ht2">进口</td>
+												<td class="width-per-0z5 ht2">转入</td>
+												<td class="width-per-1 ht2">加工收回</td>
+												<td class="width-per-0z5 ht2">其他</td>
+												<td class="width-per-0z5 ht2">合计</td>
+												<td class="width-per-0z5 ht2">销售</td>
+												<td class="width-per-0z5 ht2">转出</td>
+												<td class="width-per-1 ht2">加工付出</td>
+												<td class="width-per-0z5 ht2">损耗</td>
+												<td class="width-per-0z5 ht2">其他</td>
+											</tr>
+										</thead>
+										<tbody class="font-s-small">
+											<tr>
+												<td class="width-per-1 ht1">粮食合计</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1">一、小麦</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1 x-left">（一）进口合计</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1 x-left pl10">1.美麦</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1 x-right pr10">硬红麦</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1 x-right pr10">软红麦</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1 x-left pl10">2.加麦</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1 x-right pr10">硬白麦</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1 x-right pr10">硬红麦</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1 x-left pl10">3.澳麦</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1 x-right pr10">标准白麦</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1 x-right pr10">优质白麦</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1 x-left">（二）国产合计</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1 x-left pl10">1.硬白麦</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1 x-left pl10">2.软白麦</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1 x-left pl10">3.硬红麦</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1 x-left pl10">4.软红麦</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1 x-left pl10">5.混麦</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1">二、面粉</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1 x-left pl10">1.特一粉</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1 x-left pl10">2.特二粉</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1">三、稻谷</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1 x-left pl10">1.粳谷</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1">四、玉米</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1">五、大米</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+											<tr>
+												<td class="width-per-1 ht1">1.粳米</td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-0z5 ht1"></td>
+												<td class="width-per-1 ht1"></td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr class="pt-shw">
+								<td class="ht5 p10" colspan="13">
+									<table class="width-per-10 x-left">
+										<tr>
+											<td class="width-per-2">承储单位：</td>
+											<td class="width-per-2">科长：</td>
+											<td class="width-per-2">制表：</td>
+											<td class="width-per-2">填表日期：&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;月&nbsp;&nbsp;日</td>
+											<td class="width-per-2">电话：</td>
 										</tr>
 									</table>
 								</td>
