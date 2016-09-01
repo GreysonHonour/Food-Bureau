@@ -56,14 +56,23 @@ a:active{text-decoration:none;}
 .w90{width:900px;}
 
 .ht1{height:10px;}
+.ht1z5{height:15px;}
 .ht2{height:20px;}
+.ht2z5{height:25px;}
 .ht3{height:30px;}
+.ht3z5{height:35px;}
 .ht4{height:40px;}
+.ht4z5{height:45px;}
 .ht5{height:50px;}
+.ht5z5{height:55px;}
 .ht6{height:60px;}
+.ht6z5{height:65px;}
 .ht7{height:70px;}
+.ht7z5{height:75px;}
 .ht8{height:80px;}
+.ht8z5{height:85px;}
 .ht9{height:90px;}
+.ht9z5{height:95px;}
 
 .ht10{height:100px;}
 .ht15{height:150px;}
@@ -187,3 +196,9 @@ a:active{text-decoration:none;}
 .noborder{border:none;}
 .noborder-l{border-left: none}
 .noborder-r{border-right: none}
+
+.font-s-normal{font-size:normal;}
+.font-s-small{font-size:small;}
+.font-s-large{font-size:large;}
+.font-s-larger{font-size:larger;}
+
