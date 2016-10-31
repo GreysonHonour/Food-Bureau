@@ -275,7 +275,6 @@
 				datatype: "local",
 				height: 340,
 				multiselect: false,
-				cellEdit: true,
 				caption: "市粮食储备粮油变更一览",
 				colNames:['现单据编号','原单据编号','填报单位','变更日期','原粮食数量','入粮数量','出粮数量','原仓号','变更仓号','修改'],
 				colModel:[
@@ -340,14 +339,25 @@
 			};
 
 			cgArry.push(jsonRowData);
-			$("#view_cg_tbl").jqGrid('setRowData',id,{revise: sv});
-
+			var ids = $("#view_cg_tbl").jqGrid('getDataIDs');
+            for(var i=0;i < ids.length;i++){
+                if(id == ids[i]){
+					$("#view_cg_tbl").jqGrid('setRowData',id,{revise: sv});
+                } else{
+                	$("#view_cg_tbl").jqGrid('setRowData',ids[i],{revise: ""});
+                }
+			}
 			// body...
 		}
 
 		function saveToEdit(id) {
-			var re = "<input class='w8 h2' style='margin-left:10px' type='button' value='修改' onclick=\"$('#view_cg_tbl').editRow('"+id+"');editToSave('"+id+"')\"  />";
-			$("#view_cg_tbl").jqGrid('setRowData',id,{revise: re});
+			//id用途别途 考虑
+
+			var ids = $("#view_cg_tbl").jqGrid('getDataIDs');
+            for(var i=0;i < ids.length;i++){
+            	var re = "<input class='w8 h2' style='margin-left:10px' type='button' value='修改' onclick=\"$('#view_cg_tbl').editRow('"+ids[i]+"');editToSave('"+ids[i]+"')\"  />";
+            	$("#view_cg_tbl").jqGrid('setRowData',ids[i],{revise: re});
+            }
 		}
 
 		function getYears(){
