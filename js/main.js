@@ -1,5 +1,6 @@
 	$(function () {
 
+		cgArry = [];
 		var options = {
 			production_year:getYears(),
 				go_source:["","辽宁","吉林","黑龙江","河北","山东","河南","内蒙古","进口","本市","移库","加工回收"],//来源内容
@@ -268,16 +269,18 @@
 				$("#view_out_tbl").jqGrid('addRowData',i+1,mydata[i]);
 			}
 			// <!-- 一览END -->
-
 			//关于变更一览
 			// <!-- 一览START -->
 			$("#view_cg_tbl").jqGrid({
 				datatype: "local",
 				height: 340,
+				multiselect: false,
+				cellEdit: true,
+				caption: "市粮食储备粮油变更一览",
 				colNames:['现单据编号','原单据编号','填报单位','变更日期','原粮食数量','入粮数量','出粮数量','原仓号','变更仓号','修改'],
 				colModel:[
 				//现单据编号
-				{name:'vw_cg_ivy_no',index:'vw_cg_ivy_no', width:80, sorttype:"text"},
+				{name:'vw_cg_ivy_no',index:'vw_cg_ivy_no', width:80, sorttype:"text", editable: true, editrules:{required:true}},
 				//原单据编号
 				{name:'vw_ci_ivy_no',index:'vw_ci_ivy_no', width:80, sorttype:"text"},
 				//填报单位
@@ -285,32 +288,37 @@
 				//变更日期
 				{name:'vw_cg_tm',index:'vw_cg_tm', width:100, align:"center", sorttype:"date"},
 				//原粮食数量
-				{name:'vw_ci_ivy_amt',index:'vw_ci_ivy_amt', width:80, align:"right", sorttype:"int"},	
+				{name:'vw_ci_ivy_amt',index:'vw_ci_ivy_amt', width:80, align:"right", sorttype:"int", editable: true},	
 				//入粮数量
-				{name:'vw_cg_ci_amt',index:'vw_cg_ci_amt', width:80, align:"right", sorttype:"int"},
+				{name:'vw_cg_ci_amt',index:'vw_cg_ci_amt', width:80, align:"right", sorttype:"int", editable: true},
 				//出粮数量
-				{name:'vw_cg_co_amt',index:'vw_cg_co_amt', width:80, align:"right", sorttype:"int"},	
+				{name:'vw_cg_co_amt',index:'vw_cg_co_amt', width:80, align:"right", sorttype:"int", editable: true},	
 				//原仓号
 				{name:'vw_cg_ows',index:'vw_cg_ows', width:165, sorttype:"text"},
 				//变更仓号
 				{name:'vw_cg_iws',index:'vw_cg_iws', width:165, sorttype:"text"},
 				//修改
-				{name:'revise',index:'revise', width:60, sortable:false, align:"center", formatter:function(cellvalue, options, rowObject){
-					return "<a onclick=\"viewInfo()\" style='text-decoration:underline;color:blue'>"+cellvalue+"</a>";}}],
-					multiselect: false,
-					caption: "市粮食储备粮油变更一览"
-				});
+				{name:'revise',index:'revise', width:60, sortable:false, align:"center"}],
+				gridComplete: function(){
+            		var ids = $("#view_cg_tbl").jqGrid('getDataIDs');
+            		for(var i=0;i < ids.length;i++){
+               			var cl = ids[i];
+                		var re = "<input class='w8 h2' style='margin-left:10px' type='button' value='修改' onclick=\"$('#view_cg_tbl').editRow('"+cl+"');editToSave('"+cl+"')\"  />";
+                	$("#view_cg_tbl").jqGrid('setRowData',ids[i],{revise:re});
+            		}
+       			}
+			});
 
 			var mydata = [
-			{vw_cg_ivy_no:"B00000001",vw_ci_ivy_no:"S00000001", vw_cg_rsv_nm:"变更-填报单位12345678910", vw_cg_tm:"2016-04-30", vw_ci_ivy_amt:"100", vw_cg_ci_amt:"32", vw_cg_co_amt:"40", vw_cg_ows:"C0815", vw_cg_iws:"C9080"},
-			{vw_cg_ivy_no:"B00000001",vw_ci_ivy_no:"S00000001", vw_cg_rsv_nm:"变更-填报单位12345678910", vw_cg_tm:"2016-04-30", vw_ci_ivy_amt:"100", vw_cg_ci_amt:"32", vw_cg_co_amt:"40", vw_cg_ows:"C0815", vw_cg_iws:"C9080"},
-			{vw_cg_ivy_no:"B00000001",vw_ci_ivy_no:"S00000001", vw_cg_rsv_nm:"变更-填报单位12345678910", vw_cg_tm:"2016-04-30", vw_ci_ivy_amt:"100", vw_cg_ci_amt:"32", vw_cg_co_amt:"40", vw_cg_ows:"C0815", vw_cg_iws:"C9080"},
-			{vw_cg_ivy_no:"B00000001",vw_ci_ivy_no:"S00000001", vw_cg_rsv_nm:"变更-填报单位12345678910", vw_cg_tm:"2016-04-30", vw_ci_ivy_amt:"100", vw_cg_ci_amt:"32", vw_cg_co_amt:"40", vw_cg_ows:"C0815", vw_cg_iws:"C9080"},
-			{vw_cg_ivy_no:"B00000001",vw_ci_ivy_no:"S00000001", vw_cg_rsv_nm:"变更-填报单位12345678910", vw_cg_tm:"2016-04-30", vw_ci_ivy_amt:"100", vw_cg_ci_amt:"32", vw_cg_co_amt:"40", vw_cg_ows:"C0815", vw_cg_iws:"C9080"},
-			{vw_cg_ivy_no:"B00000001",vw_ci_ivy_no:"S00000001", vw_cg_rsv_nm:"变更-填报单位12345678910", vw_cg_tm:"2016-04-30", vw_ci_ivy_amt:"100", vw_cg_ci_amt:"32", vw_cg_co_amt:"40", vw_cg_ows:"C0815", vw_cg_iws:"C9080"},
-			{vw_cg_ivy_no:"B00000001",vw_ci_ivy_no:"S00000001", vw_cg_rsv_nm:"变更-填报单位12345678910", vw_cg_tm:"2016-04-30", vw_ci_ivy_amt:"100", vw_cg_ci_amt:"32", vw_cg_co_amt:"40", vw_cg_ows:"C0815", vw_cg_iws:"C9080"},
-			{vw_cg_ivy_no:"B00000001",vw_ci_ivy_no:"S00000001", vw_cg_rsv_nm:"变更-填报单位12345678910", vw_cg_tm:"2016-04-30", vw_ci_ivy_amt:"100", vw_cg_ci_amt:"32", vw_cg_co_amt:"40", vw_cg_ows:"C0815", vw_cg_iws:"C9080"},
-			{vw_cg_ivy_no:"B00000001",vw_ci_ivy_no:"S00000001", vw_cg_rsv_nm:"变更-填报单位12345678910", vw_cg_tm:"2016-04-30", vw_ci_ivy_amt:"100", vw_cg_ci_amt:"32", vw_cg_co_amt:"40", vw_cg_ows:"C0815", vw_cg_iws:"C9080"}
+			{vw_cg_ivy_no:"B00000001",vw_ci_ivy_no:"S00000001", vw_cg_rsv_nm:"变更-填报单位12345678910", vw_cg_tm:"2016-04-30", vw_ci_ivy_amt:"100", vw_cg_ci_amt:"32", vw_cg_co_amt:"40", vw_cg_ows:"C0815", vw_cg_iws:"C9080", revise:"修改"},
+			{vw_cg_ivy_no:"B00000001",vw_ci_ivy_no:"S00000001", vw_cg_rsv_nm:"变更-填报单位12345678910", vw_cg_tm:"2016-04-30", vw_ci_ivy_amt:"100", vw_cg_ci_amt:"32", vw_cg_co_amt:"40", vw_cg_ows:"C0815", vw_cg_iws:"C9080", revise:"修改"},
+			{vw_cg_ivy_no:"B00000001",vw_ci_ivy_no:"S00000001", vw_cg_rsv_nm:"变更-填报单位12345678910", vw_cg_tm:"2016-04-30", vw_ci_ivy_amt:"100", vw_cg_ci_amt:"32", vw_cg_co_amt:"40", vw_cg_ows:"C0815", vw_cg_iws:"C9080", revise:"修改"},
+			{vw_cg_ivy_no:"B00000001",vw_ci_ivy_no:"S00000001", vw_cg_rsv_nm:"变更-填报单位12345678910", vw_cg_tm:"2016-04-30", vw_ci_ivy_amt:"100", vw_cg_ci_amt:"32", vw_cg_co_amt:"40", vw_cg_ows:"C0815", vw_cg_iws:"C9080", revise:"修改"},
+			{vw_cg_ivy_no:"B00000001",vw_ci_ivy_no:"S00000001", vw_cg_rsv_nm:"变更-填报单位12345678910", vw_cg_tm:"2016-04-30", vw_ci_ivy_amt:"100", vw_cg_ci_amt:"32", vw_cg_co_amt:"40", vw_cg_ows:"C0815", vw_cg_iws:"C9080", revise:"修改"},
+			{vw_cg_ivy_no:"B00000001",vw_ci_ivy_no:"S00000001", vw_cg_rsv_nm:"变更-填报单位12345678910", vw_cg_tm:"2016-04-30", vw_ci_ivy_amt:"100", vw_cg_ci_amt:"32", vw_cg_co_amt:"40", vw_cg_ows:"C0815", vw_cg_iws:"C9080", revise:"修改"},
+			{vw_cg_ivy_no:"B00000001",vw_ci_ivy_no:"S00000001", vw_cg_rsv_nm:"变更-填报单位12345678910", vw_cg_tm:"2016-04-30", vw_ci_ivy_amt:"100", vw_cg_ci_amt:"32", vw_cg_co_amt:"40", vw_cg_ows:"C0815", vw_cg_iws:"C9080", revise:"修改"},
+			{vw_cg_ivy_no:"B00000001",vw_ci_ivy_no:"S00000001", vw_cg_rsv_nm:"变更-填报单位12345678910", vw_cg_tm:"2016-04-30", vw_ci_ivy_amt:"100", vw_cg_ci_amt:"32", vw_cg_co_amt:"40", vw_cg_ows:"C0815", vw_cg_iws:"C9080", revise:"修改"},
+			{vw_cg_ivy_no:"B00000001",vw_ci_ivy_no:"S00000001", vw_cg_rsv_nm:"变更-填报单位12345678910", vw_cg_tm:"2016-04-30", vw_ci_ivy_amt:"100", vw_cg_ci_amt:"32", vw_cg_co_amt:"40", vw_cg_ows:"C0815", vw_cg_iws:"C9080", revise:"修改"}
 			];
 
 			for(var i=0;i<=mydata.length;i++){
@@ -318,6 +326,29 @@
 			}
 			// <!-- 一览END -->
 		});
+
+		function editToSave(id) {
+			var sv = "<input class='w8 h2' style='margin-left:10px' type='button' value='保存' onclick=\"$('#view_cg_tbl').saveRow('"+id+"', function(response){return true;});saveToEdit('"+id+"')\" />";
+			// 存住该行的4个变量用于check,也可以放到后台
+			var rowData = $("#view_cg_tbl").getLocalRow(id);
+			var jsonRowData = {
+				rowId : id,
+				vwCgIvyNo : rowData.vw_cg_ivy_no,
+				vwCiIvyAmt : rowData.vw_ci_ivy_amt,
+				vwCgIiAmt : rowData.vw_cg_ci_amt,
+				vwCgCoAmt : rowData.vw_cg_co_amt
+			};
+
+			cgArry.push(jsonRowData);
+			$("#view_cg_tbl").jqGrid('setRowData',id,{revise: sv});
+
+			// body...
+		}
+
+		function saveToEdit(id) {
+			var re = "<input class='w8 h2' style='margin-left:10px' type='button' value='修改' onclick=\"$('#view_cg_tbl').editRow('"+id+"');editToSave('"+id+"')\"  />";
+			$("#view_cg_tbl").jqGrid('setRowData',id,{revise: re});
+		}
 
 		function getYears(){
 			var yearDate = new Date();

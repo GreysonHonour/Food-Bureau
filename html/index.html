@@ -379,7 +379,6 @@
 													$('.dropdown-menu').on('click', function(e) {
 														var $target = $(e.target);
 														$target.is('li a') && $('#rt_menu1').text($target.text());
-
 													});
 
 													$('#sc_pt_svw').on('click', function(){
@@ -389,36 +388,41 @@
 															$("#view_pt_cscr").css("display", "none");
 															$("#view_pt_csmy").css("display", "none");
 															$("#view_pt_csic").css("display", "none");
-															$("view_pt_csibm").css("display", "none");
-														} else if($('#rt_menu1').text() == "市级储备油存储年限月报表"){
+															$("#view_pt_csibm").css("display", "none");
+														} 
+														if($('#rt_menu1').text() == "市级储备油存储年限月报表"){
 															$("#view_pt_csdr").css("display", "block");
 															$("#view_pt_cscb").css("display", "none");
 															$("#view_pt_cscr").css("display", "none");
 															$("#view_pt_csmy").css("display", "none");
 															$("#view_pt_csic").css("display", "none");
-															$("view_pt_csibm").css("display", "none");
-														} else if($('#rt_menu1').text() == "市级储备油库存管理表"){
+															$("#view_pt_csibm").css("display", "none");
+														}
+														if($('#rt_menu1').text() == "市级储备油库存管理表"){
 															$("#view_pt_cscr").css("display", "block");
 															$("#view_pt_csdr").css("display", "none");
 															$("#view_pt_cscb").css("display", "none");
 															$("#view_pt_csmy").css("display", "none");
 															$("#view_pt_csic").css("display", "none");
-															$("view_pt_csibm").css("display", "none");
-														} else if ($('#rt_menu1').text() == "市级存储粮食(月份)存储年限报表"){
+															$("#view_pt_csibm").css("display", "none");
+														}
+														if ($('#rt_menu1').text() == "市级存储粮食(月份)存储年限报表"){
 															$("#view_pt_csmy").css("display", "block");
 															$("#view_pt_cscr").css("display", "none");
 															$("#view_pt_csdr").css("display", "none");
 															$("#view_pt_cscb").css("display", "none");
 															$("#view_pt_csic").css("display", "none");
-															$("view_pt_csibm").css("display", "none");
-														} else if ($('#rt_menu1').text() == "市级储备粮库存管理表"){
+															$("#view_pt_csibm").css("display", "none");
+														}
+														if ($('#rt_menu1').text() == "市级储备粮库存管理表"){
 															$("#view_pt_csic").css("display", "block");
 															$("#view_pt_csmy").css("display", "none");
 															$("#view_pt_cscr").css("display", "none");
 															$("#view_pt_csdr").css("display", "none");
 															$("#view_pt_cscb").css("display", "none");
-															$("view_pt_csibm").css("display", "none");
-														} else {
+															$("#view_pt_csibm").css("display", "none");
+														}
+														if ($('#rt_menu1').text() == "市级储备粮进销存业务管理平衡表"){
 															$("#view_pt_csibm").css("display", "block");
 															$("#view_pt_csic").css("display", "none");
 															$("#view_pt_csmy").css("display", "none");
